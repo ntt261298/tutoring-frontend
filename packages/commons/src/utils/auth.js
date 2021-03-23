@@ -13,13 +13,13 @@ export default class Auth {
   }
 
   isAuth() {
-    return !!(this.getToken())
+    return !!(this.getToken());
   }
 
   setAuth(data) {
     this.data = data;
     this.storage.setJson(this.authKey, data);
-    this.storage.setCookie('Authorization', `Bearer ${this.data?.accessToken}`)
+    this.storage.setCookie('Authorization', `Bearer ${this.data?.accessToken}`);
   }
 
   logout() {
