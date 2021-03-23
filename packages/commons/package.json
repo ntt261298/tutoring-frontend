@@ -1,0 +1,38 @@
+{
+  "name": "@tutoring/commons",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node ../../package-webpack/scripts/start",
+    "build": "node ../../package-webpack/scripts/build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "@testing-library/react": "9.3.2",
+    "babel-eslint": "10.0.3",
+    "babel-preset-react-app": "9.1.2"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "main": "lib",
+  "module": "es",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "dependencies": {
+    "@tutoring/commons": "1.0.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
