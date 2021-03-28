@@ -87,10 +87,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/Hello.js":
-/*!*********************************!*\
-  !*** ./src/components/Hello.js ***!
-  \*********************************/
+/***/ "./src/components/Copyright.js":
+/*!*************************************!*\
+  !*** ./src/components/Copyright.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,7 +98,28 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/packages/commons/src/components/Hello.js";function Hello(props){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{__self:this,__source:{fileName:_jsxFileName,lineNumber:5,columnNumber:9}},"Hello");}/* harmony default export */ __webpack_exports__["default"] = (Hello);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1__);
+var _this=undefined,_jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/packages/commons/src/components/Copyright.js";var Copyright=function Copyright(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1___default.a,{variant:"body2",color:"textSecondary",align:"center",__self:_this,__source:{fileName:_jsxFileName,lineNumber:5,columnNumber:3}},"Copyright \xA9 Truong Nguyen",' ',new Date().getFullYear(),'.');};/* harmony default export */ __webpack_exports__["default"] = (Copyright);
+
+/***/ }),
+
+/***/ "./src/components/GoogleLoginButton.js":
+/*!*********************************************!*\
+  !*** ./src/components/GoogleLoginButton.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-login */ "react-google-login");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+var _this=undefined,_jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/packages/commons/src/components/GoogleLoginButton.js";var useStyles=Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function(){return{googleButton:{height:48,width:'100%',display:'flex',margin:'5px 0',alignItems:'center',justifyContent:'center'}};});var GoogleLoginButton=function GoogleLoginButton(_ref){var buttonText=_ref.buttonText,googleClientId=_ref.googleClientId,onGoogleLoginSuccess=_ref.onGoogleLoginSuccess,onGoogleLoginFailure=_ref.onGoogleLoginFailure;var classes=useStyles();return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_1__["GoogleLogin"],{className:classes.googleButton,style:{margin:'0 auto'},clientId:googleClientId,onSuccess:onGoogleLoginSuccess,onFailure:onGoogleLoginFailure,__self:_this,__source:{fileName:_jsxFileName,lineNumber:24,columnNumber:5}},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"fa fa-google",__self:_this,__source:{fileName:_jsxFileName,lineNumber:31,columnNumber:7}}),buttonText);};/* harmony default export */ __webpack_exports__["default"] = (GoogleLoginButton);
 
 /***/ }),
 
@@ -106,15 +127,40 @@ var _jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/package
 /*!*********************************!*\
   !*** ./src/components/index.js ***!
   \*********************************/
-/*! exports provided: Hello */
+/*! exports provided: GoogleLoginButton, Copyright */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Hello */ "./src/components/Hello.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Hello", function() { return _Hello__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony import */ var _GoogleLoginButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleLoginButton */ "./src/components/GoogleLoginButton.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GoogleLoginButton", function() { return _GoogleLoginButton__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _Copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Copyright */ "./src/components/Copyright.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Copyright", function() { return _Copyright__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
+
+/***/ }),
+
+/***/ "@material-ui/core/Typography":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/Typography" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Typography");
+
+/***/ }),
+
+/***/ "@material-ui/core/styles":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/styles" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
@@ -126,6 +172,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-google-login":
+/*!*************************************!*\
+  !*** external "react-google-login" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-login");
 
 /***/ })
 
