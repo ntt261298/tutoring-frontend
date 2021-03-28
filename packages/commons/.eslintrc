@@ -1,21 +1,22 @@
 {
-    "parser": "babel-eslint",
-    "env": {
-      "browser": true,
-      "node": true,
-      "jquery": true,
-      "jest": true
-    },
-    "extends": "airbnb",
-    "plugins": [
-      "react-hooks"
-    ],
-    "rules": {
-      "react/jsx-filename-extension": 0,
-      "import/prefer-default-export": 0,
-      "import/named": 0,
-      "no-console": 0,
-      "import/no-extraneous-dependencies": 0,
-      "react/prop-types": 0
-    }
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "jest": true
+  },
+  "extends": "airbnb",
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": 0,
+    "import/named": 0,
+    "no-console": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/prop-types": 0,
+    "import/no-unresolved": 0
+  }
 }
