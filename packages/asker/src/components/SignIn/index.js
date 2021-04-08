@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import validator from 'validator';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,8 +12,11 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/core/Alert';
 import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
 import configuration from 'configuration';
+import { LoginMessage } from 'constants/message';
+import { loginEmail } from 'actions/user';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,11 +49,45 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const validateLoginInput = (input) => {
+  if (validator.isEmpty(input.email || '')) return LoginMessage.EMAIL_REQUIRED;
+  if (!validator.isEmail(input.email)) return LoginMessage.EMAIL_INVALID;
+  if (validator.isEmpty(input.password || '')) return LoginMessage.PASSWORD_REQUIRED;
+  return null;
+};
+
 const SignIn = () => {
+  const dispatch = useDispatch();
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const onGoogleLoginSuccess = () => {};
   const onGoogleLoginFailure = () => {};
+
+  const onEmailLogin = async (e) => {
+    e.preventDefault();
+    const input = { email, password };
+
+    const inputError = validateLoginInput(input);
+    if (inputError) {
+      setErrorMessage(inputError);
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await dispatch(loginEmail(input));
+    if (error) {
+      let errorMsg = 'Login failed. Please try again.';
+      if (error && error.errorMessage) {
+        errorMsg = error.data.errorMessage;
+      }
+      setErrorMessage(errorMsg);
+      setSubmitting(false);
+    }
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -59,6 +98,9 @@ const SignIn = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
+          {errorMessage && (
+            <Alert severity="error">{errorMessage}</Alert>
+          )}
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -79,6 +121,8 @@ const SignIn = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -90,6 +134,8 @@ const SignIn = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
             <Button
               type="submit"
@@ -97,6 +143,8 @@ const SignIn = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={onEmailLogin}
+              disabled={submitting}
             >
               Sign In
             </Button>

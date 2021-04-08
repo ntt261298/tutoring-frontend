@@ -5,10 +5,15 @@ export const logout = () => ({
   type: UserAction.LOGOUT,
 });
 
-export const login = (email, password) => ({
+export const loginEmail = data => ({
   type: UserAction.LOGIN,
-  promise: post('/asker/login', {
-    email,
-    password,
+  promise: post('/login/user/email', data),
+});
+
+export const signupEmail = data => ({
+  type: UserAction.SIGNUP,
+  promise: post('/login/user/email', {
+    email: data.email,
+    password: data.password,
   }),
 });

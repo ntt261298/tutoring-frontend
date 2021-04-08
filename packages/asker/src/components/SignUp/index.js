@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import validator from 'validator';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,8 +12,12 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/core/Alert';
 import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
 import configuration from 'configuration';
+import { SignUpMessage } from 'constants/message';
+import { signupEmail } from 'actions/user';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,11 +50,50 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const PASSWORD_MIN_LENGTH = 6;
+
+const validateSignupInput = (input) => {
+  if (validator.isEmpty(input.email || '')) return SignUpMessage.EMAIL_REQUIRED;
+  if (!validator.isEmail(input.email)) return SignUpMessage.EMAIL_INVALID;
+  if (validator.isEmpty(input.password || '')) return SignUpMessage.PASSWORD_REQUIRED;
+  if (input.password.length < PASSWORD_MIN_LENGTH) return SignUpMessage.PASSWORD_MIN_LENGTH;
+  if (input.password !== input.confirmPassword) return SignUpMessage.PASSWORD_NOT_MATCH;
+  return null;
+};
+
 const SignUp = () => {
+  const dispatch = useDispatch();
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const onGoogleLoginSuccess = () => {};
   const onGoogleLoginFailure = () => {};
+
+  const onEmailSignup = async (e) => {
+    e.preventDefault();
+    const input = { email, password, confirmPassword };
+
+    const inputError = validateSignupInput(input);
+    if (inputError) {
+      setErrorMessage(inputError);
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await dispatch(signupEmail(input));
+    if (error) {
+      let errorMsg = 'Signup failed. Please try again.';
+      if (error && error.errorMessage) {
+        errorMsg = error.data.errorMessage;
+      }
+      setErrorMessage(errorMsg);
+      setSubmitting(false);
+    }
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -59,6 +104,9 @@ const SignUp = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
+          {errorMessage && (
+            <Alert severity="error">{errorMessage}</Alert>
+          )}
           <Typography component="h1" variant="h5">
             Sign Up
           </Typography>
@@ -79,6 +127,8 @@ const SignUp = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -89,6 +139,8 @@ const SignUp = () => {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -99,6 +151,8 @@ const SignUp = () => {
               label="Confirm Password"
               type="password"
               id="confirmPassword"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
             />
             <Button
               type="submit"
@@ -106,6 +160,8 @@ const SignUp = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={onEmailSignup}
+              disabled={submitting}
             >
               Sign Up
             </Button>

@@ -16,8 +16,8 @@ export default (state = INITIAL_STATE, action) => {
 
     case UserAction.LOGIN_SUCCESS:
     case UserAction.LOGIN_BY_GOOGLE_SUCCESS:
-    case UserAction.SIGN_UP_SUCCESS:
-    case UserAction.SIGN_UP_BY_GOOGLE_SUCCESS: {
+    case UserAction.SIGNUP_SUCCESS:
+    case UserAction.SIGNUP_BY_GOOGLE_SUCCESS: {
       return {
         ...state,
         loggedIn: true,
