@@ -2,9 +2,7 @@
   "name": "expert",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "scripts": {
     "start": "node ../../portal-webpack/scripts/start.js",
     "start:dev": "REACT_APP_ENV=dev npm run start",

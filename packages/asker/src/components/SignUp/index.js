@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Alert from '@material-ui/core/Alert';
+import Alert from '@material-ui/lab/Alert';
 import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
 import configuration from 'configuration';
 import { SignUpMessage } from 'constants/message';

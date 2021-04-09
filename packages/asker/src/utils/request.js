@@ -16,14 +16,6 @@ const request = new RequestUtil({
   shouldAddBreadCrumb: false,
 });
 
-const toAPI = {
-  get: request.get,
-  post: request.post,
-  put: request.put,
-  del: request.del,
-  upload: request.upload,
-};
-
-export default {
-  toAPI,
-};
+export const {
+  get, post, put, del, upload,
+} = request;
