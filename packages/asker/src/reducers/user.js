@@ -18,6 +18,7 @@ export default (state = INITIAL_STATE, action) => {
     case UserAction.LOGIN_BY_GOOGLE_SUCCESS:
     case UserAction.SIGNUP_SUCCESS:
     case UserAction.SIGNUP_BY_GOOGLE_SUCCESS: {
+      auth.setAuth(action.payload);
       return {
         ...state,
         loggedIn: true,

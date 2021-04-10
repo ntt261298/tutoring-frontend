@@ -17,8 +17,8 @@ module.exports = {
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   entry: {
-    // utils: resolveApp('src/utils/index.js'),
-    // middlewares: resolveApp('src/middlewares/index.js'),
+    utils: resolveApp('src/utils/index.js'),
+    middlewares: resolveApp('src/middlewares/index.js'),
     // hooks: resolveApp('src/hooks/index.js'),
     components: resolveApp('src/components/index.js'),
     // constants: resolveApp('src/constants/index.js'),

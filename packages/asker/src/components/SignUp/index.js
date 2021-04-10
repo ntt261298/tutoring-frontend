@@ -48,6 +48,9 @@ const useStyles = makeStyles(theme => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  alert: {
+    width: '100%',
+  },
 }));
 
 const PASSWORD_MIN_LENGTH = 6;
@@ -68,6 +71,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const onGoogleLoginSuccess = () => {};
@@ -91,8 +95,12 @@ const SignUp = () => {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);
-      setSubmitting(false);
+      setSuccessMessage(null);
+    } else {
+      setErrorMessage(null);
+      setSuccessMessage('Signup successfully!');
     }
+    setSubmitting(false);
   };
 
   return (
@@ -105,7 +113,10 @@ const SignUp = () => {
             <LockOutlinedIcon />
           </Avatar>
           {errorMessage && (
-            <Alert severity="error">{errorMessage}</Alert>
+            <Alert severity="error" className={classes.alert}>{errorMessage}</Alert>
+          )}
+          {successMessage && (
+            <Alert severity="success" className={classes.alert}>{successMessage}</Alert>
           )}
           <Typography component="h1" variant="h5">
             Sign Up
@@ -166,7 +177,7 @@ const SignUp = () => {
               Sign Up
             </Button>
             <Grid container justify="center">
-              <Link href="/sign-up" variant="body2">
+              <Link href="/sign-in" variant="body2">
                 Already have an account? Sign In
               </Link>
             </Grid>

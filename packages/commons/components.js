@@ -87,66 +87,41 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/Copyright.js":
-/*!*************************************!*\
-  !*** ./src/components/Copyright.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1__);
-var _this=undefined,_jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/packages/commons/src/components/Copyright.js";var Copyright=function Copyright(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_1___default.a,{variant:"body2",color:"textSecondary",align:"center",__self:_this,__source:{fileName:_jsxFileName,lineNumber:5,columnNumber:3}},"Copyright \xA9 Truong Nguyen",' ',new Date().getFullYear(),'.');};/* harmony default export */ __webpack_exports__["default"] = (Copyright);
-
-/***/ }),
-
-/***/ "./src/components/GoogleLoginButton.js":
-/*!*********************************************!*\
-  !*** ./src/components/GoogleLoginButton.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-login */ "react-google-login");
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-var _this=undefined,_jsxFileName="/Users/gotit/Documents/thesis/thesis_tutoring_frontend/packages/commons/src/components/GoogleLoginButton.js";var useStyles=Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function(){return{googleButton:{height:48,width:'100%',display:'flex',margin:'5px 0',alignItems:'center',justifyContent:'center'}};});var GoogleLoginButton=function GoogleLoginButton(_ref){var buttonText=_ref.buttonText,googleClientId=_ref.googleClientId,onGoogleLoginSuccess=_ref.onGoogleLoginSuccess,onGoogleLoginFailure=_ref.onGoogleLoginFailure;var classes=useStyles();return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_1__["GoogleLogin"],{className:classes.googleButton,style:{margin:'0 auto'},clientId:googleClientId,onSuccess:onGoogleLoginSuccess,onFailure:onGoogleLoginFailure,__self:_this,__source:{fileName:_jsxFileName,lineNumber:24,columnNumber:5}},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"fa fa-google",__self:_this,__source:{fileName:_jsxFileName,lineNumber:31,columnNumber:7}}),buttonText);};/* harmony default export */ __webpack_exports__["default"] = (GoogleLoginButton);
-
-/***/ }),
-
 /***/ "./src/components/index.js":
-/*!*********************************!*\
-  !*** ./src/components/index.js ***!
-  \*********************************/
-/*! exports provided: GoogleLoginButton, Copyright */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GoogleLoginButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleLoginButton */ "./src/components/GoogleLoginButton.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GoogleLoginButton", function() { return _GoogleLoginButton__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _Copyright__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Copyright */ "./src/components/Copyright.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Copyright", function() { return _Copyright__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "GoogleLoginButton", function() { return /* reexport */ components_GoogleLoginButton; });
+__webpack_require__.d(__webpack_exports__, "Copyright", function() { return /* reexport */ components_Copyright; });
 
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("react");
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
+// EXTERNAL MODULE: external "react-google-login"
+var external_react_google_login_ = __webpack_require__("react-google-login");
+
+// EXTERNAL MODULE: external "@material-ui/core/styles"
+var styles_ = __webpack_require__("@material-ui/core/styles");
+
+// CONCATENATED MODULE: ./src/components/GoogleLoginButton.js
+var useStyles=Object(styles_["makeStyles"])(function(){return{googleButton:{height:48,width:'100%',display:'flex',margin:'5px 0',alignItems:'center',justifyContent:'center'}};});var GoogleLoginButton_GoogleLoginButton=function GoogleLoginButton(_ref){var buttonText=_ref.buttonText,googleClientId=_ref.googleClientId,onGoogleLoginSuccess=_ref.onGoogleLoginSuccess,onGoogleLoginFailure=_ref.onGoogleLoginFailure;var classes=useStyles();return/*#__PURE__*/external_react_default.a.createElement(external_react_google_login_["GoogleLogin"],{className:classes.googleButton,style:{margin:'0 auto'},clientId:googleClientId,onSuccess:onGoogleLoginSuccess,onFailure:onGoogleLoginFailure},/*#__PURE__*/external_react_default.a.createElement("span",{className:"fa fa-google"}),buttonText);};/* harmony default export */ var components_GoogleLoginButton = (GoogleLoginButton_GoogleLoginButton);
+// EXTERNAL MODULE: external "@material-ui/core/Typography"
+var Typography_ = __webpack_require__("@material-ui/core/Typography");
+var Typography_default = /*#__PURE__*/__webpack_require__.n(Typography_);
+
+// CONCATENATED MODULE: ./src/components/Copyright.js
+var Copyright_Copyright=function Copyright(){return/*#__PURE__*/external_react_default.a.createElement(Typography_default.a,{variant:"body2",color:"textSecondary",align:"center"},"Copyright \xA9 Truong Nguyen",' ',new Date().getFullYear(),'.');};/* harmony default export */ var components_Copyright = (Copyright_Copyright);
+// CONCATENATED MODULE: ./src/components/index.js
 
 
 /***/ }),
 
 /***/ "@material-ui/core/Typography":
-/*!***********************************************!*\
-  !*** external "@material-ui/core/Typography" ***!
-  \***********************************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Typography");
@@ -154,10 +129,6 @@ module.exports = require("@material-ui/core/Typography");
 /***/ }),
 
 /***/ "@material-ui/core/styles":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/styles" ***!
-  \*******************************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
@@ -165,10 +136,6 @@ module.exports = require("@material-ui/core/styles");
 /***/ }),
 
 /***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("react");
@@ -176,10 +143,6 @@ module.exports = require("react");
 /***/ }),
 
 /***/ "react-google-login":
-/*!*************************************!*\
-  !*** external "react-google-login" ***!
-  \*************************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-login");

@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node ../../package-webpack/scripts/start",
-    "build": "node ../../package-webpack/scripts/build"
+    "build": "node ../../package-webpack/scripts/build",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
