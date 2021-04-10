@@ -8,6 +8,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UserAction.LOGOUT: {
+      auth.logout();
       return {
         ...INITIAL_STATE,
         loggedIn: false,
