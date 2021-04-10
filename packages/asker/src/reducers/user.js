@@ -22,6 +22,7 @@ export default (state = INITIAL_STATE, action) => {
       auth.setAuth(action.payload);
       return {
         ...state,
+        ...action.payload,
         loggedIn: true,
       };
     }

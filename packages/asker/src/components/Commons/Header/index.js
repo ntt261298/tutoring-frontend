@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import DropdownMenu from 'components/Commons/Header/DropdownMenu';
 
 const useStyles = makeStyles(theme => ({
@@ -52,6 +53,11 @@ const Header = () => {
           <Link variant="button" color="textPrimary" href="/feedback" className={classes.link}>
             Feedback
           </Link>
+          <Button
+            variant="outlined"
+          >
+            Question Balance: 100
+          </Button>
         </nav>
         <DropdownMenu />
       </Toolbar>
