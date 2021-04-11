@@ -1,12 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 import DropdownMenu from 'components/Commons/Header/DropdownMenu';
+import { showModal } from 'actions/modal';
+import { ModalKey } from 'constants/modal';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -31,11 +35,21 @@ const useStyles = makeStyles(theme => ({
   link: {
     margin: theme.spacing(1, 1.5),
   },
+  feedback: {
+    margin: theme.spacing(1, 1.5),
+    fontSize: '0.875rem',
+    fontWeight: 500,
+    textTransform: 'uppercase',
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
 }));
 
 const Header = () => {
   const history = useHistory();
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
@@ -50,9 +64,9 @@ const Header = () => {
           <Link variant="button" color="textPrimary" href="/my-questions" className={classes.link}>
             My Questions
           </Link>
-          <Link variant="button" color="textPrimary" href="/feedback" className={classes.link}>
+          <Box component="span" color="textPrimary" className={classes.feedback} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
             Feedback
-          </Link>
+          </Box>
           <Button
             variant="outlined"
           >

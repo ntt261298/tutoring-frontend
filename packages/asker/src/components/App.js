@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfo } from 'actions/user';
+import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Home from './Home';
@@ -53,6 +54,7 @@ function App() {
   return (
     <BrowserRouter>
       {renderRoutes()}
+      <ModalContainer />
     </BrowserRouter>
   );
 }
