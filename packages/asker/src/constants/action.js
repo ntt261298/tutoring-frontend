@@ -17,3 +17,7 @@ export const UserAction = {
   UPDATE_PROFILE: 'UPDATE_PROFILE',
   UPDATE_PASSWORD: 'UPDATE_PASSWORD',
 };
+
+export const FeedbackAction = {
+  CREATE_FEEDBACK: 'CREATE_FEEDBACK',
+};

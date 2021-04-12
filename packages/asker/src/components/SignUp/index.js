@@ -91,7 +91,7 @@ const SignUp = () => {
     const { error } = await dispatch(signupEmail(input));
     if (error) {
       let errorMsg = 'Signup failed. Please try again.';
-      if (error && error.errorMessage) {
+      if (error.data && error.data.errorMessage) {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);

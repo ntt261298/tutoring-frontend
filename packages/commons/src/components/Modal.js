@@ -51,10 +51,10 @@ const DialogActions = withStyles(theme => ({
   },
 }))(MuiDialogActions);
 
-const renderHeader = (header, headerText, onHide) => {
+const renderHeader = (header, headerText, onHide, closable) => {
   if (header) return header;
   return (
-    <DialogTitle onClose={onHide}>
+    <DialogTitle onClose={onHide} closable={closable}>
       {headerText}
     </DialogTitle>
   );
@@ -118,6 +118,7 @@ const Modal = ({
 }) => (
   <Dialog
     open
+    fullWidth
     onClose={onHide}
     disableBackdropClick={!backdrop}
   >

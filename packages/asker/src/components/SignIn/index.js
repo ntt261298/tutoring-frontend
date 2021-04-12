@@ -85,7 +85,7 @@ const SignIn = () => {
     const { error } = await dispatch(loginEmail(input));
     if (error) {
       let errorMsg = 'Login failed. Please try again.';
-      if (error && error.errorMessage) {
+      if (error.data && error.data.errorMessage) {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);
