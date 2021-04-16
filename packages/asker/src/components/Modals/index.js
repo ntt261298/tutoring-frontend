@@ -4,9 +4,11 @@ import { ModalKey } from 'constants/modal';
 import { showModal } from 'actions/modal';
 import { ModalContainer } from '@tutoring/commons/components';
 import Feedback from './Feedback';
+import Payment from './Payment';
 
 const modalsMap = {
   [ModalKey.FEEDBACK]: Feedback,
+  [ModalKey.PAYMENT]: Payment,
 };
 
 export default () => {

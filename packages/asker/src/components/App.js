@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfo } from 'actions/user';
+import { getSubscription } from 'actions/subscription';
+import { getUserSubscription } from 'actions/userSubscription';
 import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
@@ -18,6 +20,8 @@ function App() {
   useEffect(() => {
     if (loggedIn) {
       dispatch(getInfo());
+      dispatch(getSubscription());
+      dispatch(getUserSubscription());
     }
   }, [loggedIn]);
 

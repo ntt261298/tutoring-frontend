@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,6 +11,8 @@ import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { showModal } from 'actions/modal';
+import { ModalKey } from 'constants/modal';
 import Header from 'components/Commons/Header';
 import Footer from 'components/Commons/Footer';
 
@@ -46,55 +49,55 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
   },
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
-  },
 }));
 
-const tiers = [
-  {
-    title: 'Free',
-    price: '0',
-    description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
-    buttonText: 'Sign up for free',
+const SubscriptionType = {
+  BUNDLE: 'bundle',
+  MONTHLY: 'monthly',
+  YEARLY: 'yearly',
+};
+
+const pricingConfig = {
+  [SubscriptionType.BUNDLE]: {
+    description: [
+      'One-time billing',
+    ],
+    buttonText: 'Purchase',
     buttonVariant: 'outlined',
   },
-  {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
+  [SubscriptionType.MONTHLY]: {
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+      'Unlimited questions',
+      'Renew monthly',
     ],
-    buttonText: 'Get started',
+    buttonText: 'Purchase',
     buttonVariant: 'contained',
   },
-  {
-    title: 'Enterprise',
-    price: '30',
+  [SubscriptionType.YEARLY]: {
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Unlimited questions',
+      'Renew yearly',
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Purchase',
     buttonVariant: 'outlined',
   },
-];
+};
 
 export default function Pricing() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const packages = useSelector(({ subscription }) => subscription.packages);
+
+  const handlePurchaseClick = (id, price, name, numberOfQuestions) => {
+    dispatch(showModal(ModalKey.PAYMENT, {
+      selectedPackage: {
+        id,
+        name,
+        numberOfQuestions,
+        transactionAmount: price,
+      },
+    }));
+  };
 
   return (
     <React.Fragment>
@@ -113,30 +116,37 @@ export default function Pricing() {
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
-          {tiers.map(tier => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+          {packages.map(({
+            id, name, price, type, numberOfQuestions,
+          }, index) => (
+            <Grid item key={id} xs={12} sm={6} md={4}>
               <Card>
                 <CardHeader
-                  title={tier.title}
-                  subheader={tier.subheader}
+                  title={name}
+                  subheader={index === 1 ? 'Most popular' : ''}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={index === 1 ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>
                   <div className={classes.cardPricing}>
                     <Typography component="h2" variant="h3" color="textPrimary">
                       $
-                      {tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /mo
+                      {price}
                     </Typography>
                   </div>
                   <ul>
-                    {tier.description.map(line => (
+                    {type === SubscriptionType.BUNDLE && (
+                      <Typography component="li" variant="subtitle1" align="center" key={numberOfQuestions}>
+                        For
+                        {' '}
+                        {numberOfQuestions}
+                        {' '}
+                        questions
+                      </Typography>
+                    )}
+                    {pricingConfig[type]?.description.map(line => (
                       <Typography component="li" variant="subtitle1" align="center" key={line}>
                         {line}
                       </Typography>
@@ -144,8 +154,13 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
-                    {tier.buttonText}
+                  <Button
+                    fullWidth
+                    variant={pricingConfig[type].buttonVariant}
+                    color="primary"
+                    onClick={() => handlePurchaseClick(id, price, name, numberOfQuestions)}
+                  >
+                    {pricingConfig[type].buttonText}
                   </Button>
                 </CardActions>
               </Card>

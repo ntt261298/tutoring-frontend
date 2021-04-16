@@ -33,3 +33,13 @@ export const getInfo = () => ({
   type: UserAction.GET_INFO,
   promise: get('/user/me/info'),
 });
+
+export const getBrainTreeClientToken = () => ({
+  type: UserAction.GET_BRAINTREE_CLIENT_TOKEN,
+  promise: get('/user/me/payments/braintree'),
+});
+
+export const purchasePackage = data => ({
+  type: UserAction.PURCHASE_CREDIT_PACKAGES,
+  promise: post('/user/me/transactions', data),
+});

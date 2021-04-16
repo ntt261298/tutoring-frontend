@@ -1,3 +1,5 @@
+import { SubscriptionAction } from './action';
+
 export const ErrorCode = {
   UNAUTHORIZED: 40100,
 };
@@ -18,4 +20,9 @@ export const FileOption = {
 export const FileMessage = {
   FILE_TOO_LARGE: 'Attachment size exceeds the allowable limit of 10MB.',
   FILE_INVALID: 'Attachment has an invalid file extension. Only .jpg, .jpeg, .png files are allowed.',
+};
+
+export const SubscriptionStatus = {
+  ACTIVE: 'active',
+  TERMINATED: 'terminated',
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 import DropdownMenu from 'components/Commons/Header/DropdownMenu';
 import { showModal } from 'actions/modal';
 import { ModalKey } from 'constants/modal';
+import { SubscriptionStatus } from 'constants/common';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -50,6 +51,10 @@ const Header = () => {
   const history = useHistory();
   const classes = useStyles();
   const dispatch = useDispatch();
+  const freeCreditBalance = useSelector(({ user }) => user.freeCreditBalance || 0);
+  const paidCreditBalance = useSelector(({ user }) => user.paidCreditBalance || 0);
+  const isSubscriber = useSelector(({ userSubscription }) => userSubscription.status === SubscriptionStatus.ACTIVE);
+  const questionBalance = isSubscriber ? 'Unlimited' : (freeCreditBalance + paidCreditBalance);
 
   return (
     <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
@@ -70,7 +75,7 @@ const Header = () => {
           <Button
             variant="outlined"
           >
-            Question Balance: 100
+            {`Question Balance:  ${questionBalance}`}
           </Button>
         </nav>
         <DropdownMenu />
