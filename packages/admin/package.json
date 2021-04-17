@@ -2,7 +2,9 @@
   "name": "admin",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@tutoring/commons": "1.0.0"
+  },
   "scripts": {
     "start": "node ../../portal-webpack/scripts/start.js",
     "start:dev": "REACT_APP_ENV=dev npm run start",

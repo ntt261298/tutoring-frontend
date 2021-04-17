@@ -1,5 +1,3 @@
-import { SubscriptionAction } from './action';
-
 export const ErrorCode = {
   UNAUTHORIZED: 40100,
 };
