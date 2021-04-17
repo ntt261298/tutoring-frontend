@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
+import Fingerprint from 'utils/fingerprint';
 import configuration from 'configuration';
 import { SignUpMessage } from 'constants/message';
 import { signupEmail } from 'actions/user';
@@ -71,7 +72,6 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const onGoogleLoginSuccess = () => {};
@@ -98,12 +98,9 @@ const SignUp = () => {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);
-      setSuccessMessage(null);
     } else {
       setErrorMessage(null);
-      setSuccessMessage('Signup successfully!');
     }
-    setSubmitting(false);
   };
 
   return (
@@ -117,9 +114,6 @@ const SignUp = () => {
           </Avatar>
           {errorMessage && (
             <Alert severity="error" className={classes.alert}>{errorMessage}</Alert>
-          )}
-          {successMessage && (
-            <Alert severity="success" className={classes.alert}>{successMessage}</Alert>
           )}
           <Typography component="h1" variant="h5">
             Sign Up

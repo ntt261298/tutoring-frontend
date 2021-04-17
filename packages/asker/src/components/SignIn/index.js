@@ -65,7 +65,6 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const onGoogleLoginSuccess = () => {};
@@ -89,9 +88,7 @@ const SignIn = () => {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);
-      setSuccessMessage(null);
     } else {
-      setSuccessMessage('Login successfully!');
       setErrorMessage(null);
     }
     setSubmitting(false);
@@ -108,9 +105,6 @@ const SignIn = () => {
           </Avatar>
           {errorMessage && (
             <Alert severity="error" className={classes.alert}>{errorMessage}</Alert>
-          )}
-          {successMessage && (
-            <Alert severity="success" className={classes.alert}>{successMessage}</Alert>
           )}
           <Typography component="h1" variant="h5">
             Sign in
