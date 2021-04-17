@@ -79,7 +79,10 @@ const SignUp = () => {
 
   const onEmailSignup = async (e) => {
     e.preventDefault();
-    const input = { email, password, confirmPassword };
+    const browserFingerprint = await Fingerprint.getFingerprint();
+    const input = {
+      email, password, confirmPassword, browserFingerprint,
+    };
 
     const inputError = validateSignupInput(input);
     if (inputError) {

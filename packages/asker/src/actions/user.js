@@ -15,6 +15,7 @@ export const signupEmail = data => ({
   promise: post('/sign-up/user/email', {
     email: data.email,
     password: data.password,
+    browserFingerprint: data.browserFingerprint,
   }),
 });
 
