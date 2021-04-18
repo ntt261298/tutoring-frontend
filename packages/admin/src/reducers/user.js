@@ -15,10 +15,7 @@ export default (state = INITIAL_STATE, action) => {
       };
     }
 
-    case UserAction.LOGIN_SUCCESS:
-    case UserAction.LOGIN_BY_GOOGLE_SUCCESS:
-    case UserAction.SIGNUP_SUCCESS:
-    case UserAction.SIGNUP_BY_GOOGLE_SUCCESS: {
+    case UserAction.LOGIN_WITH_GOOGLE_SUCCESS: {
       auth.setAuth(action.payload);
       return {
         ...state,
@@ -26,21 +23,6 @@ export default (state = INITIAL_STATE, action) => {
         loggedIn: true,
       };
     }
-
-    case UserAction.GET_INFO: {
-      return {
-        ...state,
-        isLoading: true,
-      };
-    }
-    case UserAction.GET_INFO_SUCCESS: {
-      return {
-        ...state,
-        ...action.payload,
-        isLoading: false,
-      };
-    }
-
     default:
       break;
   }
