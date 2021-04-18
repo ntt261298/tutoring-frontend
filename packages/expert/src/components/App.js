@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter, Switch, Route, Redirect,
+} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getInfo } from 'actions/user';
+import ModalContainer from './Modals';
+import SignIn from './SignIn';
+import Home from './Home';
 
 function App() {
+  const dispatch = useDispatch();
+  const loggedIn = useSelector(({ user }) => user.loggedIn);
+
+  useEffect(() => {
+    if (loggedIn) {
+      dispatch(getInfo());
+    }
+  }, [loggedIn]);
+
+  const renderRoutes = () => {
+    if (!loggedIn) {
+      return (
+        <Switch>
+          <Route path="/sign-in">
+            <SignIn />
+          </Route>
+          <Redirect to="/sign-in" />
+        </Switch>
+      );
+    }
+    return (
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Redirect to="/home" />
+      </Switch>
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {renderRoutes()}
+      <ModalContainer />
+    </BrowserRouter>
   );
 }
 
