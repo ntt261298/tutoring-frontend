@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import Home from './Home';
+import Experts from './Experts';
 
 function App() {
   const loggedIn = useSelector(({ user }) => user.loggedIn);
@@ -25,6 +26,9 @@ function App() {
       <Switch>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/experts">
+          <Experts />
         </Route>
         <Redirect to="/home" />
       </Switch>

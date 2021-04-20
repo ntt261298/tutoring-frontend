@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
@@ -50,6 +51,8 @@ const Navigator = ({
 }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { pathname } = history.location;
 
   return (
     <Drawer
@@ -66,23 +69,41 @@ const Navigator = ({
       </div>
       <Divider />
       <List>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/home');
+          }}
+          selected={pathname === '/home'}
+        >
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/users');
+          }}
+          selected={pathname === '/user'}
+        >
           <ListItemIcon>
             <ShoppingCartIcon />
           </ListItemIcon>
-          <ListItemText primary="Orders" />
+          <ListItemText primary="Users" />
         </ListItem>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/experts');
+          }}
+          selected={pathname === '/experts'}
+        >
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="Customers" />
+          <ListItemText primary="Experts" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
