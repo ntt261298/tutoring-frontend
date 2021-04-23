@@ -12,8 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
-import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
-import configuration from 'configuration';
+import { Copyright } from '@tutoring/commons/components';
 import { LoginMessage } from 'constants/message';
 import { loginEmail } from 'actions/user';
 
@@ -48,6 +47,7 @@ const useStyles = makeStyles(theme => ({
   },
   alert: {
     width: '100%',
+    margin: 5,
   },
 }));
 
@@ -65,9 +65,6 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
-
-  const onGoogleLoginSuccess = () => {};
-  const onGoogleLoginFailure = () => {};
 
   const onEmailLogin = async (e) => {
     e.preventDefault();
@@ -87,10 +84,8 @@ const SignIn = () => {
         errorMsg = error.data.errorMessage;
       }
       setErrorMessage(errorMsg);
-    } else {
-      setErrorMessage(null);
+      setSubmitting(false);
     }
-    setSubmitting(false);
   };
 
   return (
@@ -108,12 +103,6 @@ const SignIn = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <GoogleLoginButton
-            buttonText="Sign in with Google"
-            googleClientId={configuration.googleClientId}
-            onGoogleLoginSuccess={onGoogleLoginSuccess}
-            onGoogleLoginFailure={onGoogleLoginFailure}
-          />
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"

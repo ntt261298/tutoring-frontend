@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -10,8 +10,12 @@ import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableFooter from '@material-ui/core/TableFooter';
 import Paper from '@material-ui/core/Paper';
-import { getExperts } from 'actions/expert';
-import { TopicId } from 'constants/common';
+import Rating from '@material-ui/lab/Rating';
+import { showModal } from 'actions/modal';
+import { deleteExpert, undoDeleteExpert } from 'actions/expert';
+import { ModalKey } from 'constants/modal';
+import { AccountType, ExpertStatus, TopicId } from 'constants/common';
+import { showSuccessMsg, showErrorMsg } from 'utils/toastr';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -31,20 +35,6 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return {
-    name, calories, fat, carbs, protein,
-  };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
@@ -55,32 +45,108 @@ const useStyles = makeStyles({
     },
     color: 'red',
   },
+  updateOption: {
+    '&:hover': {
+      cursor: 'pointer',
+    },
+    color: 'blue',
+  },
 });
 
-const DefaultParams = {
-  ids: '',
-  email: '',
-  topicId: TopicId.MATH,
-  page: 1,
-  itemsPerPage: 10,
+const findRatingByTopic = (ranks, topicId) => {
+  const currentRank = ranks.find(rank => parseInt(rank.topicId, 10) === parseInt(topicId, 10));
+
+  return currentRank?.scoreAvg || 0;
 };
 
-export default function ExpertList() {
-  const dispatch = useDispatch();
-  const classes = useStyles();
-  const [experts, setExperts] = useState([]);
 
-  const fetchExpertList = async () => {
-    const { result } = await dispatch(getExperts(DefaultParams));
-    if (result) {
-      console.log('result experts', result);
-      setExperts(result);
+export default function ExpertList({
+  experts, topicId, fetchExpertList, paginationData, defaultParams,
+}) {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+  const [page, setPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(paginationData.itemsPerPage);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+    fetchExpertList({
+      ...defaultParams,
+      topicId,
+      page: newPage + 1,
+      itemsPerPage,
+    });
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    const newRowsPerPage = parseInt(event.target.value, 10);
+    setItemsPerPage(newRowsPerPage);
+    setPage(0);
+    fetchExpertList({
+      ...defaultParams,
+      topicId,
+      page: page + 1,
+      itemsPerPage: newRowsPerPage,
+    });
+  };
+
+  const onDeleteExpert = async (id) => {
+    const { error } = await dispatch(deleteExpert(id));
+    if (error) {
+      showErrorMsg(error?.errorMessage || 'Delete expert failed!');
+    } else {
+      showSuccessMsg('Delete expert successfully!');
+      fetchExpertList({
+        ...defaultParams,
+        topicId,
+      });
+      setPage(0);
+      setItemsPerPage(10);
     }
   };
 
-  useEffect(() => {
-    fetchExpertList(DefaultParams);
-  }, []);
+  const onUndoDeleteExpert = async (id) => {
+    const { error } = await dispatch(undoDeleteExpert(id));
+    if (error) {
+      showErrorMsg(error?.errorMessage || 'Undo delete expert failed!');
+    } else {
+      showSuccessMsg('Undo delete expert successfully!');
+      fetchExpertList({
+        ...defaultParams,
+        topicId,
+      });
+      setPage(0);
+      setItemsPerPage(10);
+    }
+  };
+
+  const handleUpdateExpert = (expert) => {
+    dispatch(showModal(ModalKey.UPDATE_EXPERT, {
+      expert,
+      onUpdateSuccess: () => fetchExpertList({
+        ...defaultParams,
+        topicId,
+      }),
+    }));
+  };
+
+  const handleDeleteExpert = (id, email) => {
+    dispatch(showModal(ModalKey.CONFIRM_DELETE, {
+      id,
+      email,
+      onDelete: () => onDeleteExpert(id),
+      type: AccountType.EXPERT,
+    }));
+  };
+
+  const handleUndoDeleteExpert = (id, email) => {
+    dispatch(showModal(ModalKey.CONFIRM_UNDO_DELETE, {
+      id,
+      email,
+      onUndoDelete: () => onUndoDeleteExpert(id),
+      type: AccountType.EXPERT,
+    }));
+  };
 
   return (
     <TableContainer component={Paper}>
@@ -90,22 +156,63 @@ export default function ExpertList() {
             <StyledTableCell>ID</StyledTableCell>
             <StyledTableCell align="center">Signup Date</StyledTableCell>
             <StyledTableCell align="center">Email</StyledTableCell>
-            <StyledTableCell align="center">Asked Questions</StyledTableCell>
-            <StyledTableCell align="center">Topics</StyledTableCell>
+            {topicId !== TopicId.ALL && (
+              <StyledTableCell align="center">Rating</StyledTableCell>
+            )}
+            <StyledTableCell align="center">Status</StyledTableCell>
+            <StyledTableCell align="center" />
             <StyledTableCell align="center" />
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
+          {experts.map(expert => (
+            <StyledTableRow key={expert.email}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {expert.id}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.calories}</StyledTableCell>
-              <StyledTableCell align="center">{row.fat}</StyledTableCell>
-              <StyledTableCell align="center">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="center">{row.protein}</StyledTableCell>
-              <StyledTableCell align="center" className={classes.deleteOption}>delete</StyledTableCell>
+              <StyledTableCell align="center">{expert.created}</StyledTableCell>
+              <StyledTableCell align="center">{expert.email}</StyledTableCell>
+              {topicId !== TopicId.ALL && (
+                <StyledTableCell align="center">
+                  <Rating
+                    value={findRatingByTopic(expert.expertRanks, topicId)}
+                    readOnly
+                  />
+                </StyledTableCell>
+              )}
+              <StyledTableCell align="center">{expert.status}</StyledTableCell>
+              {expert.status === ExpertStatus.ACTIVE && (
+                <>
+                  <StyledTableCell
+                    align="center"
+                    className={classes.updateOption}
+                    onClick={() => handleUpdateExpert(expert)}
+                  >
+                    update
+                  </StyledTableCell>
+                  <StyledTableCell
+                    align="center"
+                    className={classes.deleteOption}
+                    onClick={() => handleDeleteExpert(expert.id, expert.email)}
+                  >
+                    delete
+                  </StyledTableCell>
+                </>
+              )}
+              {expert.status === ExpertStatus.DELETED && (
+                <>
+                  <StyledTableCell
+                    align="center"
+                  />
+                  <StyledTableCell
+                    align="center"
+                    className={classes.deleteOption}
+                    onClick={() => handleUndoDeleteExpert(expert.id, expert.email)}
+                  >
+                    undo delete
+                  </StyledTableCell>
+                </>
+              )}
             </StyledTableRow>
           ))}
         </TableBody>
@@ -114,16 +221,15 @@ export default function ExpertList() {
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={3}
-              count={rows.length}
-              rowsPerPage={10}
-              page={1}
+              count={paginationData.totalItems}
+              rowsPerPage={itemsPerPage}
+              page={page}
               SelectProps={{
                 inputProps: { 'aria-label': 'rows per page' },
                 native: true,
               }}
-            //   onChangePage={handleChangePage}
-            //   onChangeRowsPerPage={handleChangeRowsPerPage}
-            //   ActionsComponent={TablePaginationActions}
+              onChangePage={handleChangePage}
+              onChangeRowsPerPage={handleChangeRowsPerPage}
             />
           </TableRow>
         </TableFooter>

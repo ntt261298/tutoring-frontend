@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import validator from 'validator';
-import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -12,10 +10,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import { Modal } from '@tutoring/commons/components';
-import { createExpert } from 'actions/expert';
-import { showModal } from 'actions/modal';
-import { ModalKey } from 'constants/modal';
-import { AccountType } from 'constants/common';
+import { updateExpert } from 'actions/expert';
+import { TopicId } from 'constants/common';
+import { showSuccessMsg } from 'utils/toastr';
 
 const useStyles = makeStyles(() => ({
   topicInput: {
@@ -36,16 +33,24 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const AddExpert = ({
+const checkTopicExisted = (expertTopics, topicId) => {
+  const existed = expertTopics.find(expert => expert.topicId === topicId);
+  if (existed) {
+    return true;
+  }
+  return false;
+};
+
+const UpdateExpert = ({
   onModalClose,
-  onAddSuccess,
+  expert,
+  onUpdateSuccess,
 }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
   const [topic, setTopic] = useState({
-    math: true,
-    english: false,
+    math: checkTopicExisted(expert.expertTopics, TopicId.MATH),
+    english: checkTopicExisted(expert.expertTopics, TopicId.ENGLISH),
   });
   const [mathRanking, setMathRanking] = useState(null);
   const [englishRanking, setEnglishRanking] = useState(null);
@@ -57,13 +62,9 @@ const AddExpert = ({
     setTopic({ ...topic, [event.target.name]: event.target.checked });
   };
 
-  const handleCreateExpert = async () => {
-    if (!validator.isEmail(email)) {
-      setErrorMessage('Invalid email.');
-      return;
-    }
-
-    if ((topic.math && !mathRanking) || (topic.english && !englishRanking)) {
+  const handleUpdateExpert = async () => {
+    if ((topic.math && !mathRanking && !checkTopicExisted(expert.expertTopics, TopicId.MATH))
+    || (topic.english && !englishRanking && !checkTopicExisted(expert.expertTopics, TopicId.ENGLISH))) {
       setErrorMessage('Should set ranking for the selected topic.');
       return;
     }
@@ -74,12 +75,12 @@ const AddExpert = ({
     }
 
     setSubmitting(true);
-    const { error, result } = await dispatch(createExpert({
-      email, topic, mathRanking, englishRanking,
+    const { error } = await dispatch(updateExpert(expert.id, {
+      topic, mathRanking, englishRanking,
     }));
 
     if (error) {
-      let errorMsg = 'Create expert failed. Please try again.';
+      let errorMsg = 'Update expert failed. Please try again.';
       if (error.data && error.data.errorMessage) {
         errorMsg = error.data.errorMessage;
       }
@@ -87,19 +88,16 @@ const AddExpert = ({
       setSuccessMessage(null);
       setSubmitting(false);
     } else {
-      dispatch(showModal(ModalKey.PASSWORD_INFO, {
-        type: AccountType.EXPERT,
-        email: result.email,
-        password: result.password,
-      }));
-      onAddSuccess();
+      showSuccessMsg('Update expert successfully!');
+      onUpdateSuccess();
+      onModalClose();
     }
   };
 
   return (
     <Modal
       onHide={onModalClose}
-      headerText="Add new expert"
+      headerText={`Update expert ${expert.email}`}
       body={(
         <>
           {errorMessage && (
@@ -108,13 +106,6 @@ const AddExpert = ({
           {successMessage && (
             <Alert severity="success" className={classes.alert}>{successMessage}</Alert>
           )}
-          <TextField
-            className={classes.textField}
-            label="Email (Required)"
-            fullWidth
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
           <FormControl component="fieldset" className={classes.topicInput}>
             <FormLabel component="legend">Topic:</FormLabel>
             <FormGroup>
@@ -125,14 +116,16 @@ const AddExpert = ({
                     label="Math"
                   />
                 </Grid>
-                <Grid item xs={6}>
-                  <Input
-                    type="number"
-                    placeholder="Initial ranking"
-                    value={mathRanking}
-                    onChange={e => setMathRanking(e.target.value)}
-                  />
-                </Grid>
+                {!checkTopicExisted(expert.expertTopics, TopicId.MATH) && (
+                  <Grid item xs={6}>
+                    <Input
+                      type="number"
+                      placeholder="Initial ranking"
+                      value={mathRanking}
+                      onChange={e => setMathRanking(e.target.value)}
+                    />
+                  </Grid>
+                )}
               </Grid>
               <Grid container>
                 <Grid item xs={6}>
@@ -141,27 +134,29 @@ const AddExpert = ({
                     label="English"
                   />
                 </Grid>
-                <Grid item xs={6}>
-                  <Input
-                    type="number"
-                    placeholder="Initial ranking"
-                    value={englishRanking}
-                    onChange={e => setEnglishRanking(e.target.value)}
-                  />
-                </Grid>
+                {!checkTopicExisted(expert.expertTopics, TopicId.ENGLISH) && (
+                  <Grid item xs={6}>
+                    <Input
+                      type="number"
+                      placeholder="Initial ranking"
+                      value={englishRanking}
+                      onChange={e => setEnglishRanking(e.target.value)}
+                    />
+                  </Grid>
+                )}
               </Grid>
             </FormGroup>
           </FormControl>
         </>
       )}
       footerType="double"
-      primaryButtonText="Submit"
-      disablePrimaryButton={!email || submitting}
-      onClickPrimaryButton={handleCreateExpert}
+      primaryButtonText="Update"
+      disablePrimaryButton={submitting}
+      onClickPrimaryButton={handleUpdateExpert}
       secondaryButtonText="Cancel"
       onClickSecondaryButton={onModalClose}
     />
   );
 };
 
-export default AddExpert;
+export default UpdateExpert;

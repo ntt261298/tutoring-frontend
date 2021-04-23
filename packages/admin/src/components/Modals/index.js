@@ -5,10 +5,16 @@ import { showModal } from 'actions/modal';
 import { ModalContainer } from '@tutoring/commons/components';
 import AddExpert from './AddExpert';
 import PasswordInfo from './PasswordInfo';
+import ConfirmDelete from './ConfirmDelete';
+import UpdateExpert from './UpdateExpert';
+import ConfirmUndoDelete from './ConfirmUndoDelete';
 
 const modalsMap = {
   [ModalKey.ADD_EXPERT]: AddExpert,
   [ModalKey.PasswordInfo]: PasswordInfo,
+  [ModalKey.CONFIRM_DELETE]: ConfirmDelete,
+  [ModalKey.UPDATE_EXPERT]: UpdateExpert,
+  [ModalKey.CONFIRM_UNDO_DELETE]: ConfirmUndoDelete,
 };
 
 export default () => {
