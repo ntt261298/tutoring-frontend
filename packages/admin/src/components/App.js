@@ -7,6 +7,8 @@ import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import Home from './Home';
 import Experts from './Experts';
+import Users from './Users';
+
 
 function App() {
   const loggedIn = useSelector(({ user }) => user.loggedIn);
@@ -29,6 +31,9 @@ function App() {
         </Route>
         <Route path="/experts">
           <Experts />
+        </Route>
+        <Route path="/users">
+          <Users />
         </Route>
         <Redirect to="/home" />
       </Switch>

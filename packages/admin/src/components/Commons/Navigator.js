@@ -86,7 +86,7 @@ const Navigator = ({
           onClick={() => {
             history.push('/users');
           }}
-          selected={pathname === '/user'}
+          selected={pathname === '/users'}
         >
           <ListItemIcon>
             <ShoppingCartIcon />

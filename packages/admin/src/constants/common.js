@@ -15,7 +15,7 @@ export const AccountType = {
   USER: 'user',
 };
 
-export const ExpertStatus = {
+export const AccountStatus = {
   ACTIVE: 'active',
   DELETED: 'deleted',
 };

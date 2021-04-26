@@ -10,11 +10,10 @@ import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableFooter from '@material-ui/core/TableFooter';
 import Paper from '@material-ui/core/Paper';
-import Rating from '@material-ui/lab/Rating';
 import { showModal } from 'actions/modal';
-import { deleteExpert, undoDeleteExpert } from 'actions/expert';
+import { deleteUser, undoDeleteUser } from 'actions/user';
 import { ModalKey } from 'constants/modal';
-import { AccountType, AccountStatus, TopicId } from 'constants/common';
+import { AccountType, AccountStatus } from 'constants/common';
 import { showSuccessMsg, showErrorMsg } from 'utils/toastr';
 
 const StyledTableCell = withStyles(theme => ({
@@ -53,15 +52,9 @@ const useStyles = makeStyles({
   },
 });
 
-const findRatingByTopic = (ranks, topicId) => {
-  const currentRank = ranks.find(rank => parseInt(rank.topicId, 10) === parseInt(topicId, 10));
 
-  return currentRank?.scoreAvg || 0;
-};
-
-
-export default function ExpertList({
-  experts, topicId, fetchExpertList, paginationData, defaultParams,
+export default function UserList({
+  users, fetchUserList, paginationData, defaultParams,
 }) {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -70,9 +63,8 @@ export default function ExpertList({
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
-    fetchExpertList({
+    fetchUserList({
       ...defaultParams,
-      topicId,
       page: newPage + 1,
       itemsPerPage,
     });
@@ -82,69 +74,59 @@ export default function ExpertList({
     const newRowsPerPage = parseInt(event.target.value, 10);
     setItemsPerPage(newRowsPerPage);
     setPage(0);
-    fetchExpertList({
+    fetchUserList({
       ...defaultParams,
-      topicId,
       page: page + 1,
       itemsPerPage: newRowsPerPage,
     });
   };
 
-  const onDeleteExpert = async (id) => {
-    const { error } = await dispatch(deleteExpert(id));
+  const onDeleteUser = async (id) => {
+    const { error } = await dispatch(deleteUser(id));
     if (error) {
-      showErrorMsg(error?.errorMessage || 'Delete expert failed!');
+      showErrorMsg(error?.errorMessage || 'Delete user failed!');
     } else {
-      showSuccessMsg('Delete expert successfully!');
-      fetchExpertList({
-        ...defaultParams,
-        topicId,
-      });
+      showSuccessMsg('Delete user successfully!');
+      fetchUserList(defaultParams);
       setPage(0);
       setItemsPerPage(10);
     }
   };
 
-  const onUndoDeleteExpert = async (id) => {
-    const { error } = await dispatch(undoDeleteExpert(id));
+  const onUndoDeleteUser = async (id) => {
+    const { error } = await dispatch(undoDeleteUser(id));
     if (error) {
-      showErrorMsg(error?.errorMessage || 'Undo delete expert failed!');
+      showErrorMsg(error?.errorMessage || 'Undo delete user failed!');
     } else {
-      showSuccessMsg('Undo delete expert successfully!');
-      fetchExpertList({
-        ...defaultParams,
-        topicId,
-      });
+      showSuccessMsg('Undo delete user successfully!');
+      fetchUserList(defaultParams);
       setPage(0);
       setItemsPerPage(10);
     }
   };
 
-  const handleUpdateExpert = (expert) => {
-    dispatch(showModal(ModalKey.UPDATE_EXPERT, {
-      expert,
-      onUpdateSuccess: () => fetchExpertList({
-        ...defaultParams,
-        topicId,
-      }),
+  const handleUpdateUser = (user) => {
+    dispatch(showModal(ModalKey.UPDATE_USER, {
+      user,
+      onUpdateSuccess: () => fetchUserList(defaultParams),
     }));
   };
 
-  const handleDeleteExpert = (id, email) => {
+  const handleDeleteUser = (id, email) => {
     dispatch(showModal(ModalKey.CONFIRM_DELETE, {
       id,
       email,
-      onDelete: () => onDeleteExpert(id),
-      type: AccountType.EXPERT,
+      onDelete: () => onDeleteUser(id),
+      type: AccountType.USER,
     }));
   };
 
-  const handleUndoDeleteExpert = (id, email) => {
+  const handleUndoDeleteUser = (id, email) => {
     dispatch(showModal(ModalKey.CONFIRM_UNDO_DELETE, {
       id,
       email,
-      onUndoDelete: () => onUndoDeleteExpert(id),
-      type: AccountType.EXPERT,
+      onUndoDelete: () => onUndoDeleteUser(id),
+      type: AccountType.USER,
     }));
   };
 
@@ -156,50 +138,39 @@ export default function ExpertList({
             <StyledTableCell>ID</StyledTableCell>
             <StyledTableCell align="center">Signup Date</StyledTableCell>
             <StyledTableCell align="center">Email</StyledTableCell>
-            {topicId !== TopicId.ALL && (
-              <StyledTableCell align="center">Rating</StyledTableCell>
-            )}
             <StyledTableCell align="center">Status</StyledTableCell>
             <StyledTableCell align="center" />
             <StyledTableCell align="center" />
           </TableRow>
         </TableHead>
         <TableBody>
-          {experts.map(expert => (
-            <StyledTableRow key={expert.email}>
+          {users.map(user => (
+            <StyledTableRow key={user.email}>
               <StyledTableCell component="th" scope="row">
-                {expert.id}
+                {user.id}
               </StyledTableCell>
-              <StyledTableCell align="center">{expert.created}</StyledTableCell>
-              <StyledTableCell align="center">{expert.email}</StyledTableCell>
-              {topicId !== TopicId.ALL && (
-                <StyledTableCell align="center">
-                  <Rating
-                    value={findRatingByTopic(expert.expertRanks, topicId)}
-                    readOnly
-                  />
-                </StyledTableCell>
-              )}
-              <StyledTableCell align="center">{expert.status}</StyledTableCell>
-              {expert.status === AccountStatus.ACTIVE && (
+              <StyledTableCell align="center">{user.created}</StyledTableCell>
+              <StyledTableCell align="center">{user.email}</StyledTableCell>
+              <StyledTableCell align="center">{user.status}</StyledTableCell>
+              {user.status === AccountStatus.ACTIVE && (
                 <>
                   <StyledTableCell
                     align="center"
                     className={classes.updateOption}
-                    onClick={() => handleUpdateExpert(expert)}
+                    onClick={() => handleUpdateUser(user)}
                   >
                     update
                   </StyledTableCell>
                   <StyledTableCell
                     align="center"
                     className={classes.deleteOption}
-                    onClick={() => handleDeleteExpert(expert.id, expert.email)}
+                    onClick={() => handleDeleteUser(user.id, user.email)}
                   >
                     delete
                   </StyledTableCell>
                 </>
               )}
-              {expert.status === AccountStatus.DELETED && (
+              {user.status === AccountStatus.DELETED && (
                 <>
                   <StyledTableCell
                     align="center"
@@ -207,7 +178,7 @@ export default function ExpertList({
                   <StyledTableCell
                     align="center"
                     className={classes.deleteOption}
-                    onClick={() => handleUndoDeleteExpert(expert.id, expert.email)}
+                    onClick={() => handleUndoDeleteUser(user.id, user.email)}
                   >
                     undo delete
                   </StyledTableCell>
