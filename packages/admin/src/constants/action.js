@@ -20,3 +20,7 @@ export const ExpertAction = {
   DELETE_EXPERT: 'DELETE_EXPERT',
   UNDO_DELETE_EXPERT: 'UNDO_DELETE_EXPERT',
 };
+
+export const FeedbackAction = {
+  GET_FEEDBACK: 'GET_FEEDBACK',
+};

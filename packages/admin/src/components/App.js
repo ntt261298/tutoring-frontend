@@ -8,6 +8,7 @@ import SignIn from './SignIn';
 import Home from './Home';
 import Experts from './Experts';
 import Users from './Users';
+import Feedback from './Feedback';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path="/users">
           <Users />
+        </Route>
+        <Route path="/feedback">
+          <Feedback />
         </Route>
         <Redirect to="/home" />
       </Switch>

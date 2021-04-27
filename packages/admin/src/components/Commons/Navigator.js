@@ -105,11 +105,17 @@ const Navigator = ({
           </ListItemIcon>
           <ListItemText primary="Experts" />
         </ListItem>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/feedback');
+          }}
+          selected={pathname === '/feedback'}
+        >
           <ListItemIcon>
             <BarChartIcon />
           </ListItemIcon>
-          <ListItemText primary="Reports" />
+          <ListItemText primary="Feedback" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
