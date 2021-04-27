@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
+import ContactsIcon from '@material-ui/icons/Contacts';
 import Header from 'components/Commons/Header';
 import Footer from 'components/Commons/Footer';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -14,59 +19,114 @@ const useStyles = makeStyles(theme => ({
       listStyle: 'none',
     },
   },
-  appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  toolbar: {
-    flexWrap: 'wrap',
-  },
-  toolbarTitle: {
-    flexGrow: 1,
-  },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
-  cardHeader: {
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+  paper: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    height: 220,
   },
-  cardPricing: {
+  infoHeader: {
+    height: 60,
+    backgroundColor: theme.palette.primary.main,
+    color: 'white',
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'baseline',
-    marginBottom: theme.spacing(2),
   },
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
+  startWorking: {
+    height: '100%',
+    backgroundColor: theme.palette.primary.main,
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&:hover': {
+      cursor: 'pointer',
     },
+  },
+  headerBoxItem: {
+    width: '100%',
+    marginBottom: 20,
+  },
+  headerBoxInfo: {
+    backgroundColor: '#E1E2E1',
+    height: 30,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerBoxContainer: {
+    padding: '0 20px',
+  },
+  headerBoxDetail: {
+    height: 30,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  startWorkingIcon: {
+    margin: 20,
+    fontSize: 60,
   },
 }));
 
 const Home = () => {
   const classes = useStyles();
+  const nickname = useSelector(({ user }) => user.nickname);
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Header />
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+      <Container maxWidth="md" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Get instant connect to our experts
+          Start working to help others and earn your money
         </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Quickly build an effective pricing table for your potential customers with this layout.
-          It&apos;s built with default Material-UI components with little customization.
-        </Typography>
+        <Grid container spacing={3}>
+          <Grid item xs={5}>
+            <Paper className={classes.paper}>
+              <Box component="h2" className={classes.infoHeader}>
+                {nickname && `Hello ${nickname}!`}
+                {!nickname && 'Hello expert!'}
+              </Box>
+              <Grid container className={classes.headerBoxContainer} spacing={2}>
+                <Grid item className={classes.headerBoxItem} xs={6}>
+                  <Box className={classes.headerBoxInfo}>
+                    Earnings
+                  </Box>
+                  <Box component="h2" className={classes.headerBoxDetail}>
+                    1.0
+                  </Box>
+                  <Box>
+                    USD
+                  </Box>
+                </Grid>
+                <Grid item className={classes.headerBoxItem} xs={6}>
+                  <Box className={classes.headerBoxInfo}>
+                    Ratings
+                  </Box>
+                  <Box component="h2" className={classes.headerBoxDetail}>
+                    2.5
+                  </Box>
+                  <Box>
+                    Per 5
+                  </Box>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={7}>
+            <Paper className={classes.paper}>
+              <Box component="h2" className={classes.startWorking}>
+                <ContactsIcon className={classes.startWorkingIcon} />
+                Start working
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
       </Container>
       {/* End hero unit */}
       <Container maxWidth="md" component="main" />
