@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -74,6 +75,7 @@ const useStyles = makeStyles(theme => ({
 
 const Home = () => {
   const classes = useStyles();
+  const history = useHistory();
   const nickname = useSelector(({ user }) => user.nickname);
 
   return (
@@ -119,7 +121,7 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item xs={7}>
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} onClick={() => history.push('/workspace')}>
               <Box component="h2" className={classes.startWorking}>
                 <ContactsIcon className={classes.startWorkingIcon} />
                 Start working

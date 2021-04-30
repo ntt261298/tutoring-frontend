@@ -8,6 +8,7 @@ import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import Home from './Home';
 import Profile from './Profile';
+import Workspace from './Workspace';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/workspace">
+          <Workspace />
         </Route>
         <Redirect to="/home" />
       </Switch>
