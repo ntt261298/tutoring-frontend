@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Experts for Microsoft" />
+  <title></title>
+  <!-- stylesheet -->
+    <link href="css/literallycanvas.css" rel="stylesheet">
+
+    <!-- dependency: React.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+
+    <script src="js/literallycanvas.js"></script>
+
+    <style>
+      html {
+        overflow: hidden;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      #handContainer {
+        width: 100%;
+        height: 100%;
+      }
+
+      .my-drawing, .literally {
+        height: 100%;
+        width: 100%;
+        position: static;
+      }
+
+      .literally {
+        background-color: #fff;
+      }
+
+      .literally .lc-picker {
+        z-index: 10;
+        right: 0;
+        bottom: auto;
+        width: auto;
+        border-right: 0;
+        border-bottom: 1px solid #555;
+      }
+
+      .literally .lc-options {
+        left: 0;
+      }
+
+      .lc-picker-contents > div:last-child {
+        position: static !important;
+        padding-left: 10px;
+      }
+
+      .literally .lc-picker .toolbar-button {
+        float: left;
+        clear: none;
+      }
+
+      .literally .color-well {
+        align-items: center;
+        display: flex;
+        font-size: 10px;
+        width: 60px;
+      }
+
+      .color-well {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .color-well label {
+        position: relative;
+        left: -2px;
+      }
+
+      .literally .color-well-color-container {
+        margin: 0;
+      }
+
+      .literally .lc-drawing.with-gui {
+        left: 0;
+      }
+
+      .lc-color-pickers > div:first-child > .color-picker-popup {
+        left: 152px;
+        top: 0px;
+        width: 167px;
+      }
+      .lc-color-pickers > div:nth-child(2) > .color-picker-popup {
+        left: 200px;
+        top: 0px;
+        width: 167px;
+      }
+      .lc-color-pickers > div:last-child > .color-picker-popup {
+        left: 260px;
+        top: 0px;
+        width: 167px;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="my-drawing"></div>
+
+  <!-- kick it off -->
+  <script>
+    const lc = LC.init(
+      document.getElementsByClassName('my-drawing')[0],
+      { imageURLPrefix: 'img', toolbarPosition: 'bottom' }
+    );
+
+    function getImage() {
+      return lc.getImage();
+    }
+  </script>
+</body>
+
+</html>

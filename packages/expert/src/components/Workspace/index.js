@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
-import { Copyright } from '@tutoring/commons/components';
 import { WorkspaceScreen } from 'constants/question';
 import HeaderWorking from 'components/Commons/HeaderWorking';
 import Waiting from './Waiting';
 import Bidding from './Bidding';
+import Working from './Working';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 
 const WorkSpace = () => {
   const classes = useStyles();
-  const [screen, setScreen] = useState(WorkspaceScreen.BIDDING);
+  const [screen, setScreen] = useState(WorkspaceScreen.WORKING);
 
   return (
     <Box className={classes.container}>
@@ -26,6 +26,7 @@ const WorkSpace = () => {
       <HeaderWorking />
       {screen === WorkspaceScreen.WAITING && <Waiting />}
       {screen === WorkspaceScreen.BIDDING && <Bidding />}
+      {screen === WorkspaceScreen.WORKING && <Working />}
     </Box>
   );
 };

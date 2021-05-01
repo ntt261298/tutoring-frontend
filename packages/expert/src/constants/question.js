@@ -3,3 +3,8 @@ export const WorkspaceScreen = {
   BIDDING: 'bidding',
   WORKING: 'working',
 };
+
+export const Topic = {
+  MATH: 'math',
+  ENGLISH: 'english',
+};

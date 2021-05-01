@@ -1,0 +1,606 @@
+<!-- saved from url=(0063)http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols -->
+<!DOCTYPE html>
+<html lang="en">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, san-serif;
+			font-size: 13px;
+			color: #555;
+			padding: 0;
+			margin: 16px;
+			background-color: #ecf2f6;
+		}
+		h2 {
+			font-size: 20px;
+			color: #0058a4;
+		}
+
+		.tabs {
+		  float: none;
+		  list-style: none;
+		  position: relative;
+		  padding: 0;
+		  margin: 0;
+		}
+		.tabs > li {
+		  float: left;
+		  display: block;
+		}
+		.tabs input[type="radio"] {
+		  position: absolute;
+		  top: -9999px;
+		  left: -9999px;
+		}
+		.tabs label {
+		  display: block;
+		  padding: 5px 0 2px;
+		  margin-right: 16px;
+		  border-bottom: 3px solid transparent;
+		  font-weight: normal;
+		  font-size: 14px;
+		  position: relative;
+		  -moz-transition: all 0.2s ease-in-out;
+		  -o-transition: all 0.2s ease-in-out;
+		  -webkit-transition: all 0.2s ease-in-out;
+		  transition: all 0.2s ease-in-out;
+		}
+		.tabs label:hover {
+		  border-bottom-color: #ccc;
+		}
+		.tabs li:last-child label {
+    		margin-right: 0;
+		}
+		.tabs .tab-content {
+		  z-index: 2;
+		  display: none;
+		  overflow: hidden;
+		  position: absolute;
+		  top: 60px;
+		  left: 0;
+		  right: 0;
+		}
+		.tabs [id^="tab"]:checked + label {
+		  top: 0;
+		  font-weight: bold;
+		  border-bottom-color: #0058a4;
+		  color: #0058a4;
+		}
+		.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+		  display: block;
+		}
+
+		table a {
+    		pointer-events: none;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table, th, td {
+			border: 1px solid #cccccc;
+		}
+
+		.table-striped tr:nth-child(odd) {
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+    <div id="bodyContent">
+    	<ul class="tabs">
+		    <!-- Operators: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab1" checked />
+		        <label for="tab1"><span class="mw-headline" id="Operators">Operators</span></label>
+		        <div id="tab-content1" class="tab-content">
+		          <table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ab831e7ef5cbe6d0c5b6be99691ae42bd12d5a16&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ab831e7ef5cbe6d0c5b6be99691ae42bd12d5a16.gif" class="latex" title="\pm" alt="\pm" style="vertical-align: -0px"></a></td><td>\pm</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=daa893e3d35083a0765107bb4b83b0e6cb1979d3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/daa893e3d35083a0765107bb4b83b0e6cb1979d3.gif" class="latex" title="\mp" alt="\mp" style="vertical-align: -3px"></a></td><td>\mp</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5d2892f79a845583e0efde20c511377b165285fb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5d2892f79a845583e0efde20c511377b165285fb.gif" class="latex" title="\times" alt="\times" style="vertical-align: -0px"></a></td><td>\times
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=669a988bd59c28b05f3e017a7e11ce2a33e43d51&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/669a988bd59c28b05f3e017a7e11ce2a33e43d51.gif" class="latex" title="\div" alt="\div" style="vertical-align: -0px"></a></td><td>\div</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9204fd4be60aaa10dec0929315049a65155d8ffc&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9204fd4be60aaa10dec0929315049a65155d8ffc.gif" class="latex" title="\cdot" alt="\cdot" style="vertical-align: -0px"></a></td><td>\cdot</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=65cf200212223c762d7ed4756d09813cde57121d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/65cf200212223c762d7ed4756d09813cde57121d.gif" class="latex" title="\ast" alt="\ast" style="vertical-align: -0px"></a></td><td>\ast
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9312c2748ccad7c25f8d92bc855a5a0b38989a51&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9312c2748ccad7c25f8d92bc855a5a0b38989a51.gif" class="latex" title="\star" alt="\star" style="vertical-align: -0px"></a></td><td>\star</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6fab35ce8c0cbf08a6a37f556dfe2dc62f062b7b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6fab35ce8c0cbf08a6a37f556dfe2dc62f062b7b.gif" class="latex" title="\dagger" alt="\dagger" style="vertical-align: -5px"></a></td><td>\dagger</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=559027a4144b356a7e6124debb7e0aa351dd0010&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/559027a4144b356a7e6124debb7e0aa351dd0010.gif" class="latex" title="\ddagger" alt="\ddagger" style="vertical-align: -3px"></a></td><td>\ddagger
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=814aec70be8e6ecea1188e71a83255656c410d95&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/814aec70be8e6ecea1188e71a83255656c410d95.gif" class="latex" title="\amalg" alt="\amalg" style="vertical-align: -0px"></a></td><td>\amalg</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7be2c0544441f4163b5555e57a9890557fb84ce9&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7be2c0544441f4163b5555e57a9890557fb84ce9.gif" class="latex" title="\cap" alt="\cap" style="vertical-align: -1px"></a></td><td>\cap</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=29af616648180918f9ab43518c8e9182f6c0d0da&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/29af616648180918f9ab43518c8e9182f6c0d0da.gif" class="latex" title="\cup" alt="\cup" style="vertical-align: -1px"></a></td><td>\cup
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=003e6cf6d4dbe1201e8c8d9b579b89ce1d655918&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/003e6cf6d4dbe1201e8c8d9b579b89ce1d655918.gif" class="latex" title="\uplus" alt="\uplus" style="vertical-align: -1px"></a></td><td>\uplus</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a352113c24f50465806544abc803ff71786b3d38&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a352113c24f50465806544abc803ff71786b3d38.gif" class="latex" title="\sqcap" alt="\sqcap" style="vertical-align: -0px"></a></td><td>\sqcap</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=13b4413340e552b654e4f7b334dd1206fa330f83&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/13b4413340e552b654e4f7b334dd1206fa330f83.gif" class="latex" title="\sqcup" alt="\sqcup" style="vertical-align: -0px"></a></td><td>\sqcup
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5e8ef042050cb082b91c8fb3ee50d2c87b494854&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5e8ef042050cb082b91c8fb3ee50d2c87b494854.gif" class="latex" title="\vee" alt="\vee" style="vertical-align: -1px"></a></td><td>\vee</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=faf2201eca3fb68ad72f203a66929aa4695a5feb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/faf2201eca3fb68ad72f203a66929aa4695a5feb.gif" class="latex" title="\wedge" alt="\wedge" style="vertical-align: -1px"></a></td><td>\wedge</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c4b7092c0f7ce6535f2574569c98f7b3c2fe2c5f&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c4b7092c0f7ce6535f2574569c98f7b3c2fe2c5f.gif" class="latex" title="\oplus" alt="\oplus" style="vertical-align: -2px"></a></td><td>\oplus
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=633322af137bc2edf3fcc7e6420504ddeb6a64d0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/633322af137bc2edf3fcc7e6420504ddeb6a64d0.gif" class="latex" title="\ominus" alt="\ominus" style="vertical-align: -2px"></a></td><td>\ominus</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=72166555a6db55785fc6fbe9a7c5bbe72be28db8&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/72166555a6db55785fc6fbe9a7c5bbe72be28db8.gif" class="latex" title="\otimes" alt="\otimes" style="vertical-align: -2px"></a></td><td>\otimes</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c2696114afc5d846dd66d5c552cca4ebfba355bc&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c2696114afc5d846dd66d5c552cca4ebfba355bc.gif" class="latex" title="\circ" alt="\circ" style="vertical-align: -0px"></a></td><td>\circ
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9dd420e290929156c7e188e631f80a056a4e6d60&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9dd420e290929156c7e188e631f80a056a4e6d60.gif" class="latex" title="\bullet" alt="\bullet" style="vertical-align: -0px"></a></td><td>\bullet</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5535bcdec4c47f48bc7dcaaf51ba2b5901a202e5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5535bcdec4c47f48bc7dcaaf51ba2b5901a202e5.gif" class="latex" title="\diamond" alt="\diamond" style="vertical-align: -0px"></a></td><td>\diamond</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=d1e1e7d91bb193196acf2e97385c72307aa1fb37&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/d1e1e7d91bb193196acf2e97385c72307aa1fb37.gif" class="latex" title="\lhd" alt="\lhd" style="vertical-align: -1px"></a></td><td>\lhd
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=af535ec404871e5c3771ade922f938ae90e21fb9&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/af535ec404871e5c3771ade922f938ae90e21fb9.gif" class="latex" title="\rhd" alt="\rhd" style="vertical-align: -1px"></a></td><td>\rhd</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6ebfd50d9577b9fc741a2b73932fa9376553ab6c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6ebfd50d9577b9fc741a2b73932fa9376553ab6c.gif" class="latex" title="\unlhd" alt="\unlhd" style="vertical-align: -3px"></a></td><td>\unlhd</td><td><a href="http://www.artofproblemsolving.com/Wiki/index.php/File:Unrhd.gif" class="image"><img alt="Unrhd.gif" src="laTeX_img/Unrhd.gif" width="15" height="17"></a></td><td>\unrhd
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=244f654959488c08ea900cad5371010c9a265de0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/244f654959488c08ea900cad5371010c9a265de0.gif" class="latex" title="\oslash" alt="\oslash" style="vertical-align: -2px"></a></td><td>\oslash</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c8e2d1a0bf50a27d43ade30cfb048d99feb31ad1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c8e2d1a0bf50a27d43ade30cfb048d99feb31ad1.gif" class="latex" title="\odot" alt="\odot" style="vertical-align: -2px"></a></td><td>\odot</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=bafd5e286b3ef82f19f4aa289bd40a54315b252d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/bafd5e286b3ef82f19f4aa289bd40a54315b252d.gif" class="latex" title="\bigcirc" alt="\bigcirc" style="vertical-align: -4px"></a></td><td>\bigcirc
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=827321199abb19fd4f56ffde78cfff97ae1b2f40&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/827321199abb19fd4f56ffde78cfff97ae1b2f40.gif" class="latex" title="\triangleleft" alt="\triangleleft" style="vertical-align: -1px"></a></td><td>\triangleleft</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b8a8b37ec93e19c3ec5f2a47d702286cf3368873&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b8a8b37ec93e19c3ec5f2a47d702286cf3368873.gif" class="latex" title="\Diamond" alt="\Diamond" style="vertical-align: -3px"></a></td><td>\Diamond</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ff4990f701044aaa9480aad1d9db7dbbdc0290a0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ff4990f701044aaa9480aad1d9db7dbbdc0290a0.gif" class="latex" title="\bigtriangleup" alt="\bigtriangleup" style="vertical-align: -0px"></a></td><td>\bigtriangleup
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=36446f73ea2ea585aeb5abff445da1638282a440&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/36446f73ea2ea585aeb5abff445da1638282a440.gif" class="latex" title="\bigtriangledown" alt="\bigtriangledown" style="vertical-align: -4px"></a></td><td>\bigtriangledown</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=da6ebdf8db3e5cfba3e271851ae04dca9ac272f7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/da6ebdf8db3e5cfba3e271851ae04dca9ac272f7.gif" class="latex" title="\Box" alt="\Box" style="vertical-align: -0px"></a></td><td>\Box</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8f109b4e2027fa7f913d821caa9c25c9c0d3d951&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8f109b4e2027fa7f913d821caa9c25c9c0d3d951.gif" class="latex" title="\triangleright" alt="\triangleright" style="vertical-align: -1px"></a></td><td>\triangleright
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6e7622454af52b3f501bf44ac868d26eeeffef8e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6e7622454af52b3f501bf44ac868d26eeeffef8e.gif" class="latex" title="\setminus" alt="\setminus" style="vertical-align: -4px"></a></td><td>\setminus</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=299f4e7e16294ea73591c156ba2fc1a410272ac8&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/299f4e7e16294ea73591c156ba2fc1a410272ac8.gif" class="latex" title="\wr" alt="\wr" style="vertical-align: -2px"></a></td><td>\wr</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dd68ff2d8e5b97302506ac32d308bb521ab84a26&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dd68ff2d8e5b97302506ac32d308bb521ab84a26.gif" class="latex" title="\sqrt{x}" alt="\sqrt{x}" style="vertical-align: -3px"></a></td><td>\sqrt{x}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4813ccf2724b634716182869f60dd812e732263a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4813ccf2724b634716182869f60dd812e732263a.gif" class="latex" title="x^{\circ}" alt="x^{\circ}" style="vertical-align: -1px"></a></td><td>x^{\circ}
+					</td></tr></tbody></table>
+		        </div>
+		    </li>
+		  	<!-- /Operators -->
+		  	<!-- Relations: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab2" />
+		        <label for="tab2"><span class="mw-headline" id="Relations">Relations</span></label>
+		        <div id="tab-content2" class="tab-content">
+		          <table class="latextable table table-bordered  table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command </th><th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=60fd4c42f3956e697cf94397160a51086fbb6f5b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/60fd4c42f3956e697cf94397160a51086fbb6f5b.gif" class="latex" title="\le" alt="\le" style="vertical-align: -3px"></a></td><td>\le</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b2be99a76d16a90ce29869dbaf7d770f41ec46be&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b2be99a76d16a90ce29869dbaf7d770f41ec46be.gif" class="latex" title="\ge" alt="\ge" style="vertical-align: -3px"></a></td><td>\ge</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=01a502f8cd366c5e944c6210805f30c7c7613b95&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/01a502f8cd366c5e944c6210805f30c7c7613b95.gif" class="latex" title="\neq" alt="\neq" style="vertical-align: -4px"></a></td><td>\neq
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ec2243ccce8948e68890aabd1ce859dbb83defe1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ec2243ccce8948e68890aabd1ce859dbb83defe1.gif" class="latex" title="\sim" alt="\sim" style="vertical-align: -0px"></a></td><td>\sim</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7f38f3bed35e74c221c218a8e0992b71831bb14d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7f38f3bed35e74c221c218a8e0992b71831bb14d.gif" class="latex" title="\ll" alt="\ll" style="vertical-align: -2px"></a></td><td>\ll</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=343ac549460f3d909c806aa697476034bba54a3b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/343ac549460f3d909c806aa697476034bba54a3b.gif" class="latex" title="\gg" alt="\gg" style="vertical-align: -2px"></a></td><td>\gg
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=189b66ef82b69d98bc0576e7a28d35c3073c5f8e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/189b66ef82b69d98bc0576e7a28d35c3073c5f8e.gif" class="latex" title="\doteq" alt="\doteq" style="vertical-align: -0px"></a></td><td>\doteq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=808f13f76e08cd558028f2f176a0a03e8cda4f22&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/808f13f76e08cd558028f2f176a0a03e8cda4f22.gif" class="latex" title="\simeq" alt="\simeq" style="vertical-align: -0px"></a></td><td>\simeq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5e4f8da580997f60b8875f7bdff1e1ab7be1cf21&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5e4f8da580997f60b8875f7bdff1e1ab7be1cf21.gif" class="latex" title="\subset" alt="\subset" style="vertical-align: -1px"></a></td><td>\subset
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e2e9f6cefb31e18d399966410fc9f7a7accc5f4d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e2e9f6cefb31e18d399966410fc9f7a7accc5f4d.gif" class="latex" title="\supset" alt="\supset" style="vertical-align: -1px"></a></td><td>\supset</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=baf1f8e194a46566b6abaecc626a5338eb89b6c4&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/baf1f8e194a46566b6abaecc626a5338eb89b6c4.gif" class="latex" title="\approx" alt="\approx" style="vertical-align: -0px"></a></td><td>\approx</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=84ef81af4d15a5fd3b99ce940332c3afae2228b5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/84ef81af4d15a5fd3b99ce940332c3afae2228b5.gif" class="latex" title="\asymp" alt="\asymp" style="vertical-align: -0px"></a></td><td>\asymp
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0241ed64f7f754d714cf9b2cef41ae3ac7b2cb35&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0241ed64f7f754d714cf9b2cef41ae3ac7b2cb35.gif" class="latex" title="\subseteq" alt="\subseteq" style="vertical-align: -3px"></a></td><td>\subseteq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f105754b4546af3fb651cbd6ea1a925ee87bf121&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f105754b4546af3fb651cbd6ea1a925ee87bf121.gif" class="latex" title="\supseteq" alt="\supseteq" style="vertical-align: -3px"></a></td><td>\supseteq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=fcf44bbe42dd616ba760f60a48dcdecb873be267&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/fcf44bbe42dd616ba760f60a48dcdecb873be267.gif" class="latex" title="\cong" alt="\cong" style="vertical-align: -0px"></a></td><td>\cong
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0b39736afccc73ba30e67790270e27c03185b11b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0b39736afccc73ba30e67790270e27c03185b11b.gif" class="latex" title="\smile" alt="\smile" style="vertical-align: -0px"></a></td><td>\smile</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=604036ffddf49048d3cb04c528661704fb2695cf&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/604036ffddf49048d3cb04c528661704fb2695cf.gif" class="latex" title="\sqsubset" alt="\sqsubset" style="vertical-align: -1px"></a></td><td>\sqsubset</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=244c03ea093e22a916c87035129ebde1c699f76e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/244c03ea093e22a916c87035129ebde1c699f76e.gif" class="latex" title="\sqsupset" alt="\sqsupset" style="vertical-align: -1px"></a></td><td>\sqsupset
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=265a73f0318d82099471b873fb7854c7f06ef9d4&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/265a73f0318d82099471b873fb7854c7f06ef9d4.gif" class="latex" title="\equiv" alt="\equiv" style="vertical-align: -0px"></a></td><td>\equiv</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2407a9918cb53b1d16a797cbbaf237c2993e5a8d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2407a9918cb53b1d16a797cbbaf237c2993e5a8d.gif" class="latex" title="\frown" alt="\frown" style="vertical-align: -0px"></a></td><td>\frown</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a72762414b8bed4bd270885b1d0bd9eb8dede643&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a72762414b8bed4bd270885b1d0bd9eb8dede643.gif" class="latex" title="\sqsubseteq" alt="\sqsubseteq" style="vertical-align: -3px"></a></td><td>\sqsubseteq
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8e889c1e20e01ac3433a0a4086822bb7f8d0d72c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8e889c1e20e01ac3433a0a4086822bb7f8d0d72c.gif" class="latex" title="\sqsupseteq" alt="\sqsupseteq" style="vertical-align: -3px"></a></td><td>\sqsupseteq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=37c2f2286d14b68779e0cd01e9fb402b4fa91b07&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/37c2f2286d14b68779e0cd01e9fb402b4fa91b07.gif" class="latex" title="\propto" alt="\propto" style="vertical-align: -0px"></a></td><td>\propto</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0b27cf7954c1449da91a59b401f6c91340149289&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0b27cf7954c1449da91a59b401f6c91340149289.gif" class="latex" title="\bowtie" alt="\bowtie" style="vertical-align: -1px"></a></td><td>\bowtie
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a10a30cec966c55cdc95f8d69ecac067cdd0d075&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a10a30cec966c55cdc95f8d69ecac067cdd0d075.gif" class="latex" title="\in" alt="\in" style="vertical-align: -1px"></a></td><td>\in</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=29e88ddf17a770259fc230e8575486a6988b1ba8&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/29e88ddf17a770259fc230e8575486a6988b1ba8.gif" class="latex" title="\ni" alt="\ni" style="vertical-align: -1px"></a></td><td>\ni</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=68754fe0fef756f566c7a89867adcafbf73b17ed&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/68754fe0fef756f566c7a89867adcafbf73b17ed.gif" class="latex" title="\prec" alt="\prec" style="vertical-align: -1px"></a></td><td>\prec
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=be6332ab7ac9be5e9c853d3224854ddfd8a56d62&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/be6332ab7ac9be5e9c853d3224854ddfd8a56d62.gif" class="latex" title="\succ" alt="\succ" style="vertical-align: -1px"></a></td><td>\succ</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9108c923b5f8a1586a6a58d098d0782730b7cfe2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9108c923b5f8a1586a6a58d098d0782730b7cfe2.gif" class="latex" title="\vdash" alt="\vdash" style="vertical-align: -0px"></a></td><td>\vdash</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8f99a271b0cb9a649acd730aff44d084b535080d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8f99a271b0cb9a649acd730aff44d084b535080d.gif" class="latex" title="\dashv" alt="\dashv" style="vertical-align: -0px"></a></td><td>\dashv
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a9a5ad6572445860fcfe381bcaedbb848ddb6c68&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a9a5ad6572445860fcfe381bcaedbb848ddb6c68.gif" class="latex" title="\preceq" alt="\preceq" style="vertical-align: -3px"></a></td><td>\preceq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e8ea1ff5f75f6f3a36aeade4f6a96f9ece9c369d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e8ea1ff5f75f6f3a36aeade4f6a96f9ece9c369d.gif" class="latex" title="\succeq" alt="\succeq" style="vertical-align: -3px"></a></td><td>\succeq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5b08083b6076725c6aaba8499250f64900b422a6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5b08083b6076725c6aaba8499250f64900b422a6.gif" class="latex" title="\models" alt="\models" style="vertical-align: -4px"></a></td><td>\models
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=67833d7163657ab54825d1712d2ba7c67721b269&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/67833d7163657ab54825d1712d2ba7c67721b269.gif" class="latex" title="\perp" alt="\perp" style="vertical-align: -0px"></a></td><td>\perp</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2e8b77536b7a06edb5eb7f669ae672d5cfdd2efd&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2e8b77536b7a06edb5eb7f669ae672d5cfdd2efd.gif" class="latex" title="\parallel" alt="\parallel" style="vertical-align: -5px"></a></td><td>\parallel</td><td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=75f55739a2cf803c528710550991a95420fe2ddb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/75f55739a2cf803c528710550991a95420fe2ddb.gif" class="latex" title="\|" alt="\|" style="vertical-align: -5px"></a> </td><td> \|
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ddbf6923ea3f08cb83b08ed026f40a80751dff3f&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ddbf6923ea3f08cb83b08ed026f40a80751dff3f.gif" class="latex" title="\mid" alt="\mid" style="vertical-align: -4px"></a></td><td>\mid
+					</td></tr></tbody></table>
+		        </div>
+		    </li>
+		    <!-- /Relations -->
+		  	<!-- Negations: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab3" />
+		        <label for="tab3"><span class="mw-headline" id="Negations">Negations</span></label>
+		        <div id="tab-content3" class="tab-content">
+		          	<p>Negations of many of these relations can be formed by just putting \not before the symbol, or by slipping an n between the \ and the word. Here are a few examples, plus a few other negations; it works for many of the others as well.
+					</p>
+					<table class="latextable table table-bordered  table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9e5b0550770505e4ffce8cfa8892cbe279759c8d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9e5b0550770505e4ffce8cfa8892cbe279759c8d.gif" class="latex" title="\nmid" alt="\nmid" style="vertical-align: -5px"></a></td><td>\nmid</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=aabef6f3d37209e4c262a51a0179c4002198f558&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/aabef6f3d37209e4c262a51a0179c4002198f558.gif" class="latex" title="\nleq" alt="\nleq" style="vertical-align: -5px"></a></td><td>\nleq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=334845b052976d900619c61ebfb931b3919ab6d7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/334845b052976d900619c61ebfb931b3919ab6d7.gif" class="latex" title="\ngeq" alt="\ngeq" style="vertical-align: -5px"></a></td><td>\ngeq
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c2c026910d25a8a74388de2597bc27eba7937bd1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c2c026910d25a8a74388de2597bc27eba7937bd1.gif" class="latex" title="\nsim" alt="\nsim" style="vertical-align: -0px"></a></td><td>\nsim</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=eab14dc22765390c78dd1d23258da57729cc19e0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/eab14dc22765390c78dd1d23258da57729cc19e0.gif" class="latex" title="\ncong" alt="\ncong" style="vertical-align: -3px"></a></td><td>\ncong</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=199317a7977e2a1179cc58a817c371631d23d3f1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/199317a7977e2a1179cc58a817c371631d23d3f1.gif" class="latex" title="\nparallel" alt="\nparallel" style="vertical-align: -5px"></a></td><td>\nparallel
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dcaface07401766075431858071014d9b11e2373&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dcaface07401766075431858071014d9b11e2373.gif" class="latex" title="\not&lt;" alt="\not&lt;" style="vertical-align: -4px"></a></td><td>\not&lt;</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3aef12ba8d8c61836c75a98dfecb59b6d69ff652&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3aef12ba8d8c61836c75a98dfecb59b6d69ff652.gif" class="latex" title="\not&gt;" alt="\not&gt;" style="vertical-align: -4px"></a></td><td>\not&gt;</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=fe833eb814e9d1e2cb77105288bab30a38861af7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/fe833eb814e9d1e2cb77105288bab30a38861af7.gif" class="latex" title="\not=" alt="\not=" style="vertical-align: -4px"></a></td><td>\not=
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7eaef810758c77c2e7a8cc09dee50e0d3a0f9af7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7eaef810758c77c2e7a8cc09dee50e0d3a0f9af7.gif" class="latex" title="\not\le" alt="\not\le" style="vertical-align: -4px"></a></td><td>\not\le</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=da4098059456165673dd910a87367abda197e6f3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/da4098059456165673dd910a87367abda197e6f3.gif" class="latex" title="\not\ge" alt="\not\ge" style="vertical-align: -4px"></a></td><td>\not\ge</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5c4bd7334ccaff8450d04fbc1568ed04882c902c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5c4bd7334ccaff8450d04fbc1568ed04882c902c.gif" class="latex" title="\not\sim" alt="\not\sim" style="vertical-align: -4px"></a></td><td>\not\sim
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6243b7b2471e3c68d168ff7a939b7caeb4808586&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6243b7b2471e3c68d168ff7a939b7caeb4808586.gif" class="latex" title="\not \approx" alt="\not \approx" style="vertical-align: -4px"></a></td><td>\not\approx</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=bb5d1b103b6f7f839730e0b39ffac3606c355eee&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/bb5d1b103b6f7f839730e0b39ffac3606c355eee.gif" class="latex" title="\not\cong" alt="\not\cong" style="vertical-align: -4px"></a></td><td>\not\cong</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e84418a17e8c4197f1e959a750b20acfe3536d23&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e84418a17e8c4197f1e959a750b20acfe3536d23.gif" class="latex" title="\not\equiv" alt="\not\equiv" style="vertical-align: -4px"></a></td><td>\not\equiv
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=39f75ce727f189242d786a9b3dc99cd41df913cf&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/39f75ce727f189242d786a9b3dc99cd41df913cf.gif" class="latex" title="\not\parallel" alt="\not\parallel" style="vertical-align: -5px"></a></td><td>\not\parallel</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c892110c4e0d18e0479296a50ede983ff978d770&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c892110c4e0d18e0479296a50ede983ff978d770.gif" class="latex" title="\nless" alt="\nless" style="vertical-align: -4px"></a></td><td>\nless</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a384303ea7feec44d938203b3ba3cd52ec019784&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a384303ea7feec44d938203b3ba3cd52ec019784.gif" class="latex" title="\ngtr" alt="\ngtr" style="vertical-align: -4px"></a></td><td>\ngtr
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f4eefb0a59d556b857a742c826e4944076e1f769&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f4eefb0a59d556b857a742c826e4944076e1f769.gif" class="latex" title="\lneq" alt="\lneq" style="vertical-align: -4px"></a></td><td>\lneq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=16768285521fbc009505165e116cf33471f1acea&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/16768285521fbc009505165e116cf33471f1acea.gif" class="latex" title="\gneq" alt="\gneq" style="vertical-align: -4px"></a></td><td>\gneq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9987d6b51f036feb324169230fff7ebb5d9c8919&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9987d6b51f036feb324169230fff7ebb5d9c8919.gif" class="latex" title="\lnsim" alt="\lnsim" style="vertical-align: -6px"></a></td><td>\lnsim
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6e76facfb2e3ad4a30decaadfed44f957fcb5d24&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6e76facfb2e3ad4a30decaadfed44f957fcb5d24.gif" class="latex" title="\lneqq" alt="\lneqq" style="vertical-align: -5px"></a></td><td>\lneqq</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=21d1c8878fd568ed91c7754a37dc1a1e2c87e1c0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/21d1c8878fd568ed91c7754a37dc1a1e2c87e1c0.gif" class="latex" title="\gneqq" alt="\gneqq" style="vertical-align: -5px"></a></td><td>\gneqq
+					</td></tr></tbody></table>
+					<p>To use other relations not listed here, such as =, &gt;, and &lt;, in LaTeX, you may just use the symbols on your keyboard.
+					</p>
+		        </div>
+		    </li>
+		  	<!-- /Negations -->
+		  	<!-- Greek Letters: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab4" />
+		        <label for="tab4"><span class="mw-headline" id="Greek_Letters">Greek Letters</span></label>
+		        <div id="tab-content4" class="tab-content">
+		          <table class="latextable table table-bordered  table-striped table-condensed">
+					<caption>Lowercase Letters</caption>
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f7c665b45932a814215e979bc2611080b4948e68&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f7c665b45932a814215e979bc2611080b4948e68.gif" class="latex" title="\alpha" alt="\alpha" style="vertical-align: -0px"></a></td><td>\alpha</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6499d503bfc00cadae1440b191c52a8632e2f8c4&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6499d503bfc00cadae1440b191c52a8632e2f8c4.gif" class="latex" title="\beta" alt="\beta" style="vertical-align: -3px"></a></td><td>\beta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=67833ee2012ec1c6254b6c009dc72bf0dc48aa6d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/67833ee2012ec1c6254b6c009dc72bf0dc48aa6d.gif" class="latex" title="\gamma" alt="\gamma" style="vertical-align: -3px"></a></td><td>\gamma</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3a6a16552e246af497720ffdfe6091b42d2f8938&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3a6a16552e246af497720ffdfe6091b42d2f8938.gif" class="latex" title="\delta" alt="\delta" style="vertical-align: -0px"></a></td><td>\delta
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b64244d4b91c2f1738b8b84d6883f4d5736693e7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b64244d4b91c2f1738b8b84d6883f4d5736693e7.gif" class="latex" title="\epsilon" alt="\epsilon" style="vertical-align: -0px"></a></td><td>\epsilon</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=abfcc7fffa771b562756e65a07ae43b713c3f026&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/abfcc7fffa771b562756e65a07ae43b713c3f026.gif" class="latex" title="\varepsilon" alt="\varepsilon" style="vertical-align: -0px"></a></td><td>\varepsilon</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=08fe2529d0840698ffd7746e5150f521ae9c0abf&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/08fe2529d0840698ffd7746e5150f521ae9c0abf.gif" class="latex" title="\zeta" alt="\zeta" style="vertical-align: -3px"></a></td><td>\zeta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2899aeb886ad0fa72652bffd5511e452aaf084ab&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2899aeb886ad0fa72652bffd5511e452aaf084ab.gif" class="latex" title="\eta" alt="\eta" style="vertical-align: -3px"></a></td><td>\eta
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cb005d76f9f2e394a770c2562c2e150a413b3216&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cb005d76f9f2e394a770c2562c2e150a413b3216.gif" class="latex" title="\theta" alt="\theta" style="vertical-align: -0px"></a></td><td>\theta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dffd955c012884df83091207c9cb9ff982a6f7e7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dffd955c012884df83091207c9cb9ff982a6f7e7.gif" class="latex" title="\vartheta" alt="\vartheta" style="vertical-align: -0px"></a></td><td>\vartheta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4c12e853b6bca3c4e24829292c109b5302e51442&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4c12e853b6bca3c4e24829292c109b5302e51442.gif" class="latex" title="\iota" alt="\iota" style="vertical-align: -0px"></a></td><td>\iota</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=397916aac98718ec79c5268ba9d12c07ea9fe133&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/397916aac98718ec79c5268ba9d12c07ea9fe133.gif" class="latex" title="\kappa" alt="\kappa" style="vertical-align: -0px"></a></td><td>\kappa
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b3931f1ce298c536432fd324b3a1ab4337120689&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b3931f1ce298c536432fd324b3a1ab4337120689.gif" class="latex" title="\lambda" alt="\lambda" style="vertical-align: -0px"></a></td><td>\lambda</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3a4e56595df1d02f21e5c3ff7b0e9d80921858ff&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3a4e56595df1d02f21e5c3ff7b0e9d80921858ff.gif" class="latex" title="\mu" alt="\mu" style="vertical-align: -3px"></a></td><td>\mu</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=697fbec64a12e65fc251dd60807f99520ec4a6a2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/697fbec64a12e65fc251dd60807f99520ec4a6a2.gif" class="latex" title="\nu" alt="\nu" style="vertical-align: -0px"></a></td><td>\nu</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2bf5b3aa5637cf4de78773151105ea8574bdbc59&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2bf5b3aa5637cf4de78773151105ea8574bdbc59.gif" class="latex" title="\xi" alt="\xi" style="vertical-align: -3px"></a></td><td>\xi
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6ac47b6d7372b4087583cfd048d20f4c1571f5cf&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6ac47b6d7372b4087583cfd048d20f4c1571f5cf.gif" class="latex" title="\pi" alt="\pi" style="vertical-align: -0px"></a></td><td>\pi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=6ff7f2c95e23f7f671e2dcd67f34c2beb6c6d87b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/6ff7f2c95e23f7f671e2dcd67f34c2beb6c6d87b.gif" class="latex" title="\varpi" alt="\varpi" style="vertical-align: -1px"></a></td><td>\varpi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c77a25750c5830bac1363a0ccdc587efa0746a6a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c77a25750c5830bac1363a0ccdc587efa0746a6a.gif" class="latex" title="\rho" alt="\rho" style="vertical-align: -3px"></a></td><td>\rho</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2a60abc0b0c44e380461e7dd8e00e2547b111d61&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2a60abc0b0c44e380461e7dd8e00e2547b111d61.gif" class="latex" title="\varrho" alt="\varrho" style="vertical-align: -4px"></a></td><td>\varrho
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=69c15416b63fd933850978302bcda59da879774e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/69c15416b63fd933850978302bcda59da879774e.gif" class="latex" title="\sigma" alt="\sigma" style="vertical-align: -0px"></a></td><td>\sigma</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8a000332cf10a02ab074902f57409c043a4b7930&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8a000332cf10a02ab074902f57409c043a4b7930.gif" class="latex" title="\varsigma" alt="\varsigma" style="vertical-align: -2px"></a></td><td>\varsigma</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c9148a5f77a39b4083611f2ac760c9479d17582c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c9148a5f77a39b4083611f2ac760c9479d17582c.gif" class="latex" title="\tau" alt="\tau" style="vertical-align: -0px"></a></td><td>\tau</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ecaab5335bffd47fb6dfb29c61f7afd9347b27be&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ecaab5335bffd47fb6dfb29c61f7afd9347b27be.gif" class="latex" title="\upsilon" alt="\upsilon" style="vertical-align: -0px"></a></td><td>\upsilon
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=411e715f9ab9075b0a30b4117d209921f0bc2389&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/411e715f9ab9075b0a30b4117d209921f0bc2389.gif" class="latex" title="\phi" alt="\phi" style="vertical-align: -3px"></a></td><td>\phi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=44294dbd1964e6b4d20a0ef2238a709d1d48ad13&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/44294dbd1964e6b4d20a0ef2238a709d1d48ad13.gif" class="latex" title="\varphi" alt="\varphi" style="vertical-align: -3px"></a></td><td>\varphi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e2ab8159ae04948c068d81b5b8be31b102d5217c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e2ab8159ae04948c068d81b5b8be31b102d5217c.gif" class="latex" title="\chi" alt="\chi" style="vertical-align: -3px"></a></td><td>\chi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c774d4ea848036687a827f51610b5b681b3b67d5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c774d4ea848036687a827f51610b5b681b3b67d5.gif" class="latex" title="\psi" alt="\psi" style="vertical-align: -3px"></a></td><td>\psi
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=73b077a63e22815fe5c8ee82dab9894be842b19c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/73b077a63e22815fe5c8ee82dab9894be842b19c.gif" class="latex" title="\omega" alt="\omega" style="vertical-align: -0px"></a></td><td>\omega
+					</td></tr></tbody></table>
+
+					<table class="latextable table table-bordered  table-striped table-condensed">
+					<caption>Capital Letters</caption>
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4c596c27eb47af04b4c9c7534f796b1a3b7f28e4&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4c596c27eb47af04b4c9c7534f796b1a3b7f28e4.gif" class="latex" title="\Gamma" alt="\Gamma" style="vertical-align: -1px"></a></td><td>\Gamma</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=763bcca756eff32d120509e78298021b60d7f614&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/763bcca756eff32d120509e78298021b60d7f614.gif" class="latex" title="\Delta" alt="\Delta" style="vertical-align: -0px"></a></td><td>\Delta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8f42a32ead6a2a8a4a7cbe92ee7ea2d432194638&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8f42a32ead6a2a8a4a7cbe92ee7ea2d432194638.gif" class="latex" title="\Theta" alt="\Theta" style="vertical-align: -0px"></a></td><td>\Theta</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=29ac27e34d4fdceb5d4689aad36976233eeb11fa&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/29ac27e34d4fdceb5d4689aad36976233eeb11fa.gif" class="latex" title="\Lambda" alt="\Lambda" style="vertical-align: -1px"></a></td><td>\Lambda
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=d8c33e099eb08ede756fb75424f4b9b74e34d2a2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/d8c33e099eb08ede756fb75424f4b9b74e34d2a2.gif" class="latex" title="\Xi" alt="\Xi" style="vertical-align: -0px"></a></td><td>\Xi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ca3db286daee0046cd40cbb02921232bf38d2a99&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ca3db286daee0046cd40cbb02921232bf38d2a99.gif" class="latex" title="\Pi" alt="\Pi" style="vertical-align: -1px"></a></td><td>\Pi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cb5615b3fcee824f137c372e351ccca3ff3a3292&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cb5615b3fcee824f137c372e351ccca3ff3a3292.gif" class="latex" title="\Sigma" alt="\Sigma" style="vertical-align: -0px"></a></td><td>\Sigma</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2427b419df24096179e377ed2b7765e475dad4f3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2427b419df24096179e377ed2b7765e475dad4f3.gif" class="latex" title="\Upsilon" alt="\Upsilon" style="vertical-align: -1px"></a></td><td>\Upsilon
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b51f9a1a7fe06472f0d68f436b2710c8e200e52a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b51f9a1a7fe06472f0d68f436b2710c8e200e52a.gif" class="latex" title="\Phi" alt="\Phi" style="vertical-align: -1px"></a></td><td>\Phi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2290bb0684c4a70d70553f35528aa2ae4f7f7d7d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2290bb0684c4a70d70553f35528aa2ae4f7f7d7d.gif" class="latex" title="\Psi" alt="\Psi" style="vertical-align: -1px"></a></td><td>\Psi</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4959627bdb882062bf2d1a1cde4bb119077fd40e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4959627bdb882062bf2d1a1cde4bb119077fd40e.gif" class="latex" title="\Omega" alt="\Omega" style="vertical-align: -0px"></a></td><td>\Omega
+					</td></tr></tbody></table>
+		        </div>
+		    </li>
+		  	<!-- /Greek Letters -->
+		  	<!-- Arrows: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab5" />
+		        <label for="tab5"><span class="mw-headline" id="Arrows">Arrows</span></label>
+		        <div id="tab-content5" class="tab-content">
+		          <table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cf7010159e975c6953af0607d22dbb068892f115&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cf7010159e975c6953af0607d22dbb068892f115.gif" class="latex" title="\gets" alt="\gets" style="vertical-align: -0px"></a></td><td>\gets</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c13147a185499c643ff6eed30a5df467e1f9f510&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c13147a185499c643ff6eed30a5df467e1f9f510.gif" class="latex" title="\to" alt="\to" style="vertical-align: -0px"></a></td><td>\to
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2c3d154ee1aefb29215058ed71d118d919969304&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2c3d154ee1aefb29215058ed71d118d919969304.gif" class="latex" title="\leftarrow" alt="\leftarrow" style="vertical-align: -0px"></a></td><td>\leftarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dedbc9c7110a8418f5af9ddd5e006596f8b70f36&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dedbc9c7110a8418f5af9ddd5e006596f8b70f36.gif" class="latex" title="\Leftarrow" alt="\Leftarrow" style="vertical-align: -1px"></a></td><td>\Leftarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=70a0795f45d32287dba0eb83fc4a3f470c6e5537&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/70a0795f45d32287dba0eb83fc4a3f470c6e5537.gif" class="latex" title="\rightarrow" alt="\rightarrow" style="vertical-align: -0px"></a></td><td>\rightarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4d97e684117250a9afe9be022ab8a63653dd15aa&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4d97e684117250a9afe9be022ab8a63653dd15aa.gif" class="latex" title="\Rightarrow" alt="\Rightarrow" style="vertical-align: -1px"></a></td><td>\Rightarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=eb753a72a0df411a135315be2357b1530004720e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/eb753a72a0df411a135315be2357b1530004720e.gif" class="latex" title="\leftrightarrow" alt="\leftrightarrow" style="vertical-align: -0px"></a></td><td>\leftrightarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8774ca35b6e628888a4670e4539d47857e5e5841&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8774ca35b6e628888a4670e4539d47857e5e5841.gif" class="latex" title="\Leftrightarrow" alt="\Leftrightarrow" style="vertical-align: -1px"></a></td><td>\Leftrightarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=22341972d49b9a3a22a4ef9220996604cf49ad12&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/22341972d49b9a3a22a4ef9220996604cf49ad12.gif" class="latex" title="\mapsto" alt="\mapsto" style="vertical-align: -0px"></a></td><td>\mapsto</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2115b43cd2f9477e0587a61491e7631a19ed0260&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2115b43cd2f9477e0587a61491e7631a19ed0260.gif" class="latex" title="\hookleftarrow" alt="\hookleftarrow" style="vertical-align: -0px"></a></td><td>\hookleftarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ff8602397e71e9311e7da14a80c5b2e603f3ab9e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ff8602397e71e9311e7da14a80c5b2e603f3ab9e.gif" class="latex" title="\leftharpoonup" alt="\leftharpoonup" style="vertical-align: -0px"></a></td><td>\leftharpoonup</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b95dad2fb23689377268239f4e0327f1a82065d7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b95dad2fb23689377268239f4e0327f1a82065d7.gif" class="latex" title="\leftharpoondown" alt="\leftharpoondown" style="vertical-align: -0px"></a></td><td>\leftharpoondown
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8eb6ac08e4ee5a4f2191b3a7d1e40dfde33b6406&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8eb6ac08e4ee5a4f2191b3a7d1e40dfde33b6406.gif" class="latex" title="\rightleftharpoons" alt="\rightleftharpoons" style="vertical-align: -1px"></a></td><td>\rightleftharpoons</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=bf6a5f4a031f742119bc793babf751bcc8e0db07&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/bf6a5f4a031f742119bc793babf751bcc8e0db07.gif" class="latex" title="\longleftarrow" alt="\longleftarrow" style="vertical-align: -0px"></a></td><td>\longleftarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8c7814125b7fc1b8ece162703790b7071dc3fe67&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8c7814125b7fc1b8ece162703790b7071dc3fe67.gif" class="latex" title="\Longleftarrow" alt="\Longleftarrow" style="vertical-align: -1px"></a></td><td>\Longleftarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e55df23831c27b62f5619b11733511936edd2926&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e55df23831c27b62f5619b11733511936edd2926.gif" class="latex" title="\longrightarrow" alt="\longrightarrow" style="vertical-align: -0px"></a></td><td>\longrightarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9b6d3419f9beba91c1d5382375c3d93a29f6122f&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9b6d3419f9beba91c1d5382375c3d93a29f6122f.gif" class="latex" title="\Longrightarrow" alt="\Longrightarrow" style="vertical-align: -1px"></a></td><td>\Longrightarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ecc94b07e73defe233bfe831f3977337706a2d27&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ecc94b07e73defe233bfe831f3977337706a2d27.gif" class="latex" title="\longleftrightarrow" alt="\longleftrightarrow" style="vertical-align: -0px"></a></td><td>\longleftrightarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a0c29c1e7b0d02c52cb1ab0f5e8357ee1e42253b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a0c29c1e7b0d02c52cb1ab0f5e8357ee1e42253b.gif" class="latex" title="\Longleftrightarrow" alt="\Longleftrightarrow" style="vertical-align: -1px"></a></td><td>\Longleftrightarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e8bcfe093afe3eeaf2bf408939dbce11b675fe65&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e8bcfe093afe3eeaf2bf408939dbce11b675fe65.gif" class="latex" title="\longmapsto" alt="\longmapsto" style="vertical-align: -0px"></a></td><td>\longmapsto
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=660cd8398404391ce3ecf0e00498b9716b4241bd&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/660cd8398404391ce3ecf0e00498b9716b4241bd.gif" class="latex" title="\hookrightarrow" alt="\hookrightarrow" style="vertical-align: -0px"></a></td><td>\hookrightarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0a77a1ca458ae6a0b4fb96c117681fb00c2277fb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0a77a1ca458ae6a0b4fb96c117681fb00c2277fb.gif" class="latex" title="\rightharpoonup" alt="\rightharpoonup" style="vertical-align: -0px"></a></td><td>\rightharpoonup
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9bb7263eb77f87161a8d7f077d51cd310e96e567&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9bb7263eb77f87161a8d7f077d51cd310e96e567.gif" class="latex" title="\rightharpoondown" alt="\rightharpoondown" style="vertical-align: -0px"></a></td><td>\rightharpoondown</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c230f73fd261bb4d68d73c421819c24d5b873558&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c230f73fd261bb4d68d73c421819c24d5b873558.gif" class="latex" title="\leadsto" alt="\leadsto" style="vertical-align: -0px"></a></td><td>\leadsto
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=36d613cdd74c87472bfe8fc19d2c614d4b898395&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/36d613cdd74c87472bfe8fc19d2c614d4b898395.gif" class="latex" title="\uparrow" alt="\uparrow" style="vertical-align: -4px"></a></td><td>\uparrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=915b18c7706abdf9873bba209bee36538bec4c85&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/915b18c7706abdf9873bba209bee36538bec4c85.gif" class="latex" title="\Uparrow" alt="\Uparrow" style="vertical-align: -4px"></a></td><td>\Uparrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f5d0ab2496bb6b23084bbd1e3dedbf6451a67239&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f5d0ab2496bb6b23084bbd1e3dedbf6451a67239.gif" class="latex" title="\downarrow" alt="\downarrow" style="vertical-align: -4px"></a></td><td>\downarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7139296939d5bede498446c2d90b1613fdde536d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7139296939d5bede498446c2d90b1613fdde536d.gif" class="latex" title="\Downarrow" alt="\Downarrow" style="vertical-align: -4px"></a></td><td>\Downarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e192654d3108e43773ee6e8068abb36ad44f2016&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e192654d3108e43773ee6e8068abb36ad44f2016.gif" class="latex" title="\updownarrow" alt="\updownarrow" style="vertical-align: -5px"></a></td><td>\updownarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7ce3e2037c6e8fe0fb89370f8bfdedaf950dd124&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7ce3e2037c6e8fe0fb89370f8bfdedaf950dd124.gif" class="latex" title="\Updownarrow" alt="\Updownarrow" style="vertical-align: -5px"></a></td><td>\Updownarrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e6b58845bcc59133907fbaf3ea4d9335d8da3f1d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e6b58845bcc59133907fbaf3ea4d9335d8da3f1d.gif" class="latex" title="\nearrow" alt="\nearrow" style="vertical-align: -4px"></a></td><td>\nearrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9f64e614492d9bdbabce9cd009455352d9e16d20&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9f64e614492d9bdbabce9cd009455352d9e16d20.gif" class="latex" title="\searrow" alt="\searrow" style="vertical-align: -4px"></a></td><td>\searrow
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9faf15eb77f6206a52dee1aa287cfdda3a2e3e91&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9faf15eb77f6206a52dee1aa287cfdda3a2e3e91.gif" class="latex" title="\swarrow" alt="\swarrow" style="vertical-align: -4px"></a></td><td>\swarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ad719b4b0144d2bd39bf406e2e9d91e8f5c65840&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ad719b4b0144d2bd39bf406e2e9d91e8f5c65840.gif" class="latex" title="\nwarrow" alt="\nwarrow" style="vertical-align: -4px"></a></td><td>\nwarrow
+					</td></tr></tbody></table>
+					<p>(For those of you who hate typing long strings of letters, \iff and \implies can be used in place of \Longleftrightarrow and \Longrightarrow respectively.)
+					</p>
+		        </div>
+		    </li>
+		  	<!-- /Arrows -->
+		  	<!-- Accents: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab6" />
+		        <label for="tab6"><span class="mw-headline" id="Accents">Accents</span></label>
+		        <div id="tab-content6" class="tab-content">
+		          <table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=27634ea2c473bc36e59149a7f0c457ffb292325a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/27634ea2c473bc36e59149a7f0c457ffb292325a.gif" class="latex" title="\hat{x}" alt="\hat{x}" style="vertical-align: -0px"></a></td><td>\hat{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2aaca0f030b5652318c6af7854defa1f170a2d8e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2aaca0f030b5652318c6af7854defa1f170a2d8e.gif" class="latex" title="\check{x}" alt="\check{x}" style="vertical-align: -0px"></a></td><td>\check{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c960ab6ba5cffcb371c4aea6c9d658a9ba378cab&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c960ab6ba5cffcb371c4aea6c9d658a9ba378cab.gif" class="latex" title="\dot{x}" alt="\dot{x}" style="vertical-align: -0px"></a></td><td>\dot{x}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3ef6f9664967ab45161506b378c4ea9123c90b18&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3ef6f9664967ab45161506b378c4ea9123c90b18.gif" class="latex" title="\breve{x}" alt="\breve{x}" style="vertical-align: -0px"></a></td><td>\breve{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3b6376c7e35df4c3fe56a0912a716c471515c562&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3b6376c7e35df4c3fe56a0912a716c471515c562.gif" class="latex" title="\acute{x}" alt="\acute{x}" style="vertical-align: -0px"></a></td><td>\acute{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f88224d10a356deeba84fbda29b7c4931ade0154&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f88224d10a356deeba84fbda29b7c4931ade0154.gif" class="latex" title="\ddot{x}" alt="\ddot{x}" style="vertical-align: -0px"></a></td><td>\ddot{x}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5469181d11c73089c0466b8ac70b54135e00a5f0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5469181d11c73089c0466b8ac70b54135e00a5f0.gif" class="latex" title="\grave{x}" alt="\grave{x}" style="vertical-align: -0px"></a></td><td>\grave{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cd6fcf0f14dac28bafd1ca0b2ea2e1da9ff5a430&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cd6fcf0f14dac28bafd1ca0b2ea2e1da9ff5a430.gif" class="latex" title="\tilde{x}" alt="\tilde{x}" style="vertical-align: -0px"></a></td><td>\tilde{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cfc31828126ba490044fbb48f696a3e4a2aadede&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cfc31828126ba490044fbb48f696a3e4a2aadede.gif" class="latex" title="\mathring{x}" alt="\mathring{x}" style="vertical-align: -0px"></a></td><td>\mathring{x}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8eebe76c6f552df3f8b9480d5544fe47b1028322&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8eebe76c6f552df3f8b9480d5544fe47b1028322.gif" class="latex" title="\bar{x}" alt="\bar{x}" style="vertical-align: -0px"></a></td><td>\bar{x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f8914399eadbd8be3c3196100658870e03c61fee&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f8914399eadbd8be3c3196100658870e03c61fee.gif" class="latex" title="\vec{x}" alt="\vec{x}" style="vertical-align: -0px"></a></td><td>\vec{x}
+					</td></tr></tbody></table>
+
+					<p>When applying accents to i and j, you can use \imath and \jmath to keep the dots from interfering with the accents:
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=1cb89bfa951cdc63128c794c2e4e10621786e99e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/1cb89bfa951cdc63128c794c2e4e10621786e99e.gif" class="latex" title="\vec{\jmath}" alt="\vec{\jmath}" style="vertical-align: -4px"></a></td><td>\vec{\jmath}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3ba443188155976383f0c4d3c97595bdc95ec781&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3ba443188155976383f0c4d3c97595bdc95ec781.gif" class="latex" title="\tilde{\imath}" alt="\tilde{\imath}" style="vertical-align: -0px"></a></td><td>\tilde{\imath}
+					</td></tr></tbody></table>
+
+					<p>\tilde  and \hat have wide versions that allow you to accent an expression:
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3ffca9732c64d8d367e24467d75b048b5e5bce85&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3ffca9732c64d8d367e24467d75b048b5e5bce85.gif" class="latex" title="\widehat{3+x}" alt="\widehat{3+x}" style="vertical-align: -1px"></a></td><td>\widehat{3+x}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=87db84c649fce5507c317bb91b422adb9349c422&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/87db84c649fce5507c317bb91b422adb9349c422.gif" class="latex" title="\widetilde{abc}" alt="\widetilde{abc}" style="vertical-align: -0px"></a></td><td>\widetilde{abc}
+					</td></tr></tbody></table>
+		        </div>
+		    </li>
+		  	<!-- /Accents -->
+		  	<!-- Others: -->
+		    <li>
+		        <input type="radio" name="tabs" id="tab7" />
+		        <label for="tab7"><span class="mw-headline" id="Others">Others</span></label>
+		        <div id="tab-content7" class="tab-content">
+		          <table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9b97f26fbeb1b84327c736de515f10980d9c7d68&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9b97f26fbeb1b84327c736de515f10980d9c7d68.gif" class="latex" title="\infty" alt="\infty" style="vertical-align: -0px"></a></td><td>\infty</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a4fdf592fa30656b63ecaa356e5caae9a48613c5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a4fdf592fa30656b63ecaa356e5caae9a48613c5.gif" class="latex" title="\triangle" alt="\triangle" style="vertical-align: -0px"></a></td><td>\triangle</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=d40589d68d41fb96f4a4754b153bb1e0ffb107f3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/d40589d68d41fb96f4a4754b153bb1e0ffb107f3.gif" class="latex" title="\angle" alt="\angle" style="vertical-align: -0px"></a></td><td>\angle
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8e09d0a830d8db1105ad1ff43c8c1b25a07fa2f5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8e09d0a830d8db1105ad1ff43c8c1b25a07fa2f5.gif" class="latex" title="\aleph" alt="\aleph" style="vertical-align: -0px"></a></td><td>\aleph</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9aee3e478f335d1b4c69525e79317d64e0d82a22&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9aee3e478f335d1b4c69525e79317d64e0d82a22.gif" class="latex" title="\hbar" alt="\hbar" style="vertical-align: -0px"></a></td><td>\hbar</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c93390adc15e3fa7fd9371c8c32c8435c16d14f7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c93390adc15e3fa7fd9371c8c32c8435c16d14f7.gif" class="latex" title="\imath" alt="\imath" style="vertical-align: -0px"></a></td><td>\imath
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=51addf34f27713d22faad1ead1b46608a947b12a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/51addf34f27713d22faad1ead1b46608a947b12a.gif" class="latex" title="\jmath" alt="\jmath" style="vertical-align: -4px"></a></td><td>\jmath</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c7c068229f25f741e2c902b657ba04a42feb0752&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c7c068229f25f741e2c902b657ba04a42feb0752.gif" class="latex" title="\ell" alt="\ell" style="vertical-align: -1px"></a></td><td>\ell</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=34a8aa862c9e3d0cc043dd23dfb7bf77711af4f0&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/34a8aa862c9e3d0cc043dd23dfb7bf77711af4f0.gif" class="latex" title="\wp" alt="\wp" style="vertical-align: -4px"></a></td><td>\wp
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=fca85c689a1b638e0807de0610832c54df0f8cdb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/fca85c689a1b638e0807de0610832c54df0f8cdb.gif" class="latex" title="\Re" alt="\Re" style="vertical-align: -1px"></a></td><td>\Re</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=78ccebf6b4eee8a0012cd9b972a1decad1ea9fb6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/78ccebf6b4eee8a0012cd9b972a1decad1ea9fb6.gif" class="latex" title="\Im" alt="\Im" style="vertical-align: -0px"></a></td><td>\Im</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=30f8ebdd4c4499a4a9ffc3e74e0b98dae7635e65&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/30f8ebdd4c4499a4a9ffc3e74e0b98dae7635e65.gif" class="latex" title="\mho" alt="\mho" style="vertical-align: -1px"></a></td><td>\mho
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=77f62fd82f7d6166a274d1936510349ae0b1fd33&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/77f62fd82f7d6166a274d1936510349ae0b1fd33.gif" class="latex" title="\prime" alt="\prime" style="vertical-align: -0px"></a></td><td>\prime</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=71d03cc1298521b17da1328b947ec4eb980a6e18&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/71d03cc1298521b17da1328b947ec4eb980a6e18.gif" class="latex" title="\emptyset" alt="\emptyset" style="vertical-align: -2px"></a></td><td>\emptyset</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=473d845105275d42e0a96aefc14bfa8ee70b72fd&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/473d845105275d42e0a96aefc14bfa8ee70b72fd.gif" class="latex" title="\nabla" alt="\nabla" style="vertical-align: -1px"></a></td><td>\nabla
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7e417dbdd39eebaef3720bea81c9bd41e5202ddb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7e417dbdd39eebaef3720bea81c9bd41e5202ddb.gif" class="latex" title="\surd" alt="\surd" style="vertical-align: -4px"></a></td><td>\surd</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b99cc6ef78695c8f6abf56e39a407850c8269198&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b99cc6ef78695c8f6abf56e39a407850c8269198.gif" class="latex" title="\partial" alt="\partial" style="vertical-align: -1px"></a></td><td>\partial</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2871a9b863840624f82bff47a47f4b0700a86bbd&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2871a9b863840624f82bff47a47f4b0700a86bbd.gif" class="latex" title="\top" alt="\top" style="vertical-align: -1px"></a></td><td>\top
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9a3fe51ebc4d1c767d2a86ee713c3d040af24a68&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9a3fe51ebc4d1c767d2a86ee713c3d040af24a68.gif" class="latex" title="\bot" alt="\bot" style="vertical-align: -0px"></a></td><td>\bot</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9108c923b5f8a1586a6a58d098d0782730b7cfe2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9108c923b5f8a1586a6a58d098d0782730b7cfe2.gif" class="latex" title="\vdash" alt="\vdash" style="vertical-align: -0px"></a></td><td>\vdash</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=8f99a271b0cb9a649acd730aff44d084b535080d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/8f99a271b0cb9a649acd730aff44d084b535080d.gif" class="latex" title="\dashv" alt="\dashv" style="vertical-align: -0px"></a></td><td>\dashv
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=983e5873ee8f04444f8ba6eb605d1782b7824754&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/983e5873ee8f04444f8ba6eb605d1782b7824754.gif" class="latex" title="\forall" alt="\forall" style="vertical-align: -1px"></a></td><td>\forall</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e3dfe77c1ac2f8ab03a40b2d38f594cdd0ed77c4&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e3dfe77c1ac2f8ab03a40b2d38f594cdd0ed77c4.gif" class="latex" title="\exists" alt="\exists" style="vertical-align: -0px"></a></td><td>\exists</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=1f95d4968e0af8fe96e07aa376e84031eff7c471&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/1f95d4968e0af8fe96e07aa376e84031eff7c471.gif" class="latex" title="\neg" alt="\neg" style="vertical-align: -0px"></a></td><td>\neg
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=fad5ef6a9c36930154f2724f114b07ee295620ee&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/fad5ef6a9c36930154f2724f114b07ee295620ee.gif" class="latex" title="\flat" alt="\flat" style="vertical-align: -1px"></a></td><td>\flat</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=92706fef30954aa4f0702e11601e78f966007d81&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/92706fef30954aa4f0702e11601e78f966007d81.gif" class="latex" title="\natural" alt="\natural" style="vertical-align: -4px"></a></td><td>\natural</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ce8e2d3e6e21af566fa77b21d57aaddde047880d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ce8e2d3e6e21af566fa77b21d57aaddde047880d.gif" class="latex" title="\sharp" alt="\sharp" style="vertical-align: -4px"></a></td><td>\sharp
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=1966c2af1dfbeb9b7bb62aa18f11480c6387b198&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/1966c2af1dfbeb9b7bb62aa18f11480c6387b198.gif" class="latex" title="\backslash" alt="\backslash" style="vertical-align: -4px"></a></td><td>\backslash</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=da6ebdf8db3e5cfba3e271851ae04dca9ac272f7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/da6ebdf8db3e5cfba3e271851ae04dca9ac272f7.gif" class="latex" title="\Box" alt="\Box" style="vertical-align: -0px"></a></td><td>\Box</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b8a8b37ec93e19c3ec5f2a47d702286cf3368873&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b8a8b37ec93e19c3ec5f2a47d702286cf3368873.gif" class="latex" title="\Diamond" alt="\Diamond" style="vertical-align: -3px"></a></td><td>\Diamond
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f9dc4488c6413833aba65dc14fdba88d82e70f54&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f9dc4488c6413833aba65dc14fdba88d82e70f54.gif" class="latex" title="\clubsuit" alt="\clubsuit" style="vertical-align: -3px"></a></td><td>\clubsuit</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cd3943fc0dbce6e65062cb7c6257a0d0383b6bd5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cd3943fc0dbce6e65062cb7c6257a0d0383b6bd5.gif" class="latex" title="\diamondsuit" alt="\diamondsuit" style="vertical-align: -3px"></a></td><td>\diamondsuit</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=075c4b750f7161255c6f0b0acecabc9d24052c13&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/075c4b750f7161255c6f0b0acecabc9d24052c13.gif" class="latex" title="\heartsuit" alt="\heartsuit" style="vertical-align: -1px"></a></td><td>\heartsuit
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Wiki/index.php/File:Spadesuit.gif" class="image"><img alt="Spadesuit.gif" src="laTeX_img/Spadesuit.gif" width="20" height="17"></a></td><td>\spadesuit</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a1c3c59de0032c4b3ba263db19e8395c519051a5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a1c3c59de0032c4b3ba263db19e8395c519051a5.gif" class="latex" title="\Join" alt="\Join" style="vertical-align: -0px"></a></td><td>\Join</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4a4e9e431da45a27bc880a8a1ca44d8b1b9bc143&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4a4e9e431da45a27bc880a8a1ca44d8b1b9bc143.gif" class="latex" title="\blacksquare" alt="\blacksquare" style="vertical-align: -0px"></a></td><td>\blacksquare
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cb092f062604c51a9863ba0cb5f29f5cc676fa1d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cb092f062604c51a9863ba0cb5f29f5cc676fa1d.gif" class="latex" title="\S" alt="\S" style="vertical-align: -4px"></a></td><td>\S</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ab02cc25793c57890a10c95ec428e729dc1366e6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ab02cc25793c57890a10c95ec428e729dc1366e6.gif" class="latex" title="\P" alt="\P" style="vertical-align: -4px"></a></td><td>\P</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=99145aac55b3a8932a4af32e1eccff1e3e5e1954&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/99145aac55b3a8932a4af32e1eccff1e3e5e1954.gif" class="latex" title="\copyright" alt="\copyright" style="vertical-align: -4px"></a></td><td>\copyright
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0b3483f2b8b7b6be9415ffb029505ece585a1f57&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0b3483f2b8b7b6be9415ffb029505ece585a1f57.gif" class="latex" title="\pounds" alt="\pounds" style="vertical-align: -0px"></a></td><td>\pounds</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f8eb541eff06186cee0673df631f0fb7e97b5b28&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f8eb541eff06186cee0673df631f0fb7e97b5b28.gif" class="latex" title="\overarc{ABC}" alt="\overarc{ABC}" style="vertical-align: -0px"></a></td><td>\overarc{ABC}(it works)</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=28578187c49f6dcf11625aaf4c88e2eb0794cbca&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/28578187c49f6dcf11625aaf4c88e2eb0794cbca.gif" class="latex" title="\underarc{XYZ}" alt="\underarc{XYZ}" style="vertical-align: -0px"></a></td><td>\underarc{XYZ}(it works)
+					</td></tr></tbody></table>
+
+					<h2> <span class="mw-headline" id="Command_Symbols">Command Symbols</span></h2>
+
+					<p>Some symbols are used in commands so they need to be treated in a special way.
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e24b30058b4c8a6c6a83f2042bac2531f27f6d87&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e24b30058b4c8a6c6a83f2042bac2531f27f6d87.gif" class="latex" title="\textdollar" alt="\textdollar" style="vertical-align: -1px"></a></td><td>\textdollar</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=da70bf203c4fd22c5a3b3e8a95f52c677f5d3492&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/da70bf203c4fd22c5a3b3e8a95f52c677f5d3492.gif" class="latex" title="\&amp;" alt="\&amp;" style="vertical-align: -0px"></a></td><td>\&amp;</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4ad9f27f31c1c7cc08f49287355b5b3e5c560a58&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4ad9f27f31c1c7cc08f49287355b5b3e5c560a58.gif" class="latex" title="\%" alt="\%" style="vertical-align: -1px"></a></td><td>\%</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=5c33f14c633d90d5eca1c221488e9b9f41b3011c&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/5c33f14c633d90d5eca1c221488e9b9f41b3011c.gif" class="latex" title="\#" alt="\#" style="vertical-align: -3px"></a></td><td>\#
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=89d9cda9981d1c1e2dececde4fa80adc05efcf04&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/89d9cda9981d1c1e2dececde4fa80adc05efcf04.gif" class="latex" title="\_" alt="\_" style="vertical-align: -0px"></a></td><td>\_</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9eb4380cf708f2f0e51de55cc12a876a7b7e0277&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9eb4380cf708f2f0e51de55cc12a876a7b7e0277.gif" class="latex" title="\{" alt="\{" style="vertical-align: -4px"></a></td><td>\{</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=268f6a32ad928fa7357e40ca5717084bb56bbdee&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/268f6a32ad928fa7357e40ca5717084bb56bbdee.gif" class="latex" title="\}" alt="\}" style="vertical-align: -4px"></a></td><td>\}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=1966c2af1dfbeb9b7bb62aa18f11480c6387b198&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/1966c2af1dfbeb9b7bb62aa18f11480c6387b198.gif" class="latex" title="\backslash" alt="\backslash" style="vertical-align: -4px"></a></td><td>\backslash
+					</td></tr></tbody></table>
+
+					<p>(Warning: Using \$ for <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e24b30058b4c8a6c6a83f2042bac2531f27f6d87&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e24b30058b4c8a6c6a83f2042bac2531f27f6d87.gif" class="latex" title="\textdollar" alt="\textdollar" style="vertical-align: -1px"></a> will result in <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=67ac7f6a1af9ca2ba2f7d468edc5015c7ea63689&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/67ac7f6a1af9ca2ba2f7d468edc5015c7ea63689.gif" class="latex" title="&amp;#036;" alt="&amp;#036;" style="vertical-align: -3px"></a>. This is a bug as far as we know. Depending on the version of LaTex this is not always a problem.)
+					</p>
+
+					<h2> <span class="mw-headline" id="European_Language_Symbols">European Language Symbols</span></h2>
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command</th><th>Symbol</th><th>Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0744e7f8376f400e87a01adebf3f14f04a9147b2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0744e7f8376f400e87a01adebf3f14f04a9147b2.gif" class="latex" title="{\oe}" alt="{\oe}" style="vertical-align: -0px"></a></td><td>{\oe}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=cc535aac463c94702685c2628fac6b44c76534a7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/cc535aac463c94702685c2628fac6b44c76534a7.gif" class="latex" title="{\ae}" alt="{\ae}" style="vertical-align: -0px"></a></td><td>{\ae}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=4863dbd31f0bcc1c7007088ec4f9a65be879ac0b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/4863dbd31f0bcc1c7007088ec4f9a65be879ac0b.gif" class="latex" title="{\aa}" alt="{\aa}" style="vertical-align: -0px"></a></td><td>{\aa}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=db128f5081ab83b440dab81a3e3b91e3fcdb44aa&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/db128f5081ab83b440dab81a3e3b91e3fcdb44aa.gif" class="latex" title="{\o}" alt="{\o}" style="vertical-align: -2px"></a></td><td>{\o}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7223eb6464a90dc1822fc41e3872a778417f4f09&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7223eb6464a90dc1822fc41e3872a778417f4f09.gif" class="latex" title="{\OE}" alt="{\OE}" style="vertical-align: -0px"></a></td><td>{\OE}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ceac97d772a74c0713b183efc5be1dd57022d3e2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ceac97d772a74c0713b183efc5be1dd57022d3e2.gif" class="latex" title="{\AE}" alt="{\AE}" style="vertical-align: -0px"></a></td><td>{\AE}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=65408498650a910da3ad6bd5b6333e8d427a29fe&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/65408498650a910da3ad6bd5b6333e8d427a29fe.gif" class="latex" title="{\AA}" alt="{\AA}" style="vertical-align: -0px"></a></td><td>{\AA}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=210ab92016f06e4305de8dc15a7ec5dff90f8631&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/210ab92016f06e4305de8dc15a7ec5dff90f8631.gif" class="latex" title="{\O}" alt="{\O}" style="vertical-align: -1px"></a></td><td>{\O}
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=11aee6d9eb22ca2e6c9e587b289f0537e727016b&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/11aee6d9eb22ca2e6c9e587b289f0537e727016b.gif" class="latex" title="{\l}" alt="{\l}" style="vertical-align: -0px"></a></td><td>{\l}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=130ad9d47243b3e8efb4be647463cc120592f395&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/130ad9d47243b3e8efb4be647463cc120592f395.gif" class="latex" title="{\ss}" alt="{\ss}" style="vertical-align: -0px"></a></td><td>{\ss}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ed55e243b3195f15e3f7a6715d0af1864a8bac03&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ed55e243b3195f15e3f7a6715d0af1864a8bac03.gif" class="latex" title="\text{!`}" alt="\text{!`}" style="vertical-align: -3px"></a></td><td>!`
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=df0001a6c35974b6028b4c218b476b024c55dc63&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/df0001a6c35974b6028b4c218b476b024c55dc63.gif" class="latex" title="{\L}" alt="{\L}" style="vertical-align: -0px"></a></td><td>{\L}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c5c982ac16d97dd18f42948383c89644dccc4cc5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c5c982ac16d97dd18f42948383c89644dccc4cc5.gif" class="latex" title="{\SS}" alt="{\SS}" style="vertical-align: -0px"></a></td><td>{\SS}</td><td>
+					</td></tr></tbody></table>
+
+					<h2> <span class="mw-headline" id="Bracketing_Symbols">Bracketing Symbols</span></h2>
+
+					<p>In mathematics, sometimes we need to enclose expressions in brackets or braces or parentheses. Some of these work just as you'd imagine in LaTeX; type ( and ) for parentheses, [ and ] for brackets, and | and | for absolute value. However, other symbols have special commands:
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=9eb4380cf708f2f0e51de55cc12a876a7b7e0277&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/9eb4380cf708f2f0e51de55cc12a876a7b7e0277.gif" class="latex" title="\{" alt="\{" style="vertical-align: -4px"></a></td><td>\{</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=268f6a32ad928fa7357e40ca5717084bb56bbdee&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/268f6a32ad928fa7357e40ca5717084bb56bbdee.gif" class="latex" title="\}" alt="\}" style="vertical-align: -4px"></a></td><td>\}</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=75f55739a2cf803c528710550991a95420fe2ddb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/75f55739a2cf803c528710550991a95420fe2ddb.gif" class="latex" title="\|" alt="\|" style="vertical-align: -5px"></a></td><td>\|
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=1966c2af1dfbeb9b7bb62aa18f11480c6387b198&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/1966c2af1dfbeb9b7bb62aa18f11480c6387b198.gif" class="latex" title="\backslash" alt="\backslash" style="vertical-align: -4px"></a></td><td>\backslash</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=b940017c1198f12018a137e5d310d93438dcfea1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/b940017c1198f12018a137e5d310d93438dcfea1.gif" class="latex" title="\lfloor" alt="\lfloor" style="vertical-align: -4px"></a></td><td>\lfloor</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=95432dbc80439eef9be7d9d877fc5350b1d8ab47&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/95432dbc80439eef9be7d9d877fc5350b1d8ab47.gif" class="latex" title="\rfloor" alt="\rfloor" style="vertical-align: -4px"></a></td><td>\rfloor
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dcdfeedf09f1feed7500936d54db5724028f5b34&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dcdfeedf09f1feed7500936d54db5724028f5b34.gif" class="latex" title="\lceil" alt="\lceil" style="vertical-align: -4px"></a></td><td>\lceil</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c970daa31d25893976688148419f89ca48475406&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c970daa31d25893976688148419f89ca48475406.gif" class="latex" title="\rceil" alt="\rceil" style="vertical-align: -4px"></a></td><td>\rceil</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=d06777e92c262e06bc8808ee4544acbf089d9680&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/d06777e92c262e06bc8808ee4544acbf089d9680.gif" class="latex" title="\langle" alt="\langle" style="vertical-align: -5px"></a></td><td>\langle
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=42d535415e85e44235fe1f54351a2963a914d4c6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/42d535415e85e44235fe1f54351a2963a914d4c6.gif" class="latex" title="\rangle" alt="\rangle" style="vertical-align: -5px"></a></td><td>\rangle
+					</td></tr></tbody></table>
+
+					<p>You might notice that if you use any of these to typeset an expression that is vertically large, like
+					</p>
+
+					<dl>
+						<dd>
+							<tt>(\frac{a}{x} )^2</tt>
+						</dd>
+					</dl>
+					<p>the parentheses don't come out the right size:
+					</p>
+					<dl>
+						<dd><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ed7df399258d9786dd7ac7595428a31396917cb7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ed7df399258d9786dd7ac7595428a31396917cb7.gif" class="latex" title="(\frac{a}{x})^2" alt="(\frac{a}{x})^2" style="vertical-align: -11px"></a>
+						</dd>
+					</dl>
+
+					<p>If we put \left and \right before the relevant parentheses, we get a prettier expression:
+					</p>
+
+					<dl>
+						<dd>
+							<tt>\left(\frac{a}{x} \right)^2</tt>
+						</dd>
+					</dl>
+
+					<p>gives
+					</p>
+
+					<dl>
+						<dd><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=37c76407d2b0d6441b1f0f2a9abb666d27b6758a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/37c76407d2b0d6441b1f0f2a9abb666d27b6758a.gif" class="latex" title="\left(\frac{a}{x} \right)^2" alt="\left(\frac{a}{x} \right)^2" style="vertical-align: -12px"></a>
+						</dd>
+					</dl>
+
+					<p>\left and \right can also be used to resize the following symbols:
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=36d613cdd74c87472bfe8fc19d2c614d4b898395&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/36d613cdd74c87472bfe8fc19d2c614d4b898395.gif" class="latex" title="\uparrow" alt="\uparrow" style="vertical-align: -4px"></a></td><td>\uparrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f5d0ab2496bb6b23084bbd1e3dedbf6451a67239&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f5d0ab2496bb6b23084bbd1e3dedbf6451a67239.gif" class="latex" title="\downarrow" alt="\downarrow" style="vertical-align: -4px"></a></td><td>\downarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=e192654d3108e43773ee6e8068abb36ad44f2016&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/e192654d3108e43773ee6e8068abb36ad44f2016.gif" class="latex" title="\updownarrow" alt="\updownarrow" style="vertical-align: -5px"></a></td><td>\updownarrow
+					</td></tr>
+					<tr>
+					<td> <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=915b18c7706abdf9873bba209bee36538bec4c85&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/915b18c7706abdf9873bba209bee36538bec4c85.gif" class="latex" title="\Uparrow" alt="\Uparrow" style="vertical-align: -4px"></a></td><td>\Uparrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7139296939d5bede498446c2d90b1613fdde536d&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7139296939d5bede498446c2d90b1613fdde536d.gif" class="latex" title="\Downarrow" alt="\Downarrow" style="vertical-align: -4px"></a></td><td>\Downarrow</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=7ce3e2037c6e8fe0fb89370f8bfdedaf950dd124&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/7ce3e2037c6e8fe0fb89370f8bfdedaf950dd124.gif" class="latex" title="\Updownarrow" alt="\Updownarrow" style="vertical-align: -5px"></a></td><td>\Updownarrow
+					</td></tr></tbody></table>
+
+					<h2> <span class="mw-headline" id="Multi-Size_Symbols">Multi-Size Symbols</span></h2>
+
+					<p>Some symbols render differently in inline math mode and in display mode. Display mode occurs when you use \[...\] or $$...$$, or environments like \begin{equation}...\end{equation}, \begin{align}...\end{align}. Read more in the <a href="http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Commands" title="LaTeX:Commands">commands</a> section of the guide about how symbols which take arguments above and below the symbols, such as a summation symbol, behave in the two modes.
+					</p>
+					<p>In each of the following, the two images show the symbol in display mode, then in inline mode.
+					</p>
+
+					<table class="latextable table table-bordered table-striped table-condensed">
+					<tbody><tr>
+					<th>Symbol </th><th> Command</th><th>Symbol </th><th> Command</th><th>Symbol </th><th> Command
+					</th></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=0338f4544ae8b6916d152fcdd0c164d083e657e6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/0338f4544ae8b6916d152fcdd0c164d083e657e6.gif" class="latex" title="\sum  \textstyle\sum" alt="\sum  \textstyle\sum" style="vertical-align: -8px"></a></td><td>\sum</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=21cd7b19ee384645fdb4cef1b218de8005c193b2&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/21cd7b19ee384645fdb4cef1b218de8005c193b2.gif" class="latex" title="\int  \textstyle\int" alt="\int  \textstyle\int" style="vertical-align: -14px"></a></td><td>\int</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=08061e9b96f2b235a5fee12643ca98fc34f87940&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/08061e9b96f2b235a5fee12643ca98fc34f87940.gif" class="latex" title="\oint  \textstyle\oint" alt="\oint  \textstyle\oint" style="vertical-align: -14px"></a></td><td>\oint
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=f919d7bcbe963fbe12b34550ba7954e57fe4dd58&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/f919d7bcbe963fbe12b34550ba7954e57fe4dd58.gif" class="latex" title="\prod  \textstyle\prod" alt="\prod  \textstyle\prod" style="vertical-align: -8px"></a></td><td>\prod</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a606993815bd4239f41a08ff5943e0db48ad95f8&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a606993815bd4239f41a08ff5943e0db48ad95f8.gif" class="latex" title="\coprod  \textstyle\coprod" alt="\coprod  \textstyle\coprod" style="vertical-align: -8px"></a></td><td>\coprod</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3d60ee7afe79ad732d501752ad6399333ab8010e&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3d60ee7afe79ad732d501752ad6399333ab8010e.gif" class="latex" title="\bigcap  \textstyle\bigcap" alt="\bigcap  \textstyle\bigcap" style="vertical-align: -8px"></a></td><td>\bigcap
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=139602703ebc54fdf06bcff22986088629ebcafb&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/139602703ebc54fdf06bcff22986088629ebcafb.gif" class="latex" title="\bigcup  \textstyle\bigcup" alt="\bigcup  \textstyle\bigcup" style="vertical-align: -8px"></a></td><td>\bigcup</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=eaf23df4c628e841fb2ec0791e9df2d7393f7ff5&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/eaf23df4c628e841fb2ec0791e9df2d7393f7ff5.gif" class="latex" title="\bigsqcup  \textstyle\bigsqcup" alt="\bigsqcup  \textstyle\bigsqcup" style="vertical-align: -8px"></a></td><td>\bigsqcup</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=51c48266b6ed7138c22ad71524b407f5dbd811e1&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/51c48266b6ed7138c22ad71524b407f5dbd811e1.gif" class="latex" title="\bigvee  \textstyle\bigvee" alt="\bigvee  \textstyle\bigvee" style="vertical-align: -8px"></a></td><td>\bigvee
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=a3ebc56086cdefdb440d1c2b5f8b520dfcde85d3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/a3ebc56086cdefdb440d1c2b5f8b520dfcde85d3.gif" class="latex" title="\bigwedge  \textstyle\bigwedge" alt="\bigwedge  \textstyle\bigwedge" style="vertical-align: -8px"></a></td><td>\bigwedge</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=bcbdfa40a4ad776cf19886572716eea673cec437&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/bcbdfa40a4ad776cf19886572716eea673cec437.gif" class="latex" title="\bigodot  \textstyle\bigodot" alt="\bigodot  \textstyle\bigodot" style="vertical-align: -8px"></a></td><td>\bigodot</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=c2fb1a5ffddb7d25c534bbb5e1dc6632df51cab6&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/c2fb1a5ffddb7d25c534bbb5e1dc6632df51cab6.gif" class="latex" title="\bigotimes  \textstyle\bigotimes" alt="\bigotimes  \textstyle\bigotimes" style="vertical-align: -8px"></a></td><td>\bigotimes
+					</td></tr>
+					<tr>
+					<td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=ee07e0b5fdd4f0c8e8e5fd1b1d0480481eb522c3&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/ee07e0b5fdd4f0c8e8e5fd1b1d0480481eb522c3.gif" class="latex" title="\bigoplus  \textstyle\bigoplus" alt="\bigoplus  \textstyle\bigoplus" style="vertical-align: -8px"></a></td><td>\bigoplus</td><td><a href="http://www.artofproblemsolving.com/Forum/code.php?hash=87afda0879493a155e0a23fb070d847bf2ecc135&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/87afda0879493a155e0a23fb070d847bf2ecc135.gif" class="latex" title="\biguplus  \textstyle\biguplus" alt="\biguplus  \textstyle\biguplus" style="vertical-align: -8px"></a></td><td>\biguplus
+					</td></tr></tbody></table>
+
+					<h2> <span class="mw-headline" id="Examples">Examples</span></h2>
+
+					<ul>
+						<li> x^y is the same as x^{y}, producing <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=2d3dcceaebf827060ea1f53014fc4b56d8679e85&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/2d3dcceaebf827060ea1f53014fc4b56d8679e85.gif" class="latex" title="x^y" alt="x^y" style="vertical-align: -0px"></a> .
+						</li>
+						<li> x_y is the same as x_{y}, producing  <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=dab5c242aa6555b4ff1d6cd81f160b4ec403ed1a&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/dab5c242aa6555b4ff1d6cd81f160b4ec403ed1a.gif" class="latex" title="x_y" alt="x_y" style="vertical-align: -4px"></a> .
+						</li>
+						<li> However, x^10 is <i>not</i> the same as x^{10}.  The former produces <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=fa64ff339bab7486091b6fe2ae16d4c8bd5ac1f7&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/fa64ff339bab7486091b6fe2ae16d4c8bd5ac1f7.gif" class="latex" title="x^10" alt="x^10" style="vertical-align: -0px"></a> instead of <a href="http://www.artofproblemsolving.com/Forum/code.php?hash=3d813eaec3f90ac4cbd8b2dd216c692a5584a189&sid=b68472a3961e8ee2fe7a5ecabf937c0b" class="latex"><img src="laTeX_img/3d813eaec3f90ac4cbd8b2dd216c692a5584a189.gif" class="latex" title="x^{10}" alt="x^{10}" style="vertical-align: -0px"></a>.
+						</li>
+					</ul>
+		        </div>
+		    </li>
+		  	<!-- /Others -->
+		</ul>
+
+		<!-- <p>This article will provide a short list of commonly used LaTeX symbols.
+		</p> -->
+	</div>
+</body>
+</html>
