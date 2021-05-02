@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfo } from 'actions/user';
+import pusher from 'utils/pusher';
 import ModalContainer from './Modals';
 import SignIn from './SignIn';
 import Home from './Home';
@@ -14,9 +15,21 @@ function App() {
   const dispatch = useDispatch();
   const loggedIn = useSelector(({ user }) => user.loggedIn);
 
+  const connectPusher = async () => {
+    const { result } = await dispatch(getInfo());
+    if (result) {
+      pusher.connect();
+      pusher.subscribe('account', {
+        accountType: result.accountType,
+        accountId: result.id,
+      });
+      pusher.bind('account', 'status_change', () => {});
+    }
+  };
+
   useEffect(() => {
     if (loggedIn) {
-      dispatch(getInfo());
+      connectPusher();
     }
   }, [loggedIn]);
 

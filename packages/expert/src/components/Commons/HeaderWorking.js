@@ -7,7 +7,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { showModal } from 'actions/modal';
+import { disconnect } from 'actions/user';
+import { getState } from 'actions/question';
 import { ModalKey } from 'constants/modal';
+import { QuestionState } from 'constants/question';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -29,7 +32,7 @@ const useStyles = makeStyles(theme => ({
       cursor: 'pointer',
     },
   },
-  endSession: {
+  actionButton: {
     margin: theme.spacing(1, 1.5),
     fontSize: '0.875rem',
     fontWeight: 500,
@@ -41,10 +44,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HeaderWorking = () => {
+const HeaderWorking = ({
+  questionState,
+}) => {
   const history = useHistory();
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  const stopWorking = async () => {
+    await dispatch(disconnect());
+    history.push('/home');
+    dispatch(getState());
+  };
 
   return (
     <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
@@ -53,9 +64,16 @@ const HeaderWorking = () => {
           Tutoring company
         </Typography>
         <nav>
-          <Button className={classes.endSession} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
-            End Session
-          </Button>
+          {[QuestionState.STATE_NOT_ROUTED, QuestionState.STATE_BIDDING, QuestionState.STATE_KING].includes(questionState) && (
+            <Button className={classes.actionButton} onClick={() => stopWorking()}>
+              Stop Working
+            </Button>
+          )}
+          {[QuestionState.STATE_WORKING, QuestionState.STATE_RATING].includes(questionState) && (
+            <Button className={classes.actionButton} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
+              End Session
+            </Button>
+          )}
         </nav>
       </Toolbar>
     </AppBar>

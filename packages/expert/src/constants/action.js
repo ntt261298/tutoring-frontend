@@ -12,8 +12,15 @@ export const UserAction = {
   GET_INFO_SUCCESS: 'GET_INFO_SUCCESS',
   UPDATE_PROFILE: 'UPDATE_PROFILE',
   UPDATE_PASSWORD: 'UPDATE_PASSWORD',
+  CONNECT: 'CONNECT',
+  DISCONNECT: 'DISCONNECT',
 };
 
 export const FeedbackAction = {
   CREATE_FEEDBACK: 'CREATE_FEEDBACK',
+};
+
+export const QuestionAction = {
+  GET_STATE: 'GET_STATE',
+  GET_STATE_SUCCESS: 'GET_STATE_SUCCESS',
 };
