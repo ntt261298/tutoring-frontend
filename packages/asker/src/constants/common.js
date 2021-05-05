@@ -10,6 +10,11 @@ export const TopicId = {
   ENGLISH: 2,
 };
 
+export const Topic = {
+  [TopicId.MATH]: 1,
+  [TopicId.ENGLISH]: 2,
+};
+
 export const FileOption = {
   ACCEPT: '.jpg, .png, .jpeg',
   MAX_SIZE: 10 * 1024 * 1024, // 10 MB

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Topic } from 'constants/question';
+import { Topic, TopicId } from 'constants/question';
 import Math from './Math';
 
 const useStyles = makeStyles(() => ({
@@ -14,11 +15,11 @@ const useStyles = makeStyles(() => ({
 
 const Working = () => {
   const classes = useStyles();
-  const [currentTopic, setCurrentTopic] = useState(Topic.MATH);
+  const questionInfo = useSelector(state => state.question?.questionInfo);
 
   return (
     <Box className={classes.container}>
-      {currentTopic === Topic.MATH && <Math />}
+      {questionInfo?.topicId === TopicId.MATH && <Math />}
     </Box>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import userAskingLogo from 'assets/images/user-asking.png';
+import { Topic } from 'constants/common';
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles(() => ({
 
 const Summary = () => {
   const classes = useStyles();
+  const question = useSelector(state => state.question);
 
   return (
     <Paper className={classes.paper}>
@@ -30,19 +32,21 @@ const Summary = () => {
         Question content
       </Box>
       <Box component="p">
-        This is a test question. Please skip this. Thanks.
+        {question?.text}
       </Box>
       <Divider />
       <Box component="h3">
-        Topic: Math
+        Topic: {question?.topic?.name}
       </Box>
       <Divider />
       <Box component="h3">
-        File:
+        {`File: ${!question?.file && 'No file'}`}
       </Box>
-      <Box className={classes.centerStyle}>
-        <img src={userAskingLogo} alt="expert working" className={classes.image} />
-      </Box>
+      {question?.file && (
+        <Box className={classes.centerStyle}>
+          <img src={`data:image/jpeg;base64,${question?.file?.renderedData}`} alt="expert working" className={classes.image} />
+        </Box>
+      )}
     </Paper>
   );
 };

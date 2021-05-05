@@ -125,9 +125,16 @@ const Bidding = () => {
           <Box component="h3" className={classes.centerStyle}>
             Preview
           </Box>
-          <Box component="h3" className={classes.centerStyle}>
-            <img src={expertWorkingLogo} alt="expert working" />
-          </Box>
+          {questionInfo?.file && (
+            <Box component="h3" className={classes.centerStyle}>
+              <img src={`data:image/jpeg;base64,${questionInfo?.file?.renderedData}`} alt="expert working" className={classes.image} />
+            </Box>
+          )}
+          {!questionInfo?.file && (
+            <Box component="h2" className={classes.centerStyle} style={{ height: '100%' }}>
+              No File
+            </Box>
+          )}
         </Grid>
       </Grid>
     </>
