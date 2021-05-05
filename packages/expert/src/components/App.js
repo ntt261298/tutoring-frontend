@@ -31,6 +31,12 @@ function App() {
     if (loggedIn) {
       connectPusher();
     }
+
+    return () => {
+      pusher.unbind('account', 'status_change');
+      pusher.unsubscribe('account');
+      pusher.disconnect();
+    };
   }, [loggedIn]);
 
   const renderRoutes = () => {

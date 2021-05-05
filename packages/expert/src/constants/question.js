@@ -4,9 +4,14 @@ export const WorkspaceScreen = {
   WORKING: 'working',
 };
 
+export const TopicId = {
+  MATH: 1,
+  ENGLISH: 2,
+};
+
 export const Topic = {
-  MATH: 'math',
-  ENGLISH: 'english',
+  [TopicId.MATH]: 'Math',
+  [TopicId.ENGLISH]: 'English',
 };
 
 export const QuestionState = {

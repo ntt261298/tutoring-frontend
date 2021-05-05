@@ -41,6 +41,20 @@ export default (state = INITIAL_STATE, action) => {
       };
     }
 
+    case UserAction.GET_STATE_SUCCESS: {
+      return {
+        ...state,
+        workingState: action.payload,
+      };
+    }
+
+    case UserAction.UPDATE_STATE: {
+      return {
+        ...state,
+        workingState: action.payload,
+      };
+    }
+
     default:
       break;
   }

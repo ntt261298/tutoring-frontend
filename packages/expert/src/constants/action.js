@@ -23,4 +23,8 @@ export const FeedbackAction = {
 export const QuestionAction = {
   GET_STATE: 'GET_STATE',
   GET_STATE_SUCCESS: 'GET_STATE_SUCCESS',
+  UPDATE_STATE: 'UPDATE_STATE',
+  CLAIM: 'CLAIM',
+  SKIP: 'SKIP',
+  END_SESSION: 'END_SESSION',
 };

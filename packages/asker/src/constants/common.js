@@ -1,5 +1,6 @@
 export const ErrorCode = {
   UNAUTHORIZED: 40100,
+  ACTIVE_QUESTION: 40035,
 };
 
 export const LOCAL_STORAGE_PREFIX = 'thesis_tutoring.asker';

@@ -11,6 +11,13 @@ export default (state = INITIAL_STATE, action) => {
       };
     }
 
+    case QuestionAction.UPDATE_STATE: {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    }
+
     default:
       break;
   }

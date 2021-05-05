@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Summary from './Summary';
 import Chat from './Chat';
-import Editor from './Editor';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -13,7 +12,6 @@ const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: 20,
     padding: '10px 20px',
-    height: '100%',
   },
   claimButton: {
     marginTop: 10,
@@ -38,38 +36,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Bidding = () => {
+const Math = () => {
   const classes = useStyles();
 
   return (
     <>
       <Grid container className={classes.container}>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Summary />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={8}>
           <Chat />
-        </Grid>
-        <Grid item xs={4}>
-          <Editor
-            editorStyle={{
-              flexShrink: 1,
-              marginLeft: 20,
-              marginTop: 20,
-              padding: 10,
-              height: '100%',
-            }}
-            toolMenuStyle={{
-              position: 'absolute',
-              bottom: 15,
-              zIndex: '3',
-              width: '20%',
-            }}
-          />
         </Grid>
       </Grid>
     </>
   );
 };
 
-export default Bidding;
+export default Math;

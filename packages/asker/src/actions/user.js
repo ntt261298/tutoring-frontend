@@ -44,3 +44,13 @@ export const purchasePackage = data => ({
   type: UserAction.PURCHASE_CREDIT_PACKAGES,
   promise: post('/user/me/transactions', data),
 });
+
+export const getState = () => ({
+  type: UserAction.GET_STATE,
+  promise: get('/user/me/state'),
+});
+
+export const updateState = data => ({
+  type: UserAction.UPDATE_STATE,
+  payload: data,
+});

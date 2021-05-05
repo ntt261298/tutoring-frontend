@@ -4,9 +4,13 @@ import { ModalKey } from 'constants/modal';
 import { showModal } from 'actions/modal';
 import { ModalContainer } from '@tutoring/commons/components';
 import Feedback from './Feedback';
+import BiddingDialog from './BiddingDialog';
+import BidFail from './BidFail';
 
 const modalsMap = {
   [ModalKey.FEEDBACK]: Feedback,
+  [ModalKey.BIDDING_DIALOG]: BiddingDialog,
+  [ModalKey.BID_FAIL]: BidFail,
 };
 
 export default () => {

@@ -1,3 +1,5 @@
 export const ModalKey = {
   FEEDBACK: 'FEEDBACK',
+  BID_FAIL: 'BID_FAIL',
+  BIDDING_DIALOG: 'BIDDING_DIALOG',
 };

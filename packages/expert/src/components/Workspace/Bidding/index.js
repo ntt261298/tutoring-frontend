@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
@@ -6,7 +7,11 @@ import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import { Topic } from 'constants/question';
+import { ModalKey } from 'constants/modal';
+import { claim, skip } from 'actions/question';
 import expertWorkingLogo from 'assets/images/expert-working.png';
+import { showModal } from 'actions/modal';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -44,11 +49,32 @@ const useStyles = makeStyles(theme => ({
 
 const Bidding = () => {
   const classes = useStyles();
-  const [earnings, setEarnings] = useState(10);
+  const dispatch = useDispatch();
+  const questionInfo = useSelector(state => state.question?.questionInfo);
+  const [earnings, setEarnings] = useState(8);
 
   const handleChangeEarnings = (e, newEarnings) => {
     setEarnings(newEarnings);
   };
+
+  const handleSkip = () => {
+    dispatch(skip({
+      questionId: questionInfo?.id,
+    }));
+  };
+
+  const handleClaim = async () => {
+    const { result } = await dispatch(claim({
+      questionId: questionInfo?.id,
+      bidAmount: earnings,
+    }));
+
+    if (result) {
+      dispatch(showModal(ModalKey.BIDDING_DIALOG));
+    }
+  };
+
+  useEffect(() => () => dispatch(showModal(null)), []);
 
   return (
     <>
@@ -59,11 +85,13 @@ const Bidding = () => {
               Question content
             </Box>
             <Box component="p">
-              This is a test question. Please skip this. Thanks.
+              {questionInfo?.text}
             </Box>
             <Divider />
             <Box component="h3">
-              Topic: Math
+              Topic:
+              {' '}
+              {Topic[questionInfo?.topicId] || 'Math'}
             </Box>
             <Divider />
             <Box component="h3">
@@ -78,11 +106,17 @@ const Bidding = () => {
               min={0}
               max={16}
             />
-            <Button className={classes.claimButton}>
+            <Button
+              className={classes.claimButton}
+              onClick={handleClaim}
+            >
               Claim
             </Button>
             <Divider />
-            <Button className={classes.skipButton}>
+            <Button
+              className={classes.skipButton}
+              onClick={handleSkip}
+            >
               Skip
             </Button>
           </Paper>

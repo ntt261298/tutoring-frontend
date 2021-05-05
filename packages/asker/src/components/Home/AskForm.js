@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -11,8 +12,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Alert from '@material-ui/lab/Alert';
-import { TopicId } from 'constants/common';
+import { TopicId, SubscriptionStatus, ErrorCode } from 'constants/common';
 import { validateFile } from 'utils/validation';
+import { ModalKey } from 'constants/modal';
+import { newQuestion } from 'actions/question';
+import { showModal } from 'actions/modal';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -54,10 +58,19 @@ const useStyles = makeStyles(() => ({
 
 const AskForm = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  // Select from redux
+  const question = useSelector(({ user }) => user.workingState?.question);
+  const freeCreditBalance = useSelector(({ user }) => user.freeCreditBalance || 0);
+  const paidCreditBalance = useSelector(({ user }) => user.paidCreditBalance || 0);
+  const isSubscriber = useSelector(({ userSubscription }) => userSubscription.status === SubscriptionStatus.ACTIVE);
+
+  // Local state
   const [selectedTopic, setSelectedTopic] = useState(TopicId.MATH);
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileError, setFileError] = useState(null);
   const [content, setContent] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   const handleTopicChange = (e) => {
     setSelectedTopic(e.target.value);
@@ -88,6 +101,26 @@ const AskForm = () => {
   const handleContentChange = (e) => {
     setContent(e.target.value);
   };
+
+  const handlePostQuestion = async () => {
+    if (!isSubscriber && !freeCreditBalance && !paidCreditBalance) {
+      dispatch(showModal(ModalKey.INSUFFICIENT_BALANCE));
+      return;
+    }
+    setSubmitting(true);
+    const data = {
+      topicId: selectedTopic, content, file: selectedFile,
+    }
+    const { error } = await dispatch(newQuestion(data));
+
+    if (error && error.data?.errorCode === ErrorCode.ACTIVE_QUESTION) {
+      dispatch(showModal(ModalKey.ACTIVE_QUESTION, { questionId: question?.id  }));
+    }
+    if (!error) {
+      dispatch(showModal(ModalKey.MATCHING_EXPERT));
+    }
+    setSubmitting(false);
+  }
 
   return (
     <Card className={classes.root}>
@@ -147,7 +180,8 @@ const AskForm = () => {
           variant="contained"
           color="primary"
           className={classes.submitButton}
-          disabled={!content}
+          disabled={!content || submitting}
+          onClick={handlePostQuestion}
         >
           Connect to an Expert
         </Button>

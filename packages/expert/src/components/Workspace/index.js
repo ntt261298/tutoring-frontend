@@ -4,9 +4,12 @@ import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { QuestionState } from 'constants/question';
-import { getState } from 'actions/question';
-import { connect } from 'actions/user';
-import HeaderWorking from 'components/Commons/HeaderWorking';
+import { ModalKey } from 'constants/modal';
+import { getState, updateState } from 'actions/question';
+import { connect, disconnect } from 'actions/user';
+import { showModal } from 'actions/modal';
+import pusher from 'utils/pusher';
+import HeaderWorking from 'components/Workspace/Commons/HeaderWorking';
 import Waiting from './Waiting';
 import Bidding from './Bidding';
 import Working from './Working';
@@ -31,18 +34,38 @@ const WorkSpace = () => {
   const questionState = useSelector(state => state.question?.state);
   const [connecting, setConnecting] = useState(true);
 
-  console.log('question', questionInfo);
+  const onExpertStateChange = (state) => {
+    if (state.state === QuestionState.STATE_NOT_ROUTED && questionState === QuestionState.STATE_BIDDING && questionInfo) {
+      // Bidding => Not Routed
+      showModal(ModalKey.BID_FAIL);
+    }
+    dispatch(updateState(state));
+  };
+
+  const setupPusher = () => {
+    pusher.bind('account', 'state_change', onExpertStateChange);
+  };
+
+  const disconnectPusher = () => {
+    pusher.unbind('account', 'state_change');
+  };
 
   const initConnection = async () => {
     const { error } = await dispatch(connect());
     if (!error) {
       await dispatch(getState());
+      setupPusher();
     }
     setConnecting(false);
   };
 
   useEffect(() => {
     initConnection();
+
+    return () => {
+      disconnectPusher();
+      dispatch(disconnect());
+    };
   }, []);
 
   if (connecting) {
@@ -54,7 +77,7 @@ const WorkSpace = () => {
   return (
     <Box className={classes.container}>
       <CssBaseline />
-      <HeaderWorking questionState={questionState} />
+      <HeaderWorking />
       {questionState === QuestionState.STATE_NOT_ROUTED && <Waiting />}
       {[QuestionState.STATE_BIDDING, QuestionState.STATE_KING].includes(questionState) && <Bidding />}
       {[QuestionState.STATE_WORKING, QuestionState.STATE_RATING].includes(questionState) && <Working />}

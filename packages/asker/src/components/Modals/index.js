@@ -5,10 +5,20 @@ import { showModal } from 'actions/modal';
 import { ModalContainer } from '@tutoring/commons/components';
 import Feedback from './Feedback';
 import Payment from './Payment';
+import MatchingExpert from './MatchingExpert';
+import InsufficientBalance from './InsufficientBalance';
+import QuestionDead from './QuestionDead';
+import Rate from './Rate';
+import ActiveQuestion from './ActiveQuestion';
 
 const modalsMap = {
   [ModalKey.FEEDBACK]: Feedback,
   [ModalKey.PAYMENT]: Payment,
+  [ModalKey.MATCHING_EXPERT]: MatchingExpert,
+  [ModalKey.INSUFFICIENT_BALANCE]: InsufficientBalance,
+  [ModalKey.QUESTION_DEAD]: QuestionDead,
+  [ModalKey.RATE]: Rate,
+  [ModalKey.ACTIVE_QUESTION]: ActiveQuestion,
 };
 
 export default () => {

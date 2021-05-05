@@ -1,5 +1,6 @@
 import invariant from 'invariant';
 import Pusher from 'pusher-js';
+import { CaseConverter } from '@tutoring/commons/utils';
 import config from 'configuration';
 import auth from './auth';
 
@@ -15,6 +16,10 @@ const CHANNEL = {
 
 const connect = () => {
   const accessToken = auth.getToken();
+
+  // Set to true if want to log all Pusher state changes.
+  Pusher.logToConsole = true;
+
   pusher = new Pusher(config.pusherKey, {
     cluster: config.pusherCluster,
     authEndpoint: `${config.apiUrl}/expert/me/pusher/auth`,
@@ -85,6 +90,11 @@ const unsubscribe = (channelType) => {
   subscribedChannels = subscribedChannels.filter(channel => channel !== channelType);
 };
 
+const bindWithCaseConverter = (state, callback) => {
+  const newState = CaseConverter.snakeCaseToCamelCase(state);
+  callback(newState);
+};
+
 const bind = (channelType, eventName, callback) => {
   invariant(pusher, 'PusherAPI is disconnected');
   invariant(
@@ -93,10 +103,10 @@ const bind = (channelType, eventName, callback) => {
   );
   if (channelType === 'account') {
     invariant(accountChannel, 'PusherAPI account channel is not subscribed');
-    accountChannel.bind(eventName, callback);
+    accountChannel.bind(eventName, state => bindWithCaseConverter(state, callback));
   } else if (channelType === 'question') {
     invariant(questionChannel, 'PusherAPI question channel is not subscribed');
-    questionChannel.bind(eventName, callback);
+    questionChannel.bind(eventName, state => bindWithCaseConverter(state, callback));
   }
 };
 
@@ -109,18 +119,6 @@ const unbind = (channelType, eventName, callback) => {
     accountChannel.unbind(eventName, callback);
   } else if ((channelType === CHANNEL.QUESTION) && questionChannel) {
     questionChannel.unbind(eventName, callback);
-  }
-};
-
-const bindConnectionState = (callback) => {
-  if (pusher) {
-    pusher.connection.bind('state_change', callback);
-  }
-};
-
-const unbindConnectionState = () => {
-  if (pusher) {
-    pusher.connection.unbind('state_change');
   }
 };
 
@@ -156,7 +154,5 @@ export default {
   bindSubscriptionSucceeded,
   bind,
   unbind,
-  bindConnectionState,
-  unbindConnectionState,
   sendClientEvent,
 };

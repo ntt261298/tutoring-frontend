@@ -1,16 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { showModal } from 'actions/modal';
 import { disconnect } from 'actions/user';
-import { getState } from 'actions/question';
-import { ModalKey } from 'constants/modal';
+import { getState, endSession } from 'actions/question';
 import { QuestionState } from 'constants/question';
+import BiddingTimer from 'components/Workspace/Bidding/BiddingTimer';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -42,19 +42,27 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.warning.dark,
     },
   },
+  timer: {
+    textAlign: 'center',
+  },
 }));
 
-const HeaderWorking = ({
-  questionState,
-}) => {
+const HeaderWorking = () => {
   const history = useHistory();
   const classes = useStyles();
   const dispatch = useDispatch();
+  const questionState = useSelector(state => state.question?.state);
+  const questionInfo = useSelector(state => state.question?.questionInfo);
+  const remainClaimTime = useSelector(state => state.question?.remainClaimTime || 0);
 
   const stopWorking = async () => {
     await dispatch(disconnect());
     history.push('/home');
     dispatch(getState());
+  };
+
+  const handleEndSession = () => {
+    dispatch(endSession(questionInfo?.id));
   };
 
   return (
@@ -63,6 +71,14 @@ const HeaderWorking = ({
         <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle} onClick={() => history.push('/home')}>
           Tutoring company
         </Typography>
+        <Box className={classes.timer}>
+          {[QuestionState.STATE_BIDDING, QuestionState.STATE_KING].includes(questionState) && (
+            <BiddingTimer
+              remainingTime={remainClaimTime}
+              onTimeout={() => {}}
+            />
+          )}
+        </Box>
         <nav>
           {[QuestionState.STATE_NOT_ROUTED, QuestionState.STATE_BIDDING, QuestionState.STATE_KING].includes(questionState) && (
             <Button className={classes.actionButton} onClick={() => stopWorking()}>
@@ -70,7 +86,7 @@ const HeaderWorking = ({
             </Button>
           )}
           {[QuestionState.STATE_WORKING, QuestionState.STATE_RATING].includes(questionState) && (
-            <Button className={classes.actionButton} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
+            <Button className={classes.actionButton} onClick={() => handleEndSession()}>
               End Session
             </Button>
           )}
