@@ -54,3 +54,8 @@ export const updateState = data => ({
   type: UserAction.UPDATE_STATE,
   payload: data,
 });
+
+export const getTransactions = params => ({
+  type: UserAction.GET_TRANSACTIONS,
+  promise: get('/user/me/transactions', params),
+});

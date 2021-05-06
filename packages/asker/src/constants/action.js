@@ -21,6 +21,7 @@ export const UserAction = {
   GET_STATE: 'GET_STATE',
   GET_STATE_SUCCESS: 'GET_STATE_SUCCESS',
   UPDATE_STATE: 'UPDATE_STATE',
+  GET_TRANSACTIONS: 'GET_TRANSACTIONS',
 };
 
 export const FeedbackAction = {
@@ -44,4 +45,8 @@ export const QuestionAction = {
   RATE: 'RATE',
   NEW_MESSAGE: 'NEW_MESSAGE',
   SEND_MESSAGE: 'SEND_MESSAGE',
+};
+
+export const ExpertAction = {
+  GET_EXPERTS: 'GET_EXPERTS',
 };

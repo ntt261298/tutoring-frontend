@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -11,6 +11,7 @@ import ContactsIcon from '@material-ui/icons/Contacts';
 import Header from 'components/Commons/Header';
 import Footer from 'components/Commons/Footer';
 import { Grid } from '@material-ui/core';
+import { getInfo } from 'actions/user';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -76,7 +77,12 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
   const nickname = useSelector(({ user }) => user.nickname);
+
+  useEffect(() => {
+    dispatch(getInfo());
+  }, []);
 
   return (
     <React.Fragment>

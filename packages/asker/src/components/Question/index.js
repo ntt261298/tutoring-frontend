@@ -72,7 +72,16 @@ const Question = () => {
 
   if (connecting) {
     return (
-      <Box className={classes.center}>Connecting...</Box>
+      <Box
+        style={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        Connecting...
+      </Box>
     );
   }
 

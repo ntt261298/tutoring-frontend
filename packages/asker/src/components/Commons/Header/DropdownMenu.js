@@ -11,7 +11,6 @@ import Money from '@material-ui/icons/Money';
 import People from '@material-ui/icons/People';
 import Backspace from '@material-ui/icons/Backspace';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-
 import { logout } from 'actions/user';
 
 const StyledMenu = withStyles({
@@ -93,13 +92,13 @@ const DropdownMenu = () => {
           </ListItemIcon>
           <ListItemText primary="My Profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => history.push('/transaction')}>
           <ListItemIcon>
             <Money fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Transactions" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => history.push('/find-expert')}>
           <ListItemIcon>
             <People fontSize="small" />
           </ListItemIcon>

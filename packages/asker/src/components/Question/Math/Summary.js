@@ -4,13 +4,12 @@ import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import { Topic } from 'constants/common';
 
 const useStyles = makeStyles(() => ({
   paper: {
     marginTop: 20,
     padding: '10px 20px',
-    height: '100%',
+    height: 'calc(100vh - 100px)',
   },
   centerStyle: {
     display: 'flex',
@@ -36,11 +35,13 @@ const Summary = () => {
       </Box>
       <Divider />
       <Box component="h3">
-        Topic: {question?.topic?.name}
+        Topic:
+        {' '}
+        {question?.topic?.name}
       </Box>
       <Divider />
       <Box component="h3">
-        {`File: ${!question?.file && 'No file'}`}
+        {`File: ${!question?.file ? 'No file' : ''}`}
       </Box>
       {question?.file && (
         <Box className={classes.centerStyle}>

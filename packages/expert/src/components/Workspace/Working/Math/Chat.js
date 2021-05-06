@@ -116,7 +116,7 @@ const Chat = () => {
                         p={1}
                         m={1}
                         fontSize="1rem"
-                        className={classes.bubblePersonal}
+                        className={classes.bubblePeer}
                       >
                         {message.message}
                       </Box>

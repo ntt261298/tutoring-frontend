@@ -8,6 +8,7 @@ export const LOCAL_STORAGE_PREFIX = 'thesis_tutoring.asker';
 export const TopicId = {
   MATH: 1,
   ENGLISH: 2,
+  ALL: 3,
 };
 
 export const Topic = {

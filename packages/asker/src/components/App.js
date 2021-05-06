@@ -18,6 +18,8 @@ import Home from './Home';
 import Pricing from './Pricing';
 import Profile from './Profile';
 import Question from './Question';
+import FindExpert from './FindExpert';
+import Transaction from './Transaction';
 
 function App() {
   const dispatch = useDispatch();
@@ -109,6 +111,12 @@ function App() {
         </Route>
         <Route path="/question/:questionId">
           <Question />
+        </Route>
+        <Route path="/find-expert">
+          <FindExpert />
+        </Route>
+        <Route path="/transaction">
+          <Transaction />
         </Route>
         <Redirect to="/home" />
       </Switch>
