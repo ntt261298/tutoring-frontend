@@ -18,6 +18,16 @@ export default (state = INITIAL_STATE, action) => {
       };
     }
 
+    case QuestionAction.NEW_MESSAGE: {
+      return {
+        ...state,
+        questionInfo: {
+          ...state.questionInfo,
+          messages: state.questionInfo.messages.concat(action.payload),
+        },
+      };
+    }
+
     default:
       break;
   }

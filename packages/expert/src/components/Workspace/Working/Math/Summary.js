@@ -7,15 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Topic } from 'constants/question';
 
 const useStyles = makeStyles(() => ({
-  container: {
-    paddingLeft: '30px',
-    paddingRight: '30px',
-    height: '100%',
-  },
   paper: {
     marginTop: 20,
     padding: '10px 20px',
-    height: '100%',
+    height: 'calc(100vh - 100px)',
   },
   centerStyle: {
     display: 'flex',
@@ -45,7 +40,7 @@ const Summary = () => {
       </Box>
       <Divider />
       <Box component="h3">
-        {`File: ${!questionInfo?.file && 'No file'}`}
+        {`File: ${!questionInfo?.file ? 'No file' : ''}`}
       </Box>
       {questionInfo?.file && (
         <Box className={classes.centerStyle}>

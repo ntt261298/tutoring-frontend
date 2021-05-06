@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
-import { getQuestionById } from 'actions/question';
+import { getQuestionById, newMessage } from 'actions/question';
 import { showModal } from 'actions/modal';
 import { QuestionState } from 'constants/question';
 import { ModalKey } from 'constants/modal';
@@ -23,10 +23,14 @@ const useStyles = makeStyles(() => ({
 const Question = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
+  const [connecting, setConnecting] = useState(true);
   const match = useRouteMatch('/question/:questionId');
   const question = useSelector(({ user }) => user.workingState?.question);
 
-  const pusherNewMessage = () => {};
+  const pusherNewMessage = (message) => {
+    dispatch(newMessage(message));
+  };
 
   const pusherQuestionDone = () => {};
 
@@ -34,6 +38,12 @@ const Question = () => {
     pusher.subscribe('question', questionId);
     pusher.bind('question', 'new_message', pusherNewMessage);
     pusher.bind('question', 'question_done', pusherQuestionDone);
+  };
+
+  const disconnectPusher = () => {
+    pusher.unsubscribe('question');
+    pusher.unbind('question', 'new_message');
+    pusher.unbind('question', 'question_done');
   };
 
   const fetchQuestionInfo = async () => {
@@ -48,12 +58,23 @@ const Question = () => {
       if (state === QuestionState.RATING) {
         dispatch(showModal(ModalKey.RATE, { questionId: result.id }));
       }
+      setConnecting(false);
+    } else {
+      history.pushState('/home');
     }
   };
 
   useEffect(() => {
     fetchQuestionInfo();
+
+    return () => disconnectPusher();
   }, []);
+
+  if (connecting) {
+    return (
+      <Box className={classes.center}>Connecting...</Box>
+    );
+  }
 
   return (
     <>

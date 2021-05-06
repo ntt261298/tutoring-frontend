@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import { sendMessage } from 'actions/question';
 import Summary from './Summary';
 import Chat from './Chat';
 import Editor from './Editor';
@@ -38,8 +40,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Bidding = () => {
+const Math = () => {
   const classes = useStyles();
+  const questionInfo = useSelector(state => state.question?.questionInfo);
+
+  const handleSendMessage = data => sendMessage({
+    questionId: questionInfo?.id,
+    ...data,
+  });
 
   return (
     <>
@@ -57,7 +65,7 @@ const Bidding = () => {
               marginLeft: 20,
               marginTop: 20,
               padding: 10,
-              height: '100%',
+              height: 'calc(100vh - 100px)',
             }}
             toolMenuStyle={{
               position: 'absolute',
@@ -65,6 +73,7 @@ const Bidding = () => {
               zIndex: '3',
               width: '20%',
             }}
+            onReceiveResult={handleSendMessage}
           />
         </Grid>
       </Grid>
@@ -72,4 +81,4 @@ const Bidding = () => {
   );
 };
 
-export default Bidding;
+export default Math;

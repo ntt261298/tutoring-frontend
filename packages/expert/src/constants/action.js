@@ -27,4 +27,6 @@ export const QuestionAction = {
   CLAIM: 'CLAIM',
   SKIP: 'SKIP',
   END_SESSION: 'END_SESSION',
+  SEND_MESSAGE: 'SEND_MESSAGE',
+  NEW_MESSAGE: 'NEW_MESSAGE',
 };
