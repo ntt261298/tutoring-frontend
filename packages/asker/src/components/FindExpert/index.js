@@ -104,7 +104,7 @@ export default function FindExpert() {
               <Box component="h2">
                 <SearchIcon />
                 {' '}
-                Search Experts
+                Find Experts
               </Box>
             </Grid>
           </Grid>

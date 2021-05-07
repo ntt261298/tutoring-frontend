@@ -50,3 +50,8 @@ export const newMessage = message => ({
   type: QuestionAction.NEW_MESSAGE,
   payload: message,
 });
+
+export const getQuestions = params => ({
+  type: QuestionAction.GET_QUESTIONS,
+  promise: get('/user/me/questions', params),
+});

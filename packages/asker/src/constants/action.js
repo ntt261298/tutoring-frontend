@@ -45,6 +45,7 @@ export const QuestionAction = {
   RATE: 'RATE',
   NEW_MESSAGE: 'NEW_MESSAGE',
   SEND_MESSAGE: 'SEND_MESSAGE',
+  GET_QUESTIONS: 'GET_QUESTIONS',
 };
 
 export const ExpertAction = {

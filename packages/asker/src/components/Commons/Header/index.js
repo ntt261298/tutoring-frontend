@@ -66,7 +66,7 @@ const Header = () => {
           <Link variant="button" color="textPrimary" href="/pricing" className={classes.link}>
             Pricing
           </Link>
-          <Link variant="button" color="textPrimary" href="/my-questions" className={classes.link}>
+          <Link variant="button" color="textPrimary" href="/question-history" className={classes.link}>
             My Questions
           </Link>
           <Box component="span" color="textPrimary" className={classes.feedback} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
