@@ -11,6 +11,7 @@ import SignIn from './SignIn';
 import Home from './Home';
 import Profile from './Profile';
 import Workspace from './Workspace';
+import Earnings from './Earnings';
 
 function App() {
   const dispatch = useDispatch();
@@ -78,6 +79,9 @@ function App() {
         </Route>
         <Route path="/workspace">
           <Workspace />
+        </Route>
+        <Route path="/earnings">
+          <Earnings />
         </Route>
         <Redirect to="/home" />
       </Switch>

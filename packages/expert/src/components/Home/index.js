@@ -11,7 +11,8 @@ import ContactsIcon from '@material-ui/icons/Contacts';
 import Header from 'components/Commons/Header';
 import Footer from 'components/Commons/Footer';
 import { Grid } from '@material-ui/core';
-import { getInfo } from 'actions/user';
+import { getEarnings, getInfo } from 'actions/user';
+import { TopicId } from 'constants/question';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -78,7 +79,25 @@ const Home = () => {
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
-  const nickname = useSelector(({ user }) => user.nickname);
+  const user = useSelector(state => state.user);
+
+  const calculateEarnings = (earnings) => {
+    let total = 0;
+    earnings.forEach((earning) => {
+      total += earning.amount;
+    });
+    return total;
+  };
+
+  const getTopicRank = (ranks, topicId) => {
+    let rankScore = 0;
+    ranks.forEach((rank) => {
+      if (rank.topicId === topicId) {
+        rankScore = rank.scoreAvg;
+      }
+    });
+    return rankScore;
+  };
 
   useEffect(() => {
     dispatch(getInfo());
@@ -94,30 +113,41 @@ const Home = () => {
           Start working to help others and earn your money
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={5}>
+          <Grid item xs={6}>
             <Paper className={classes.paper}>
               <Box component="h2" className={classes.infoHeader}>
-                {nickname && `Hello ${nickname}!`}
-                {!nickname && 'Hello expert!'}
+                {user.nickname && `Hello ${user.nickname}!`}
+                {!user.nickname && 'Hello expert!'}
               </Box>
               <Grid container className={classes.headerBoxContainer} spacing={2}>
-                <Grid item className={classes.headerBoxItem} xs={6}>
+                <Grid item className={classes.headerBoxItem} xs={4}>
                   <Box className={classes.headerBoxInfo}>
                     Earnings
                   </Box>
                   <Box component="h2" className={classes.headerBoxDetail}>
-                    1.0
+                    {calculateEarnings(user.expertEarnings)}
                   </Box>
                   <Box>
                     USD
                   </Box>
                 </Grid>
-                <Grid item className={classes.headerBoxItem} xs={6}>
+                <Grid item className={classes.headerBoxItem} xs={4}>
                   <Box className={classes.headerBoxInfo}>
-                    Ratings
+                    Ratings - Math
                   </Box>
                   <Box component="h2" className={classes.headerBoxDetail}>
-                    2.5
+                    {getTopicRank(user.expertRanks, TopicId.MATH)}
+                  </Box>
+                  <Box>
+                    Per 5
+                  </Box>
+                </Grid>
+                <Grid item className={classes.headerBoxItem} xs={4}>
+                  <Box className={classes.headerBoxInfo}>
+                    Ratings - English
+                  </Box>
+                  <Box component="h2" className={classes.headerBoxDetail}>
+                    {getTopicRank(user.expertRanks, TopicId.ENGLISH)}
                   </Box>
                   <Box>
                     Per 5
@@ -126,7 +156,7 @@ const Home = () => {
               </Grid>
             </Paper>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={6}>
             <Paper className={classes.paper} onClick={() => history.push('/workspace')}>
               <Box component="h2" className={classes.startWorking}>
                 <ContactsIcon className={classes.startWorkingIcon} />

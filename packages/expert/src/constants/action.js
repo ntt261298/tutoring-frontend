@@ -14,6 +14,7 @@ export const UserAction = {
   UPDATE_PASSWORD: 'UPDATE_PASSWORD',
   CONNECT: 'CONNECT',
   DISCONNECT: 'DISCONNECT',
+  GET_EARNINGS: 'GET_EARNINGS',
 };
 
 export const FeedbackAction = {

@@ -93,18 +93,6 @@ const DropdownMenu = () => {
           </ListItemIcon>
           <ListItemText primary="My Profile" />
         </StyledMenuItem>
-        <StyledMenuItem>
-          <ListItemIcon>
-            <Money fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Transactions" />
-        </StyledMenuItem>
-        <StyledMenuItem>
-          <ListItemIcon>
-            <People fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Find Expert" />
-        </StyledMenuItem>
         <StyledMenuItem onClick={() => dispatch(logout())}>
           <ListItemIcon>
             <Backspace fontSize="small" />

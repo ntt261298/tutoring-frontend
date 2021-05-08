@@ -37,3 +37,8 @@ export const disconnect = () => ({
   type: UserAction.CONNECT,
   promise: del('/expert/me/connections'),
 });
+
+export const getEarnings = params => ({
+  type: UserAction.GET_EARNINGS,
+  promise: get('/expert/me/earnings', params),
+});

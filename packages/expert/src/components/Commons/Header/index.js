@@ -57,8 +57,8 @@ const Header = () => {
           Tutoring company
         </Typography>
         <nav>
-          <Link variant="button" color="textPrimary" href="/my-questions" className={classes.link}>
-            Answered questions
+          <Link variant="button" color="textPrimary" href="/earnings" className={classes.link}>
+            Your earnings
           </Link>
           <Box component="span" color="textPrimary" className={classes.feedback} onClick={() => dispatch(showModal(ModalKey.FEEDBACK))}>
             Feedback
