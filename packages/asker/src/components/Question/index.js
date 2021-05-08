@@ -60,7 +60,7 @@ const Question = () => {
       }
       setConnecting(false);
     } else {
-      history.pushState('/home');
+      history.push('/home');
     }
   };
 
