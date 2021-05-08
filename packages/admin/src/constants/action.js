@@ -24,3 +24,8 @@ export const ExpertAction = {
 export const FeedbackAction = {
   GET_FEEDBACK: 'GET_FEEDBACK',
 };
+
+export const SubscriptionPackageAction = {
+  GET_SUBSCRIPTION_PACKAGES: 'GET_SUBSCRIPTION_PACKAGES',
+  UPDATE_SUBSCRIPTION_PACKAGE: 'UPDATE_SUBSCRIPTION_PACKAGE',
+};

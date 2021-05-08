@@ -9,6 +9,7 @@ import Home from './Home';
 import Experts from './Experts';
 import Users from './Users';
 import Feedback from './Feedback';
+import SubscriptionPackage from './SubscriptionPackage';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/feedback">
           <Feedback />
+        </Route>
+        <Route path="/subscription-packages">
+          <SubscriptionPackage />
         </Route>
         <Redirect to="/home" />
       </Switch>

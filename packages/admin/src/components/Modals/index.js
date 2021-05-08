@@ -10,6 +10,7 @@ import UpdateExpert from './UpdateExpert';
 import ConfirmUndoDelete from './ConfirmUndoDelete';
 import AddUser from './AddUser';
 import UpdateUser from './UpdateUser';
+import UpdateSubscriptionPackage from './UpdateSubscriptionPackage';
 
 const modalsMap = {
   [ModalKey.ADD_EXPERT]: AddExpert,
@@ -19,6 +20,7 @@ const modalsMap = {
   [ModalKey.CONFIRM_UNDO_DELETE]: ConfirmUndoDelete,
   [ModalKey.ADD_USER]: AddUser,
   [ModalKey.UPDATE_USER]: UpdateUser,
+  [ModalKey.UPDATE_SUBSCRIPTION_PACKAGE]: UpdateSubscriptionPackage,
 };
 
 export default () => {

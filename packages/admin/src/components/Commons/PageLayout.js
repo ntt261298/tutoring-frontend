@@ -14,7 +14,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Copyright } from '@tutoring/commons/components';
 import Navigator from 'components/Commons/Navigator';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles(theme => ({
   root: {

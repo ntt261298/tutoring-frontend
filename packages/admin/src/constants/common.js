@@ -19,3 +19,9 @@ export const AccountStatus = {
   ACTIVE: 'active',
   DELETED: 'deleted',
 };
+
+export const PackageType = {
+  BUNDLE: 'bundle',
+  MONTHLY: 'monthly',
+  YEARLY: 'yearly',
+};

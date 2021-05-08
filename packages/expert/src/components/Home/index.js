@@ -11,7 +11,7 @@ import ContactsIcon from '@material-ui/icons/Contacts';
 import Header from 'components/Commons/Header';
 import Footer from 'components/Commons/Footer';
 import { Grid } from '@material-ui/core';
-import { getEarnings, getInfo } from 'actions/user';
+import { getInfo } from 'actions/user';
 import { TopicId } from 'constants/question';
 
 const useStyles = makeStyles(theme => ({

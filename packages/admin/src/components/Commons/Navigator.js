@@ -21,7 +21,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import Backspace from '@material-ui/icons/Backspace';
 import { logout } from 'actions/user';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles(theme => ({
   drawerPaper: {
@@ -117,11 +117,17 @@ const Navigator = ({
           </ListItemIcon>
           <ListItemText primary="Feedback" />
         </ListItem>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/subscription-packages');
+          }}
+          selected={pathname === '/subscription-packages'}
+        >
           <ListItemIcon>
             <LayersIcon />
           </ListItemIcon>
-          <ListItemText primary="Integrations" />
+          <ListItemText primary="Subscription Packages" />
         </ListItem>
       </List>
       <Divider />
