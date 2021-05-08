@@ -27,3 +27,8 @@ export const undoDeleteExpert = expertId => ({
   type: ExpertAction.UNDO_DELETE_EXPERT,
   promise: put(`/admin/experts/${expertId}/undo-delete`),
 });
+
+export const getActiveExperts = () => ({
+  type: ExpertAction.GET_ACTIVE_EXPERTS,
+  promise: get('/admin/active-experts'),
+});

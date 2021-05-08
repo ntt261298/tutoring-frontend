@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { getTransactions } from 'actions/transaction';
+import { getActiveExperts } from 'actions/expert';
 import Title from './Title';
 
 function preventDefault(event) {
@@ -16,29 +16,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Deposits() {
+export default function ActiveExperts() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const date = new Date();
-  const [totalEarnings, setTotalEarnings] = useState(null);
-
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December',
-  ];
-
-  const getTotalEarnings = (transactions) => {
-    let total = 0;
-    transactions.forEach((transaction) => {
-      total += transaction.amount;
-    });
-    return total;
-  };
+  const [totalActiveExperts, setTotalActiveExperts] = useState(null);
 
   const fetchTransactions = async () => {
-    const { result } = await dispatch(getTransactions());
+    const { result } = await dispatch(getActiveExperts());
 
     if (result) {
-      setTotalEarnings(getTotalEarnings(result.transactions));
+      setTotalActiveExperts(result.activeExperts);
     }
   };
 
@@ -48,19 +35,16 @@ export default function Deposits() {
 
   return (
     <React.Fragment>
-      <Title>Total Revenue</Title>
+      <Title>Total Active Experts</Title>
       <Typography component="p" variant="h4">
-        $
-        {totalEarnings || 0}
+        {totalActiveExperts || 0}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        until
-        {' '}
-        {`${monthNames[date.getMonth()]} ${date.getDate()}th, ${date.getFullYear()}`}
+        experts are working or waiting for questions
       </Typography>
       <div>
         <Link color="primary" href="/home" onClick={preventDefault}>
-          View current month revenue
+          View expert list
         </Link>
       </div>
     </React.Fragment>

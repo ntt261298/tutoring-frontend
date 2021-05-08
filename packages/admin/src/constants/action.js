@@ -19,6 +19,8 @@ export const ExpertAction = {
   UPDATE_EXPERT: 'UPDATE_EXPERT',
   DELETE_EXPERT: 'DELETE_EXPERT',
   UNDO_DELETE_EXPERT: 'UNDO_DELETE_EXPERT',
+  GET_ACTIVE_EXPERTS: 'GET_ACTIVE_EXPERTS',
+  GET_QUESTIONS: 'GET_QUESTIONS',
 };
 
 export const FeedbackAction = {
@@ -28,4 +30,13 @@ export const FeedbackAction = {
 export const SubscriptionPackageAction = {
   GET_SUBSCRIPTION_PACKAGES: 'GET_SUBSCRIPTION_PACKAGES',
   UPDATE_SUBSCRIPTION_PACKAGE: 'UPDATE_SUBSCRIPTION_PACKAGE',
+};
+
+export const TransactionAction = {
+  GET_TRANSACTIONS: 'GET_TRANSACTIONS',
+};
+
+export const QuestionAction = {
+  GET_ACTIVE_QUESTIONS: 'GET_ACTIVE_QUESTIONS',
+  GET_QUESTIONS: 'GET_QUESTIONS',
 };

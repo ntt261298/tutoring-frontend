@@ -4,9 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import PageLayout from 'components/Commons/PageLayout';
-import Chart from './Chart';
+import ActiveExperts from './ActiveExperts';
+import ActiveQuestions from './ActiveQuestions';
 import Deposits from './Deposits';
-import Orders from './Orders';
+import Questions from './Questions/index';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -27,22 +28,28 @@ export default function Dashboard() {
   return (
     <PageLayout>
       <Grid container spacing={3}>
-        {/* Chart */}
-        <Grid item xs={12} md={8} lg={9}>
+        {/* Active Experts */}
+        <Grid item xs={12} md={4}>
           <Paper className={fixedHeightPaper}>
-            <Chart />
+            <ActiveExperts />
+          </Paper>
+        </Grid>
+        {/* Active Questions */}
+        <Grid item xs={12} md={4}>
+          <Paper className={fixedHeightPaper}>
+            <ActiveQuestions />
           </Paper>
         </Grid>
         {/* Recent Deposits */}
-        <Grid item xs={12} md={4} lg={3}>
+        <Grid item xs={12} md={4}>
           <Paper className={fixedHeightPaper}>
             <Deposits />
           </Paper>
         </Grid>
-        {/* Recent Orders */}
+        {/* Questions */}
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <Orders />
+            <Questions />
           </Paper>
         </Grid>
       </Grid>
