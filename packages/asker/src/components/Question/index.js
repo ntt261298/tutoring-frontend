@@ -12,6 +12,7 @@ import { TopicId } from 'constants/common';
 import pusher from 'utils/pusher';
 import WorkingHeader from './WorkingHeader';
 import Math from './Math';
+import English from './English';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -92,6 +93,9 @@ const Question = () => {
       <Box className={classes.container}>
         {question?.topicId === TopicId.MATH && (
           <Math />
+        )}
+        {question?.topicId === TopicId.ENGLISH && (
+          <English />
         )}
       </Box>
     </>

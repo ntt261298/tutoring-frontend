@@ -6,6 +6,7 @@ import { TopicId } from 'constants/question';
 import pusher from 'utils/pusher';
 import { newMessage } from 'actions/question';
 import Math from './Math';
+import English from './English';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -43,6 +44,7 @@ const Working = () => {
   return (
     <Box className={classes.container}>
       {questionInfo?.topicId === TopicId.MATH && <Math />}
+      {questionInfo?.topicId === TopicId.ENGLISH && <English />}
     </Box>
   );
 };
