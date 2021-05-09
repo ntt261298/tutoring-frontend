@@ -4,14 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import { TopicId } from 'constants/common';
 import { getQuestions } from 'actions/question';
-import Title from 'components/Home/Title';
+import Title from 'components/Commons/Title';
 import QuestionList from 'components/Home/Questions/QuestionList';
 
 const useStyles = makeStyles(theme => ({

@@ -133,23 +133,17 @@ const Navigator = ({
       <Divider />
       <List>
         <ListSubheader inset>Saved reports</ListSubheader>
-        <ListItem button>
+        <ListItem
+          button
+          onClick={() => {
+            history.push('/statistics');
+          }}
+          selected={pathname === '/statistics'}
+        >
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
-          <ListItemText primary="Current month" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText primary="Last quarter" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText primary="Year-end sale" />
+          <ListItemText primary="Statistics" />
         </ListItem>
       </List>
       <Divider />

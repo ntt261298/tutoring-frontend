@@ -40,3 +40,8 @@ export const QuestionAction = {
   GET_ACTIVE_QUESTIONS: 'GET_ACTIVE_QUESTIONS',
   GET_QUESTIONS: 'GET_QUESTIONS',
 };
+
+
+export const StatisticAction = {
+  GET_STATISTICS: 'GET_STATISTICS',
+};
