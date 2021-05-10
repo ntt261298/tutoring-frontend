@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -59,6 +59,7 @@ const ImageExtension = {
 const Chat = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const chatAreaRef = useRef(null);
   const [currentMessage, setCurrentMessage] = useState('');
   const questionId = useSelector(state => state.question?.questionInfo?.id);
   const messages = useSelector(state => state.question?.questionInfo?.messages);
@@ -78,6 +79,10 @@ const Chat = () => {
       setCurrentMessage('');
     }
   };
+
+  useEffect(() => {
+    chatAreaRef.current.scrollIntoView(false);
+  }, [messages.length]);
 
   return (
     <Box component={Paper} className={classes.chatSection}>
@@ -107,7 +112,7 @@ const Chat = () => {
                         m={1}
                         fontSize="1rem"
                       >
-                        <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" width={200} />
+                        <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" style={{ maxWidth: 200 }} />
                       </Box>
                     )}
                     {message.message && (
@@ -151,7 +156,7 @@ const Chat = () => {
                       m={1}
                       fontSize="1rem"
                     >
-                      <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" width={200} />
+                      <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" style={{ maxWidth: 200 }} />
                     </Box>
                   )}
                   {message.message && (
@@ -178,6 +183,7 @@ const Chat = () => {
           );
         })
       }
+        <div ref={chatAreaRef} />
       </Box>
 
       <Grid container className={classes.typeArea}>
@@ -192,6 +198,11 @@ const Chat = () => {
             fullWidth
             value={currentMessage}
             onChange={e => setCurrentMessage(e.target.value)}
+            onKeyUp={(e) => {
+              if (e.key === 'Enter') {
+                handleSendMessage();
+              }
+            }}
           />
         </Grid>
         <Grid xs={1} align="right" className={classes.sendButton}>

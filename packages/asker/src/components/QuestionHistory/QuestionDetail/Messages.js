@@ -91,7 +91,7 @@ const Messages = ({
                         m={1}
                         fontSize="1rem"
                       >
-                        <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" width={200} />
+                        <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" style={{ maxWidth: 200 }} />
                       </Box>
                     )}
                     {message.message && (
@@ -135,7 +135,7 @@ const Messages = ({
                       m={1}
                       fontSize="1rem"
                     >
-                      <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" width={200} />
+                      <img src={`data:image/${fileType};base64,${message.file?.renderedData}`} alt="chat" style={{ maxWidth: 200 }} />
                     </Box>
                   )}
                   {message.message && (
