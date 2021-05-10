@@ -17,7 +17,7 @@ import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
 import Fingerprint from 'utils/fingerprint';
 import configuration from 'configuration';
 import { SignUpMessage } from 'constants/message';
-import { signupEmail } from 'actions/user';
+import { signupEmail, loginWithGoogle } from 'actions/user';
 
 
 const useStyles = makeStyles(theme => ({
@@ -74,8 +74,23 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const onGoogleLoginSuccess = () => {};
-  const onGoogleLoginFailure = () => {};
+  const onGoogleLoginSuccess = async (response) => {
+    const data = {
+      authorizationCode: response.code,
+    };
+
+    const { error } = await dispatch(loginWithGoogle(data));
+
+    if (error) {
+      setErrorMessage(error.errorMessage);
+    } else {
+      setErrorMessage(null);
+    }
+  };
+
+  const onGoogleLoginFailure = (response) => {
+    setErrorMessage(response.errorMessage);
+  };
 
   const onEmailSignup = async (e) => {
     e.preventDefault();

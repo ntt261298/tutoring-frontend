@@ -16,7 +16,7 @@ import Alert from '@material-ui/lab/Alert';
 import { GoogleLoginButton, Copyright } from '@tutoring/commons/components';
 import configuration from 'configuration';
 import { LoginMessage } from 'constants/message';
-import { loginEmail } from 'actions/user';
+import { loginEmail, loginWithGoogle } from 'actions/user';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -67,8 +67,23 @@ const SignIn = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const onGoogleLoginSuccess = () => {};
-  const onGoogleLoginFailure = () => {};
+  const onGoogleLoginSuccess = async (response) => {
+    const data = {
+      authorizationCode: response.code,
+    };
+
+    const { error } = await dispatch(loginWithGoogle(data));
+
+    if (error) {
+      setErrorMessage(error.errorMessage);
+    } else {
+      setErrorMessage(null);
+    }
+  };
+
+  const onGoogleLoginFailure = (response) => {
+    setErrorMessage(response.errorMessage);
+  };
 
   const onEmailLogin = async (e) => {
     e.preventDefault();

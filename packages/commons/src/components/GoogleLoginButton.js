@@ -22,6 +22,7 @@ const GoogleLoginButton = ({
   const classes = useStyles();
   return (
     <GoogleLogin
+      responseType="code"
       className={classes.googleButton}
       style={{ margin: '0 auto' }}
       clientId={googleClientId}

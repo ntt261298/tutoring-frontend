@@ -36,7 +36,6 @@ const connect = () => {
 };
 
 const disconnect = () => {
-  invariant(pusher, 'PusherAPI is disconnected');
   if (pusher) {
     pusher.disconnect();
     pusher = null;

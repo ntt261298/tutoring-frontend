@@ -125,7 +125,7 @@ const Home = () => {
                     Earnings
                   </Box>
                   <Box component="h2" className={classes.headerBoxDetail}>
-                    {calculateEarnings(user.expertEarnings)}
+                    {user.expertEarnings && calculateEarnings(user.expertEarnings)}
                   </Box>
                   <Box>
                     USD
@@ -136,7 +136,7 @@ const Home = () => {
                     Ratings - Math
                   </Box>
                   <Box component="h2" className={classes.headerBoxDetail}>
-                    {getTopicRank(user.expertRanks, TopicId.MATH)}
+                    {user.expertRanks && getTopicRank(user.expertRanks, TopicId.MATH)}
                   </Box>
                   <Box>
                     Per 5
@@ -147,7 +147,7 @@ const Home = () => {
                     Ratings - English
                   </Box>
                   <Box component="h2" className={classes.headerBoxDetail}>
-                    {getTopicRank(user.expertRanks, TopicId.ENGLISH)}
+                    {user.expertRanks && getTopicRank(user.expertRanks, TopicId.ENGLISH)}
                   </Box>
                   <Box>
                     Per 5

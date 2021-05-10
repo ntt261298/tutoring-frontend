@@ -10,6 +10,11 @@ export const loginEmail = data => ({
   promise: post('/log-in/user/email', data),
 });
 
+export const loginWithGoogle = data => ({
+  type: UserAction.LOGIN_WITH_GOOGLE,
+  promise: post('/log-in/user/google', data),
+});
+
 export const signupEmail = data => ({
   type: UserAction.SIGNUP,
   promise: post('/sign-up/user/email', {
