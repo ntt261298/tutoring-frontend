@@ -27,7 +27,7 @@ const InsufficientBalance = ({
             <img src={warningIcon} alt="warning icon" />
           </Box>
           <Box className={classes.centerStyle} style={{ fontWeight: 'bold' }}>
-            Please wait while our experts take a look at your questions make the decision...
+            Please go to Pricing and purchase a new plan to continue asking
           </Box>
         </>
       )}
