@@ -6,10 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { getActiveExperts } from 'actions/expert';
 import Title from 'components/Commons/Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,
@@ -43,7 +39,7 @@ export default function ActiveExperts() {
         experts are working or waiting for questions
       </Typography>
       <div>
-        <Link color="primary" href="/home" onClick={preventDefault}>
+        <Link color="primary" href="/experts">
           View expert list
         </Link>
       </div>

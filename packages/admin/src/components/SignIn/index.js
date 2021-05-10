@@ -50,7 +50,7 @@ export default function SignIn() {
       showMessage(
         'success',
         'Login Success',
-        'Welcome to ExcelChat Admin portal!',
+        'Welcome to Tutoring Admin portal!',
       );
     } else {
       showErrorMsg(error.errorMessage);

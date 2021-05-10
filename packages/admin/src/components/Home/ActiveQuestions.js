@@ -6,10 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { getActiveQuestions } from 'actions/question';
 import Title from 'components/Commons/Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,
@@ -43,7 +39,7 @@ export default function ActiveQuestions() {
         questions are in progress
       </Typography>
       <div>
-        <Link color="primary" href="/home" onClick={preventDefault}>
+        <Link color="primary" href="/home">
           View question list below
         </Link>
       </div>

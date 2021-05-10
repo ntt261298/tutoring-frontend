@@ -6,9 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { getTransactions } from 'actions/transaction';
 import Title from 'components/Commons/Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 const useStyles = makeStyles({
   depositContext: {
@@ -59,7 +56,7 @@ export default function Deposits() {
         {`${monthNames[date.getMonth()]} ${date.getDate()}th, ${date.getFullYear()}`}
       </Typography>
       <div>
-        <Link color="primary" href="/home" onClick={preventDefault}>
+        <Link color="primary" href="/statistics">
           View current month revenue
         </Link>
       </div>
