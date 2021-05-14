@@ -90,7 +90,6 @@ const VideoCall = () => {
     port: 9001,
     path: '/tutoring',
   });
-  let localStream = null;
   const personalVideo = useRef(null);
   const peerVideo = useRef(null);
   const [peerConnected, setPeerConnected] = useState(false);
@@ -146,7 +145,6 @@ const VideoCall = () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
     const call = peer.call(questionInfo?.userId.toString(), stream);
     personalVideo.current.srcObject = stream;
-    localStream = stream;
 
     if (call) {
       call.on('stream', (remoteStream) => {
@@ -169,7 +167,6 @@ const VideoCall = () => {
   const closeConnection = () => {
     handleMute();
     handleTurnOffCamera();
-    localStream.getTracks()[0].stop();
     socket.disconnect();
   };
 

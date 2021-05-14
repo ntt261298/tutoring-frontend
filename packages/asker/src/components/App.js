@@ -56,7 +56,7 @@ function App() {
   const handleUserState = async () => {
     const { result } = await dispatch(getState());
     // Expert is having a routing question
-    if (result && result.state === QuestionState.NOT_ROUTED) {
+    if (result && [QuestionState.NOT_ROUTED, QuestionState.NO_KING, QuestionState.HAS_KING].includes(result.state)) {
       dispatch(showModal(ModalKey.MATCHING_EXPERT));
     }
   };

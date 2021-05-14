@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '20px 0',
   },
 }));
 
@@ -24,7 +25,7 @@ const InsufficientBalance = ({
       body={(
         <>
           <Box className={classes.centerStyle}>
-            <img src={warningIcon} alt="warning icon" />
+            <img src={warningIcon} alt="warning icon" width={100} />
           </Box>
           <Box className={classes.centerStyle} style={{ fontWeight: 'bold' }}>
             Please go to Pricing and purchase a new plan to continue asking

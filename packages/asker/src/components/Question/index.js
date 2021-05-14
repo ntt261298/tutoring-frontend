@@ -21,6 +21,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const MessageType = {
+  FILE: 'file',
+  TEXT: 'text',
+};
+
 const Question = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -30,21 +35,16 @@ const Question = () => {
   const question = useSelector(({ user }) => user.workingState?.question);
 
   const pusherNewMessage = (message) => {
-    dispatch(newMessage(message));
+    if (message.messageType === MessageType.FILE) {
+      dispatch(getQuestionById(match.params.questionId));
+    } else {
+      dispatch(newMessage(message));
+    }
   };
-
-  const pusherQuestionDone = () => {};
 
   const connectWithPusher = (questionId) => {
     pusher.subscribe('question', questionId);
     pusher.bind('question', 'new_message', pusherNewMessage);
-    pusher.bind('question', 'question_done', pusherQuestionDone);
-  };
-
-  const disconnectPusher = () => {
-    pusher.unsubscribe('question');
-    pusher.unbind('question', 'new_message');
-    pusher.unbind('question', 'question_done');
   };
 
   const fetchQuestionInfo = async () => {
@@ -63,6 +63,12 @@ const Question = () => {
     } else {
       history.push('/home');
     }
+  };
+
+  const disconnectPusher = () => {
+    pusher.unsubscribe('question');
+    pusher.unbind('question', 'new_message');
+    pusher.unbind('question', 'question_done');
   };
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { TopicId } from 'constants/question';
 import pusher from 'utils/pusher';
-import { newMessage } from 'actions/question';
+import { newMessage, getState } from 'actions/question';
 import Math from './Math';
 import English from './English';
 
@@ -16,13 +16,22 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const MessageType = {
+  FILE: 'file',
+  TEXT: 'text',
+};
+
 const Working = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const questionInfo = useSelector(state => state.question?.questionInfo);
 
   const pusherNewMessage = (message) => {
-    dispatch(newMessage(message));
+    if (message.messageType === MessageType.FILE) {
+      dispatch(getState());
+    } else {
+      dispatch(newMessage(message));
+    }
   };
 
   const connectWithPusher = (questionId) => {
