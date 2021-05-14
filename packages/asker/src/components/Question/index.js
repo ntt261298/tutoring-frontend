@@ -42,9 +42,14 @@ const Question = () => {
     }
   };
 
+  const pusherQuestionDone = () => {
+    dispatch(getQuestionById(match.params.questionId));
+  };
+
   const connectWithPusher = (questionId) => {
     pusher.subscribe('question', questionId);
     pusher.bind('question', 'new_message', pusherNewMessage);
+    pusher.bind('question', 'question_done', pusherQuestionDone);
   };
 
   const fetchQuestionInfo = async () => {
