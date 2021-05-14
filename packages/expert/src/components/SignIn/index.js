@@ -25,10 +25,38 @@ const useStyles = makeStyles(theme => ({
   image: {
     backgroundImage: 'url(images/tutoring.jpg)',
     backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    position: 'relative',
+  },
+  cover: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    background: 'grey',
+    opacity: '40%',
+  },
+  title: {
+    zIndex: 2,
+    opacity: 1,
+    height: '100%',
+    color: 'white',
+    marginLeft: 20,
+    bottom: 20,
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  subtitle: {
+    zIndex: 2,
+    opacity: 1,
+    height: '100%',
+    color: 'white',
+    marginLeft: 20,
+    top: 20,
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -98,7 +126,15 @@ const SignIn = () => {
         license={configuration.livechatLicense}
       />
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={false} sm={4} md={7} className={classes.image}>
+        <div className={classes.cover} />
+        <h1 className={classes.title}>
+          Apply for a job now and start earning money right away!
+        </h1>
+        <Typography component="h1" variant="h5" className={classes.subtitle}>
+          You can make up to $500/week
+        </Typography>
+      </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
