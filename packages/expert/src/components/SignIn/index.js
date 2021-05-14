@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import validator from 'validator';
+import LiveChat from 'react-livechat';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,6 +16,7 @@ import Alert from '@material-ui/lab/Alert';
 import { Copyright } from '@tutoring/commons/components';
 import { LoginMessage } from 'constants/message';
 import { loginEmail } from 'actions/user';
+import configuration from 'configuration';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -88,8 +90,13 @@ const SignIn = () => {
     }
   };
 
+  useEffect(() => () => window.LC_API.hide_chat_window(), []);
+
   return (
     <Grid container component="main" className={classes.root}>
+      <LiveChat
+        license={configuration.livechatLicense}
+      />
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
