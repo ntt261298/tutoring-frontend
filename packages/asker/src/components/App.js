@@ -40,7 +40,7 @@ function App() {
       dispatch(showModal(ModalKey.RATE, { questionId: state.question?.id }));
     }
 
-    dispatch(updateState(state));
+    dispatch(getState());
   };
 
   const setupPusher = async () => {

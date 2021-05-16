@@ -39,7 +39,7 @@ const WorkSpace = () => {
       // Bidding => Not Routed
       showModal(ModalKey.BID_FAIL);
     }
-    dispatch(updateState(state));
+    dispatch(getState());
   };
 
   const setupPusher = () => {
