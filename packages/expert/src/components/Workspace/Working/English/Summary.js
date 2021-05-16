@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
   },
   image: {
-    width: '300px',
+    width: '100%',
   },
 }));
 

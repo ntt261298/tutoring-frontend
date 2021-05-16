@@ -45,6 +45,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    width: '90%',
+  },
 }));
 
 const Bidding = () => {
