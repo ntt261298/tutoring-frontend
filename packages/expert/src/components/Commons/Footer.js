@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
       listStyle: 'none',
     },
   },
+  rightArea: {
+    textAlign: 'center',
+  },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -26,16 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const footers = [
-  {
-    title: 'Designed by Truong Nguyen',
-    description: [],
-  },
-  {
-    title: 'Contact me:',
-    description: ['0397364341', 'ntt261298@gmail.com', 'Hanoi University of Science and Technology'],
-  },
-];
+const DESCRIPTIONS = ['0397364341', 'ntt261298@gmail.com', 'Hanoi University of Science and Technology'];
 
 const Footer = () => {
   const classes = useStyles();
@@ -43,13 +37,18 @@ const Footer = () => {
   return (
     <Container maxWidth="md" component="footer" className={classes.footer}>
       <Grid container spacing={2}>
-        {footers.map(footer => (
-          <Grid item xs={6} sm={6} key={footer.title}>
+        <Grid item xs={6} sm={6}>
+          <Typography variant="h6" color="textPrimary" gutterBottom>
+            Designed by Truong Nguyen
+          </Typography>
+        </Grid>
+        <Grid item xs={6} sm={6}>
+          <div className={classes.rightArea}>
             <Typography variant="h6" color="textPrimary" gutterBottom>
-              {footer.title}
+              Contact me:
             </Typography>
             <ul>
-              {footer.description.map(item => (
+              {DESCRIPTIONS.map(item => (
                 <li key={item}>
                   <Typography variant="subtitle1" color="textSecondary">
                     {item}
@@ -57,8 +56,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </Grid>
-        ))}
+          </div>
+        </Grid>
       </Grid>
       <Box mt={5}>
         <Copyright />
