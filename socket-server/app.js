@@ -25,6 +25,11 @@ io.on('connection', socket => {
       io.to(id).emit(event);
     });
   }) 
+
+  socket.on('connect', () => {
+    console.log('connect event')
+    io.to(id).emit('Connect room');
+  });
   
   socket.on('disconnect', () => {
     console.log('disconnect event')

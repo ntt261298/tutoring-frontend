@@ -120,6 +120,10 @@ const VideoCall = () => {
       setExpertMuteVideo(false);
     });
 
+    socket.on('Connect room', () => {
+      setExpertDisconnected(false);
+    });
+
     socket.on('Disconnect room', () => {
       setExpertDisconnected(true);
     });
@@ -153,7 +157,9 @@ const VideoCall = () => {
 
     if (call) {
       call.on('stream', (remoteStream) => {
-        peerVideo.current.srcObject = remoteStream;
+        if (peerVideo.current) {
+          peerVideo.current.srcObject = remoteStream;
+        }
         setPeerConnected(true);
         setExpertDisconnected(false);
       });
@@ -164,12 +170,20 @@ const VideoCall = () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
     call.answer(stream); // Answer the call with an A/V stream.
     call.on('stream', (remoteStream) => {
-      peerVideo.current.srcObject = remoteStream;
+      if (peerVideo.current) {
+        peerVideo.current.srcObject = remoteStream;
+      }
       setPeerConnected(true);
     });
   };
 
   const closePeer = () => {
+    if (personalVideo.current.srcObject) {
+      personalVideo.current.srcObject.getVideoTracks()[0].stop();
+    }
+    if (peerVideo.current.srcObject) {
+      peerVideo.current.srcObject.getVideoTracks()[0].stop();
+    }
     socket.disconnect();
   };
 
