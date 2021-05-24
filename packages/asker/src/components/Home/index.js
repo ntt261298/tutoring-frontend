@@ -65,8 +65,8 @@ const Home = () => {
           Get instant connect to our experts
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Quickly build an effective pricing table for your potential customers with this layout.
-          It&apos;s built with default Material-UI components with little customization.
+          Post your question and get connected to a trusted expert within a minute.
+          Chat with an expert to get your problem solved.
         </Typography>
       </Container>
       {/* End hero unit */}

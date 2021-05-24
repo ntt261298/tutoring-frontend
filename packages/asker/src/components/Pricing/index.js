@@ -109,8 +109,7 @@ export default function Pricing() {
           Pricing
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Quickly build an effective pricing table for your potential customers with this layout.
-          It&apos;s built with default Material-UI components with little customization.
+          Choose your plan and start chatting with experts now.
         </Typography>
       </Container>
       {/* End hero unit */}
