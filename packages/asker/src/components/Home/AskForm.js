@@ -54,6 +54,10 @@ const useStyles = makeStyles(() => ({
       cursor: 'pointer',
     },
   },
+  previewImage: {
+    width: 200,
+    marginLeft: 20,
+  },
 }));
 
 const AskForm = () => {
@@ -110,17 +114,17 @@ const AskForm = () => {
     setSubmitting(true);
     const data = {
       topicId: selectedTopic, content, file: selectedFile,
-    }
+    };
     const { error } = await dispatch(newQuestion(data));
 
     if (error && error.data?.errorCode === ErrorCode.ACTIVE_QUESTION) {
-      dispatch(showModal(ModalKey.ACTIVE_QUESTION, { questionId: question?.id  }));
+      dispatch(showModal(ModalKey.ACTIVE_QUESTION, { questionId: question?.id }));
     }
     if (!error) {
       dispatch(showModal(ModalKey.MATCHING_EXPERT));
     }
     setSubmitting(false);
-  }
+  };
 
   return (
     <Card className={classes.root}>
@@ -154,10 +158,15 @@ const AskForm = () => {
               </Button>
             )}
             {selectedFile && (
-              <div>
-                <button type="button" className={classes.closeButton} onClick={handleRemoveFile}>×</button>
-                <span>{selectedFile.name}</span>
-              </div>
+              <>
+                <div>
+                  <button type="button" className={classes.closeButton} onClick={handleRemoveFile}>×</button>
+                  <span>{selectedFile.name}</span>
+                </div>
+                <div>
+                  <img src={URL.createObjectURL(selectedFile)} alt="preview" className={classes.previewImage} />
+                </div>
+              </>
             )}
           </Grid>
           <Grid item xs={6} className={classes.alignItemsAndJustifyContent}>
