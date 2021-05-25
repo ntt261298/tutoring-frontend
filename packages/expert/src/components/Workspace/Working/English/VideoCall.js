@@ -85,7 +85,7 @@ const VideoCall = () => {
     'http://localhost:5000', {
       query: { id: questionInfo.id },
     },
-  ); const peer = new Peer(question?.expertId.toString(), {
+  ); const peer = new Peer(`expert-peer-${question?.expertId.toString()}`, {
     host: 'localhost',
     port: 9001,
     path: '/tutoring',
@@ -147,7 +147,7 @@ const VideoCall = () => {
 
   const setupMedia = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-    const call = peer.call(questionInfo?.userId.toString(), stream);
+    const call = peer.call(`user-peer-${questionInfo?.userId.toString()}`, stream);
     personalVideo.current.srcObject = stream;
 
     if (call) {
