@@ -35,6 +35,13 @@ const Summary = ({
       </Box>
       <Divider />
       <Box component="h3">
+        Expert
+      </Box>
+      <Box component="p">
+        {question?.expert?.email}
+      </Box>
+      <Divider />
+      <Box component="h3">
         Topic:
         {' '}
         {question?.topic?.name}
