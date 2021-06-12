@@ -96,7 +96,7 @@ const Home = () => {
         rankScore = rank.scoreAvg;
       }
     });
-    return rankScore;
+    return rankScore.toFixed(2);
   };
 
   useEffect(() => {
