@@ -1,4 +1,4 @@
-# Thesis tutoring frontend
+# Tutoring frontend
 
 ### Installation and setup
 Install [NodeJS](https://nodejs.org/en/download)
